@@ -13,15 +13,54 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Pliki źródłowe\Model">
+      <UniqueIdentifier>{3d469e85-9cbc-45f6-9a69-64f2d4e3c7db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="form.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="Adres.cpp">
+      <Filter>Pliki źródłowe\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Uzytkownik.cpp">
+      <Filter>Pliki źródłowe\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Kategoria.cpp">
+      <Filter>Pliki źródłowe\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Produkt.cpp">
+      <Filter>Pliki źródłowe\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="ProduktZamowienie.cpp">
+      <Filter>Pliki źródłowe\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Zamowienie.cpp">
+      <Filter>Pliki źródłowe\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="form.h">
       <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Uzytkownik.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Adres.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Kategoria.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Produkt.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Zamowienie.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="ProduktZamowienie.h">
+      <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
