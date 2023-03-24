@@ -39,6 +39,15 @@
     <ClCompile Include="Zamowienie.cpp">
       <Filter>Pliki źródłowe\Model</Filter>
     </ClCompile>
+    <ClCompile Include="rejestracja.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="panelUzytkownika.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="PanelAdministratora.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="form.h">
@@ -61,6 +70,15 @@
     </ClInclude>
     <ClInclude Include="ProduktZamowienie.h">
       <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="rejestracja.h">
+      <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="panelUzytkownika.h">
+      <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="PanelAdministratora.h">
+      <Filter>Pliki źródłowe</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
