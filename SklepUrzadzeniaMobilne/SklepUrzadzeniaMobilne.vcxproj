@@ -121,11 +121,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Adres.cpp" />
+    <ClCompile Include="dashboardUzytkownika.cpp" />
     <ClCompile Include="form.cpp" />
     <ClCompile Include="Kategoria.cpp" />
     <ClCompile Include="PanelAdministratora.cpp" />
     <ClCompile Include="panelUzytkownika.cpp" />
     <ClCompile Include="Produkt.cpp" />
+    <ClCompile Include="ProduktyPanel.cpp" />
     <ClCompile Include="ProduktZamowienie.cpp" />
     <ClCompile Include="rejestracja.cpp" />
     <ClCompile Include="Uzytkownik.cpp" />
@@ -133,6 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Adres.h" />
+    <ClInclude Include="dashboardUzytkownika.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -144,6 +149,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Produkt.h" />
+    <ClInclude Include="ProduktyPanel.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="ProduktZamowienie.h" />
     <ClInclude Include="rejestracja.h">
       <FileType>CppForm</FileType>
@@ -152,6 +160,9 @@
     <ClInclude Include="Zamowienie.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="dashboardUzytkownika.resx">
+      <DependentUpon>dashboardUzytkownika.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form.resx">
       <DependentUpon>form.h</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="panelUzytkownika.resx">
       <DependentUpon>panelUzytkownika.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProduktyPanel.resx">
+      <DependentUpon>ProduktyPanel.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rejestracja.resx">
       <DependentUpon>rejestracja.h</DependentUpon>

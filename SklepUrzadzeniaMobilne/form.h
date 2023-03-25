@@ -1,5 +1,6 @@
 ﻿#pragma once
-
+#include "panelUzytkownika.h"
+#include "PanelAdministratora.h"
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -128,6 +129,7 @@ namespace SklepUrzadzeniaMobilne {
 			this->zalogujbutton->TabIndex = 3;
 			this->zalogujbutton->Text = L"Zaloguj";
 			this->zalogujbutton->UseVisualStyleBackColor = true;
+			this->zalogujbutton->Click += gcnew System::EventHandler(this, &form::zalogujbutton_Click);
 			// 
 			// stworzKontobutton
 			// 
@@ -165,5 +167,17 @@ namespace SklepUrzadzeniaMobilne {
 
 		}
 #pragma endregion
-	};
+	private: System::Void zalogujbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+		panelUzytkownika^ pu = gcnew panelUzytkownika();
+		pu->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+		pu->TopLevel = false;
+		//pu->Show();
+		//this->Hide();
+
+		Controls->Clear();
+		Controls->Add(pu);
+		pu->Show();
+		
+	}
+};
 }

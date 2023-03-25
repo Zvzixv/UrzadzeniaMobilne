@@ -1,4 +1,6 @@
 ﻿#pragma once
+#include "dashboardUzytkownika.h"
+#include "ProduktyPanel.h"
 
 namespace SklepUrzadzeniaMobilne {
 
@@ -35,15 +37,22 @@ namespace SklepUrzadzeniaMobilne {
 			}
 		}
 	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Button^ ustawieniabutton;
 	protected:
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button1;
+
+	private: System::Windows::Forms::Button^ produktybutton;
+	private: System::Windows::Forms::Button^ dashboardUzytkownikabutton;
+
+
+
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Panel^ panelNawigacyjny;
+
+	private: System::Windows::Forms::Button^ zamowieniabutton;
+	private: System::Windows::Forms::Button^ kontaktbutton;
+
 
 	private:
 		/// <summary>
@@ -60,14 +69,15 @@ namespace SklepUrzadzeniaMobilne {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(panelUzytkownika::typeid));
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->ustawieniabutton = (gcnew System::Windows::Forms::Button());
+			this->kontaktbutton = (gcnew System::Windows::Forms::Button());
+			this->zamowieniabutton = (gcnew System::Windows::Forms::Button());
+			this->produktybutton = (gcnew System::Windows::Forms::Button());
+			this->dashboardUzytkownikabutton = (gcnew System::Windows::Forms::Button());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->panelNawigacyjny = (gcnew System::Windows::Forms::Panel());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -76,16 +86,84 @@ namespace SklepUrzadzeniaMobilne {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::SeaShell;
-			this->panel1->Controls->Add(this->button3);
-			this->panel1->Controls->Add(this->button4);
-			this->panel1->Controls->Add(this->button2);
-			this->panel1->Controls->Add(this->button1);
+			this->panel1->Controls->Add(this->ustawieniabutton);
+			this->panel1->Controls->Add(this->kontaktbutton);
+			this->panel1->Controls->Add(this->zamowieniabutton);
+			this->panel1->Controls->Add(this->produktybutton);
+			this->panel1->Controls->Add(this->dashboardUzytkownikabutton);
 			this->panel1->Controls->Add(this->panel2);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(228, 589);
 			this->panel1->TabIndex = 0;
+			// 
+			// ustawieniabutton
+			// 
+			this->ustawieniabutton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->ustawieniabutton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->ustawieniabutton->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->ustawieniabutton->Location = System::Drawing::Point(0, 517);
+			this->ustawieniabutton->Name = L"ustawieniabutton";
+			this->ustawieniabutton->Size = System::Drawing::Size(228, 72);
+			this->ustawieniabutton->TabIndex = 1;
+			this->ustawieniabutton->Text = L"Ustawienia";
+			this->ustawieniabutton->UseVisualStyleBackColor = true;
+			// 
+			// kontaktbutton
+			// 
+			this->kontaktbutton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->kontaktbutton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->kontaktbutton->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->kontaktbutton->Location = System::Drawing::Point(0, 346);
+			this->kontaktbutton->Name = L"kontaktbutton";
+			this->kontaktbutton->Size = System::Drawing::Size(228, 72);
+			this->kontaktbutton->TabIndex = 1;
+			this->kontaktbutton->Text = L"Kontakt";
+			this->kontaktbutton->UseVisualStyleBackColor = true;
+			// 
+			// zamowieniabutton
+			// 
+			this->zamowieniabutton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->zamowieniabutton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->zamowieniabutton->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->zamowieniabutton->Location = System::Drawing::Point(0, 279);
+			this->zamowieniabutton->Name = L"zamowieniabutton";
+			this->zamowieniabutton->Size = System::Drawing::Size(228, 72);
+			this->zamowieniabutton->TabIndex = 1;
+			this->zamowieniabutton->Text = L"Zamówienia";
+			this->zamowieniabutton->UseVisualStyleBackColor = true;
+			// 
+			// produktybutton
+			// 
+			this->produktybutton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->produktybutton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->produktybutton->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->produktybutton->Location = System::Drawing::Point(0, 210);
+			this->produktybutton->Name = L"produktybutton";
+			this->produktybutton->Size = System::Drawing::Size(228, 72);
+			this->produktybutton->TabIndex = 1;
+			this->produktybutton->Text = L"Produkty";
+			this->produktybutton->UseVisualStyleBackColor = true;
+			this->produktybutton->Click += gcnew System::EventHandler(this, &panelUzytkownika::produktybutton_Click);
+			// 
+			// dashboardUzytkownikabutton
+			// 
+			this->dashboardUzytkownikabutton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->dashboardUzytkownikabutton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->dashboardUzytkownikabutton->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->dashboardUzytkownikabutton->Location = System::Drawing::Point(0, 141);
+			this->dashboardUzytkownikabutton->Name = L"dashboardUzytkownikabutton";
+			this->dashboardUzytkownikabutton->Size = System::Drawing::Size(228, 72);
+			this->dashboardUzytkownikabutton->TabIndex = 1;
+			this->dashboardUzytkownikabutton->Text = L"Panel użytkownika";
+			this->dashboardUzytkownikabutton->UseVisualStyleBackColor = true;
+			this->dashboardUzytkownikabutton->Click += gcnew System::EventHandler(this, &panelUzytkownika::dashboardUzytkownikabutton_Click);
 			// 
 			// panel2
 			// 
@@ -106,45 +184,6 @@ namespace SklepUrzadzeniaMobilne {
 			this->pictureBox1->TabIndex = 1;
 			this->pictureBox1->TabStop = false;
 			// 
-			// button1
-			// 
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::Color::SaddleBrown;
-			this->button1->Location = System::Drawing::Point(0, 141);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(228, 72);
-			this->button1->TabIndex = 1;
-			this->button1->Text = L"Panel użytkownika";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button2->ForeColor = System::Drawing::Color::SaddleBrown;
-			this->button2->Location = System::Drawing::Point(0, 210);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(228, 72);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"Produkty";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// button3
-			// 
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button3->ForeColor = System::Drawing::Color::SaddleBrown;
-			this->button3->Location = System::Drawing::Point(0, 517);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(228, 72);
-			this->button3->TabIndex = 1;
-			this->button3->Text = L"Ustawienia";
-			this->button3->UseVisualStyleBackColor = true;
-			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
@@ -157,25 +196,12 @@ namespace SklepUrzadzeniaMobilne {
 			this->label1->TabIndex = 1;
 			this->label1->Text = L"Panel użytkownika";
 			// 
-			// panel3
+			// panelNawigacyjny
 			// 
-			this->panel3->Location = System::Drawing::Point(234, 56);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(859, 533);
-			this->panel3->TabIndex = 2;
-			// 
-			// button4
-			// 
-			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->button4->ForeColor = System::Drawing::Color::SaddleBrown;
-			this->button4->Location = System::Drawing::Point(0, 279);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(228, 72);
-			this->button4->TabIndex = 1;
-			this->button4->Text = L"Zamówienia";
-			this->button4->UseVisualStyleBackColor = true;
+			this->panelNawigacyjny->Location = System::Drawing::Point(234, 56);
+			this->panelNawigacyjny->Name = L"panelNawigacyjny";
+			this->panelNawigacyjny->Size = System::Drawing::Size(859, 533);
+			this->panelNawigacyjny->TabIndex = 2;
 			// 
 			// panelUzytkownika
 			// 
@@ -183,7 +209,7 @@ namespace SklepUrzadzeniaMobilne {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SaddleBrown;
 			this->ClientSize = System::Drawing::Size(1092, 589);
-			this->Controls->Add(this->panel3);
+			this->Controls->Add(this->panelNawigacyjny);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::SizableToolWindow;
@@ -197,5 +223,25 @@ namespace SklepUrzadzeniaMobilne {
 
 		}
 #pragma endregion
-	};
+	private: System::Void dashboardUzytkownikabutton_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->panelNawigacyjny->Controls->Clear();
+		dashboardUzytkownika^ du = gcnew dashboardUzytkownika();
+		du->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+		du->TopLevel = false;
+
+		this->panelNawigacyjny->Controls->Add(du);
+		du->Show();
+		
+	}
+private: System::Void produktybutton_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->panelNawigacyjny->Controls->Clear();
+	ProduktyPanel^ pp = gcnew ProduktyPanel();
+	pp->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+	pp->TopLevel = false;
+
+	this->panelNawigacyjny->Controls->Add(pp);
+	pp->Show();
+}
+};
 }

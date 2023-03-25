@@ -48,6 +48,12 @@
     <ClCompile Include="PanelAdministratora.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="dashboardUzytkownika.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="ProduktyPanel.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="form.h">
@@ -78,6 +84,12 @@
       <Filter>Pliki źródłowe</Filter>
     </ClInclude>
     <ClInclude Include="PanelAdministratora.h">
+      <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="dashboardUzytkownika.h">
+      <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="ProduktyPanel.h">
       <Filter>Pliki źródłowe</Filter>
     </ClInclude>
   </ItemGroup>
