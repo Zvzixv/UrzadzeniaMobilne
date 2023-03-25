@@ -45,13 +45,22 @@
     <ClCompile Include="panelUzytkownika.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="PanelAdministratora.cpp">
+    <ClCompile Include="panelAdministratora.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="dashboardUzytkownika.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="ProduktyPanel.cpp">
+    <ClCompile Include="produktyPanel.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="zamowieniaPanel.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="kontakt.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="ustawienia.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,13 +92,22 @@
     <ClInclude Include="panelUzytkownika.h">
       <Filter>Pliki źródłowe</Filter>
     </ClInclude>
-    <ClInclude Include="PanelAdministratora.h">
+    <ClInclude Include="panelAdministratora.h">
       <Filter>Pliki źródłowe</Filter>
     </ClInclude>
     <ClInclude Include="dashboardUzytkownika.h">
       <Filter>Pliki źródłowe</Filter>
     </ClInclude>
-    <ClInclude Include="ProduktyPanel.h">
+    <ClInclude Include="produktyPanel.h">
+      <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="zamowieniaPanel.h">
+      <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="kontakt.h">
+      <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="ustawienia.h">
       <Filter>Pliki źródłowe</Filter>
     </ClInclude>
   </ItemGroup>

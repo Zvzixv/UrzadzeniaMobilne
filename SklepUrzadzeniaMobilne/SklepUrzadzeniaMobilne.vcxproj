@@ -124,13 +124,16 @@
     <ClCompile Include="dashboardUzytkownika.cpp" />
     <ClCompile Include="form.cpp" />
     <ClCompile Include="Kategoria.cpp" />
-    <ClCompile Include="PanelAdministratora.cpp" />
+    <ClCompile Include="kontakt.cpp" />
+    <ClCompile Include="panelAdministratora.cpp" />
     <ClCompile Include="panelUzytkownika.cpp" />
     <ClCompile Include="Produkt.cpp" />
-    <ClCompile Include="ProduktyPanel.cpp" />
+    <ClCompile Include="produktyPanel.cpp" />
     <ClCompile Include="ProduktZamowienie.cpp" />
     <ClCompile Include="rejestracja.cpp" />
+    <ClCompile Include="ustawienia.cpp" />
     <ClCompile Include="Uzytkownik.cpp" />
+    <ClCompile Include="zamowieniaPanel.cpp" />
     <ClCompile Include="Zamowienie.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -142,21 +145,30 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Kategoria.h" />
-    <ClInclude Include="PanelAdministratora.h">
+    <ClInclude Include="kontakt.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="panelAdministratora.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="panelUzytkownika.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Produkt.h" />
-    <ClInclude Include="ProduktyPanel.h">
+    <ClInclude Include="produktyPanel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ProduktZamowienie.h" />
     <ClInclude Include="rejestracja.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ustawienia.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Uzytkownik.h" />
+    <ClInclude Include="zamowieniaPanel.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Zamowienie.h" />
   </ItemGroup>
   <ItemGroup>
@@ -166,17 +178,26 @@
     <EmbeddedResource Include="form.resx">
       <DependentUpon>form.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PanelAdministratora.resx">
-      <DependentUpon>PanelAdministratora.h</DependentUpon>
+    <EmbeddedResource Include="kontakt.resx">
+      <DependentUpon>kontakt.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panelAdministratora.resx">
+      <DependentUpon>panelAdministratora.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="panelUzytkownika.resx">
       <DependentUpon>panelUzytkownika.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProduktyPanel.resx">
-      <DependentUpon>ProduktyPanel.h</DependentUpon>
+    <EmbeddedResource Include="produktyPanel.resx">
+      <DependentUpon>produktyPanel.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rejestracja.resx">
       <DependentUpon>rejestracja.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ustawienia.resx">
+      <DependentUpon>ustawienia.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="zamowieniaPanel.resx">
+      <DependentUpon>zamowieniaPanel.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

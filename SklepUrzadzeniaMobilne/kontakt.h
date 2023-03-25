@@ -10,12 +10,12 @@ namespace SklepUrzadzeniaMobilne {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for ProduktyPanel
+	/// Summary for kontakt
 	/// </summary>
-	public ref class ProduktyPanel : public System::Windows::Forms::Form
+	public ref class kontakt : public System::Windows::Forms::Form
 	{
 	public:
-		ProduktyPanel(void)
+		kontakt(void)
 		{
 			InitializeComponent();
 			//
@@ -27,15 +27,13 @@ namespace SklepUrzadzeniaMobilne {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~ProduktyPanel()
+		~kontakt()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-
-	protected:
 
 	private:
 		/// <summary>
@@ -52,15 +50,15 @@ namespace SklepUrzadzeniaMobilne {
 		{
 			this->SuspendLayout();
 			// 
-			// ProduktyPanel
+			// kontakt
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SaddleBrown;
 			this->ClientSize = System::Drawing::Size(837, 477);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"ProduktyPanel";
-			this->Text = L"ProduktyPanel";
+			this->Name = L"kontakt";
+			this->Text = L"kontakt";
 			this->ResumeLayout(false);
 
 		}

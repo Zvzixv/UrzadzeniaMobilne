@@ -1,6 +1,9 @@
 ﻿#pragma once
 #include "dashboardUzytkownika.h"
 #include "ProduktyPanel.h"
+#include "zamowieniaPanel.h"
+#include "kontakt.h"
+#include "ustawienia.h"
 
 namespace SklepUrzadzeniaMobilne {
 
@@ -110,6 +113,7 @@ namespace SklepUrzadzeniaMobilne {
 			this->ustawieniabutton->TabIndex = 1;
 			this->ustawieniabutton->Text = L"Ustawienia";
 			this->ustawieniabutton->UseVisualStyleBackColor = true;
+			this->ustawieniabutton->Click += gcnew System::EventHandler(this, &panelUzytkownika::ustawieniabutton_Click);
 			// 
 			// kontaktbutton
 			// 
@@ -123,6 +127,7 @@ namespace SklepUrzadzeniaMobilne {
 			this->kontaktbutton->TabIndex = 1;
 			this->kontaktbutton->Text = L"Kontakt";
 			this->kontaktbutton->UseVisualStyleBackColor = true;
+			this->kontaktbutton->Click += gcnew System::EventHandler(this, &panelUzytkownika::kontaktbutton_Click);
 			// 
 			// zamowieniabutton
 			// 
@@ -136,6 +141,7 @@ namespace SklepUrzadzeniaMobilne {
 			this->zamowieniabutton->TabIndex = 1;
 			this->zamowieniabutton->Text = L"Zamówienia";
 			this->zamowieniabutton->UseVisualStyleBackColor = true;
+			this->zamowieniabutton->Click += gcnew System::EventHandler(this, &panelUzytkownika::zamowieniabutton_Click);
 			// 
 			// produktybutton
 			// 
@@ -231,6 +237,7 @@ namespace SklepUrzadzeniaMobilne {
 
 		this->panelNawigacyjny->Controls->Add(du);
 		du->Show();
+		this->label1->Text = "Panel użytkownika";
 		
 	}
 private: System::Void produktybutton_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -242,6 +249,39 @@ private: System::Void produktybutton_Click(System::Object^ sender, System::Event
 
 	this->panelNawigacyjny->Controls->Add(pp);
 	pp->Show();
+	this->label1->Text = "Produkty";
+}
+private: System::Void zamowieniabutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->panelNawigacyjny->Controls->Clear();
+	zamowieniaPanel^ zp = gcnew zamowieniaPanel();
+	zp->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+	zp->TopLevel = false;
+
+	this->panelNawigacyjny->Controls->Add(zp);
+	zp->Show();
+	this->label1->Text = "Zamówienia";
+}
+private: System::Void kontaktbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->panelNawigacyjny->Controls->Clear();
+	kontakt^ k = gcnew kontakt();
+	k->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+	k->TopLevel = false;
+
+	this->panelNawigacyjny->Controls->Add(k);
+	k->Show();
+	this->label1->Text = "Kontakt";
+}
+private: System::Void ustawieniabutton_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->panelNawigacyjny->Controls->Clear();
+	ustawienia^ u = gcnew ustawienia();
+	u->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+	u->TopLevel = false;
+
+	this->panelNawigacyjny->Controls->Add(u);
+	u->Show();
+	this->label1->Text = "Ustawienia";
 }
 };
 }
