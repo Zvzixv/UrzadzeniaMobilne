@@ -10,5 +10,7 @@ private:
 	bool ultrabook;
 	bool gamingowy;
 	string marka;
+	bool hdd;
+	bool sdd;
 
 };
