@@ -16,11 +16,14 @@
     <Filter Include="Pliki źródłowe\Model">
       <UniqueIdentifier>{3d469e85-9cbc-45f6-9a69-64f2d4e3c7db}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki źródłowe\Widok">
+      <UniqueIdentifier>{39c0dba5-d91d-488c-ab32-f747cd8c9506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\Model">
+      <UniqueIdentifier>{175ee78e-adc5-41b1-8cce-3c90c430ed74}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="form.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="Adres.cpp">
       <Filter>Pliki źródłowe\Model</Filter>
     </ClCompile>
@@ -39,52 +42,40 @@
     <ClCompile Include="Zamowienie.cpp">
       <Filter>Pliki źródłowe\Model</Filter>
     </ClCompile>
-    <ClCompile Include="rejestracja.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="panelUzytkownika.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="panelAdministratora.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="dashboardUzytkownika.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Pliki źródłowe\Widok</Filter>
     </ClCompile>
-    <ClCompile Include="produktyPanel.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="zamowieniaPanel.cpp">
-      <Filter>Pliki źródłowe</Filter>
+    <ClCompile Include="form.cpp">
+      <Filter>Pliki źródłowe\Widok</Filter>
     </ClCompile>
     <ClCompile Include="kontakt.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Pliki źródłowe\Widok</Filter>
+    </ClCompile>
+    <ClCompile Include="panelAdministratora.cpp">
+      <Filter>Pliki źródłowe\Widok</Filter>
+    </ClCompile>
+    <ClCompile Include="panelUzytkownika.cpp">
+      <Filter>Pliki źródłowe\Widok</Filter>
+    </ClCompile>
+    <ClCompile Include="produktyPanel.cpp">
+      <Filter>Pliki źródłowe\Widok</Filter>
+    </ClCompile>
+    <ClCompile Include="rejestracja.cpp">
+      <Filter>Pliki źródłowe\Widok</Filter>
     </ClCompile>
     <ClCompile Include="ustawienia.cpp">
+      <Filter>Pliki źródłowe\Widok</Filter>
+    </ClCompile>
+    <ClCompile Include="zamowieniaPanel.cpp">
+      <Filter>Pliki źródłowe\Widok</Filter>
+    </ClCompile>
+    <ClCompile Include="produktOkienko.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="form.h">
       <Filter>Pliki źródłowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Uzytkownik.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Adres.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Kategoria.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Produkt.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="Zamowienie.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-    <ClInclude Include="ProduktZamowienie.h">
-      <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="rejestracja.h">
       <Filter>Pliki źródłowe</Filter>
@@ -109,6 +100,36 @@
     </ClInclude>
     <ClInclude Include="ustawienia.h">
       <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Adres.h">
+      <Filter>Pliki nagłówkowe\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Kategoria.h">
+      <Filter>Pliki nagłówkowe\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Produkt.h">
+      <Filter>Pliki nagłówkowe\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="ProduktZamowienie.h">
+      <Filter>Pliki nagłówkowe\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Uzytkownik.h">
+      <Filter>Pliki nagłówkowe\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Zamowienie.h">
+      <Filter>Pliki nagłówkowe\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="produktOkienko.h">
+      <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="KategoriaLaptop.h">
+      <Filter>Pliki nagłówkowe\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="KategoriaTelefon.h">
+      <Filter>Pliki nagłówkowe\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="KategoriaTablet.h">
+      <Filter>Pliki nagłówkowe\Model</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

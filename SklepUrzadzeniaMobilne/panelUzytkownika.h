@@ -27,6 +27,11 @@ namespace SklepUrzadzeniaMobilne {
 			//TODO: Add the constructor code here
 			//
 		}
+		panelUzytkownika(Form^ f)
+		{
+			InitializeComponent();
+			powrotny = f;
+		}
 
 	protected:
 		/// <summary>
@@ -39,6 +44,8 @@ namespace SklepUrzadzeniaMobilne {
 				delete components;
 			}
 		}
+
+	private: Form^ powrotny;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Button^ ustawieniabutton;
 	protected:
@@ -275,13 +282,18 @@ private: System::Void kontaktbutton_Click(System::Object^ sender, System::EventA
 private: System::Void ustawieniabutton_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	this->panelNawigacyjny->Controls->Clear();
-	ustawienia^ u = gcnew ustawienia();
+	ustawienia^ u = gcnew ustawienia(powrotny, this);
 	u->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 	u->TopLevel = false;
 
 	this->panelNawigacyjny->Controls->Add(u);
 	u->Show();
 	this->label1->Text = "Ustawienia";
+}
+
+public: System::Void Powrot() {
+	this->Hide();
+	powrotny->Show();
 }
 };
 }

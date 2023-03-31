@@ -128,6 +128,7 @@
     <ClCompile Include="panelAdministratora.cpp" />
     <ClCompile Include="panelUzytkownika.cpp" />
     <ClCompile Include="Produkt.cpp" />
+    <ClCompile Include="produktOkienko.cpp" />
     <ClCompile Include="produktyPanel.cpp" />
     <ClCompile Include="ProduktZamowienie.cpp" />
     <ClCompile Include="rejestracja.cpp" />
@@ -145,6 +146,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Kategoria.h" />
+    <ClInclude Include="KategoriaLaptop.h" />
+    <ClInclude Include="KategoriaTablet.h" />
+    <ClInclude Include="KategoriaTelefon.h" />
     <ClInclude Include="kontakt.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -155,6 +159,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Produkt.h" />
+    <ClInclude Include="produktOkienko.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="produktyPanel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -186,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="panelUzytkownika.resx">
       <DependentUpon>panelUzytkownika.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="produktOkienko.resx">
+      <DependentUpon>produktOkienko.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="produktyPanel.resx">
       <DependentUpon>produktyPanel.h</DependentUpon>
