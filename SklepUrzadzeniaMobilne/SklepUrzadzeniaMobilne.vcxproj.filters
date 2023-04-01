@@ -30,9 +30,6 @@
     <ClCompile Include="Uzytkownik.cpp">
       <Filter>Pliki źródłowe\Model</Filter>
     </ClCompile>
-    <ClCompile Include="Kategoria.cpp">
-      <Filter>Pliki źródłowe\Model</Filter>
-    </ClCompile>
     <ClCompile Include="Produkt.cpp">
       <Filter>Pliki źródłowe\Model</Filter>
     </ClCompile>
@@ -78,6 +75,12 @@
     <ClCompile Include="zamowienieOkienko.cpp">
       <Filter>Pliki źródłowe\Widok</Filter>
     </ClCompile>
+    <ClCompile Include="uzytkownicyPanel.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="uzytkownikOkienko.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="form.h">
@@ -108,9 +111,6 @@
       <Filter>Pliki źródłowe</Filter>
     </ClInclude>
     <ClInclude Include="Adres.h">
-      <Filter>Pliki nagłówkowe\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="Kategoria.h">
       <Filter>Pliki nagłówkowe\Model</Filter>
     </ClInclude>
     <ClInclude Include="Produkt.h">
@@ -148,6 +148,12 @@
     </ClInclude>
     <ClInclude Include="Akcesorie.h">
       <Filter>Pliki nagłówkowe\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="uzytkownicyPanel.h">
+      <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="uzytkownikOkienko.h">
+      <Filter>Pliki źródłowe</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

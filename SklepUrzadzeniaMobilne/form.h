@@ -20,9 +20,7 @@ namespace SklepUrzadzeniaMobilne {
 		form(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: W tym miejscu dodaj kod konstruktora
-			//
+
 		}
 
 	protected:
@@ -178,14 +176,23 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Void zalogujbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		//tutaj wybór czy jest to admin czy user zwykly, narazie domyslnie sam user
+		if (uzytkowniktextBox->Text == "u")
+		{
+			panelUzytkownika^ pu = gcnew panelUzytkownika(this, 'u');
+			//pu->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			//pu->TopLevel = false;
+			this->Hide();
+			pu->Show();
+		}
+		else if (uzytkowniktextBox->Text == "a")
+		{
+			PanelAdministratora^ pa = gcnew PanelAdministratora(this, 'a');
+			this->Hide();
+			pa->Show();
+		}
 
-		panelUzytkownika^ pu = gcnew panelUzytkownika(this);
-		//pu->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-		//pu->TopLevel = false;
-		this->Hide();
-		pu->Show();
-
-
+		uzytkowniktextBox->Text = "";
+		haslotextBox->Text = "";
 		//Controls->Clear();
 		//Controls->Add(pu);
 		//pu->Show();

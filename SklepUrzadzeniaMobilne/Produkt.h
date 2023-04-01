@@ -12,6 +12,8 @@ private:
     int _id_kategorii;
 
 public:
+
+    //trzeba sie zastanowic co tu ma byc virtual
     Produkt();
     Produkt(int id_produktu, string nazwa, string marka, float cena, int id_kategorii);
     Produkt GetProdukt();
@@ -30,4 +32,6 @@ public:
     void Set_marka(string marka);
     void Set_cena(float cena);
     void Set_id_kategorii(int id_kategorii);
+
+    //virtual void DodajDoKoszyka();
 };

@@ -36,10 +36,11 @@ namespace SklepUrzadzeniaMobilne {
 			du->Show();
 			this->label1->Text = "Panel użytkownika";
 		}
-		panelUzytkownika(Form^ f)
+		panelUzytkownika(Form^ f, char r)
 		{
 			InitializeComponent();
 			powrotny = f;
+			rola = r;
 
 			this->panelNawigacyjny->Controls->Clear();
 			dashboardUzytkownika^ du = gcnew dashboardUzytkownika();
@@ -64,6 +65,7 @@ namespace SklepUrzadzeniaMobilne {
 		}
 
 	private: Form^ powrotny;
+	private: char rola;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Button^ ustawieniabutton;
 	protected:
