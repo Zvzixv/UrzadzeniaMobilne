@@ -23,6 +23,9 @@ namespace SklepUrzadzeniaMobilne {
 			//
 		}
 
+
+
+
 	protected:
 		/// <summary>
 		/// Wyczyœæ wszystkie u¿ywane zasoby.
@@ -34,6 +37,9 @@ namespace SklepUrzadzeniaMobilne {
 				delete components;
 			}
 		}
+
+	private: bool czyKupowany = false;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox;
 	protected:
 	private: System::Windows::Forms::Button^ dodajButton;
@@ -61,9 +67,9 @@ namespace SklepUrzadzeniaMobilne {
 			// 
 			// pictureBox
 			// 
-			this->pictureBox->Location = System::Drawing::Point(12, 38);
+			this->pictureBox->Location = System::Drawing::Point(29, 28);
 			this->pictureBox->Name = L"pictureBox";
-			this->pictureBox->Size = System::Drawing::Size(140, 184);
+			this->pictureBox->Size = System::Drawing::Size(112, 145);
 			this->pictureBox->TabIndex = 0;
 			this->pictureBox->TabStop = false;
 			// 
@@ -73,11 +79,12 @@ namespace SklepUrzadzeniaMobilne {
 			this->dodajButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->dodajButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->dodajButton->ForeColor = System::Drawing::Color::SeaShell;
-			this->dodajButton->Location = System::Drawing::Point(62, 228);
+			this->dodajButton->Location = System::Drawing::Point(66, 179);
 			this->dodajButton->Name = L"dodajButton";
 			this->dodajButton->Size = System::Drawing::Size(36, 34);
 			this->dodajButton->TabIndex = 1;
 			this->dodajButton->UseVisualStyleBackColor = true;
+			this->dodajButton->Click += gcnew System::EventHandler(this, &produktOkienko::dodajButton_Click);
 			// 
 			// label
 			// 
@@ -96,7 +103,7 @@ namespace SklepUrzadzeniaMobilne {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SeaShell;
-			this->ClientSize = System::Drawing::Size(164, 274);
+			this->ClientSize = System::Drawing::Size(168, 228);
 			this->Controls->Add(this->label);
 			this->Controls->Add(this->dodajButton);
 			this->Controls->Add(this->pictureBox);
@@ -109,5 +116,14 @@ namespace SklepUrzadzeniaMobilne {
 
 		}
 #pragma endregion
+	private: System::Void dodajButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		czyKupowany = true;
+		
+	}
+
+	public: System::Boolean kupowanyGetData()
+	{
+		return czyKupowany;
+	}
 	};
 }

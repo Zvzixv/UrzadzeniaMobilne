@@ -127,6 +127,7 @@
     <ClCompile Include="kontakt.cpp" />
     <ClCompile Include="panelAdministratora.cpp" />
     <ClCompile Include="panelUzytkownika.cpp" />
+    <ClCompile Include="potwierdzenieZamowienia.cpp" />
     <ClCompile Include="Produkt.cpp" />
     <ClCompile Include="produktOkienko.cpp" />
     <ClCompile Include="produktyPanel.cpp" />
@@ -136,9 +137,11 @@
     <ClCompile Include="Uzytkownik.cpp" />
     <ClCompile Include="zamowieniaPanel.cpp" />
     <ClCompile Include="Zamowienie.cpp" />
+    <ClCompile Include="zamowienieOkienko.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Adres.h" />
+    <ClInclude Include="Akcesorie.h" />
     <ClInclude Include="dashboardUzytkownika.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -147,16 +150,17 @@
     </ClInclude>
     <ClInclude Include="json.hpp" />
     <ClInclude Include="Kategoria.h" />
-    <ClInclude Include="KategoriaLaptop.h" />
-    <ClInclude Include="KategoriaTablet.h" />
-    <ClInclude Include="KategoriaTelefon.h" />
     <ClInclude Include="kontakt.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Laptop.h" />
     <ClInclude Include="panelAdministratora.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="panelUzytkownika.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="potwierdzenieZamowienia.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Produkt.h" />
@@ -170,6 +174,8 @@
     <ClInclude Include="rejestracja.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Tablet.h" />
+    <ClInclude Include="Telefon.h" />
     <ClInclude Include="ustawienia.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -178,6 +184,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Zamowienie.h" />
+    <ClInclude Include="zamowienieOkienko.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="dashboardUzytkownika.resx">
@@ -195,6 +204,9 @@
     <EmbeddedResource Include="panelUzytkownika.resx">
       <DependentUpon>panelUzytkownika.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="potwierdzenieZamowienia.resx">
+      <DependentUpon>potwierdzenieZamowienia.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="produktOkienko.resx">
       <DependentUpon>produktOkienko.h</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="zamowieniaPanel.resx">
       <DependentUpon>zamowieniaPanel.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="zamowienieOkienko.resx">
+      <DependentUpon>zamowienieOkienko.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

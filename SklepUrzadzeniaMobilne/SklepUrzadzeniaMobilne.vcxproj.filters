@@ -69,8 +69,14 @@
     <ClCompile Include="zamowieniaPanel.cpp">
       <Filter>Pliki źródłowe\Widok</Filter>
     </ClCompile>
+    <ClCompile Include="potwierdzenieZamowienia.cpp">
+      <Filter>Pliki źródłowe\Widok</Filter>
+    </ClCompile>
     <ClCompile Include="produktOkienko.cpp">
-      <Filter>Pliki źródłowe</Filter>
+      <Filter>Pliki źródłowe\Widok</Filter>
+    </ClCompile>
+    <ClCompile Include="zamowienieOkienko.cpp">
+      <Filter>Pliki źródłowe\Widok</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,17 +128,26 @@
     <ClInclude Include="produktOkienko.h">
       <Filter>Pliki źródłowe</Filter>
     </ClInclude>
-    <ClInclude Include="KategoriaLaptop.h">
-      <Filter>Pliki nagłówkowe\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="KategoriaTelefon.h">
-      <Filter>Pliki nagłówkowe\Model</Filter>
-    </ClInclude>
-    <ClInclude Include="KategoriaTablet.h">
-      <Filter>Pliki nagłówkowe\Model</Filter>
-    </ClInclude>
     <ClInclude Include="json.hpp">
       <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="zamowienieOkienko.h">
+      <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="potwierdzenieZamowienia.h">
+      <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Telefon.h">
+      <Filter>Pliki nagłówkowe\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Tablet.h">
+      <Filter>Pliki nagłówkowe\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Laptop.h">
+      <Filter>Pliki nagłówkowe\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Akcesorie.h">
+      <Filter>Pliki nagłówkowe\Model</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

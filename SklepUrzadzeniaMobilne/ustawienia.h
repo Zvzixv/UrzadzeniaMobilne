@@ -46,15 +46,32 @@ namespace SklepUrzadzeniaMobilne {
 	protected:
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Panel^ panel1;
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ zmianaHaslabutton;
+
 	private: System::Windows::Forms::TextBox^ noweHaslotextBox;
 
 	private: System::Windows::Forms::TextBox^ stareHaslotextBox;
 
 		   bool starehasloklikniete = false;
 		   bool nowehasloklikniete = false;
+
+		   bool nowemiastoklikniete = false;
+		   bool nowykodklikniete = false;
+		   bool nowaulicakliniete = false;
+		   bool nowynumerklikniete = false;
+
 	private: System::Windows::Forms::Button^ wylogujbutton;
 	private: System::Windows::Forms::Button^ usunbutton;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::TextBox^ noweMiastotextBox;
+	private: System::Windows::Forms::TextBox^ nowyNumertextBox;
+
+
+	private: System::Windows::Forms::TextBox^ nowaUlicatextBox;
+
+	private: System::Windows::Forms::TextBox^ nowyKodtextBox;
+
+	private: System::Windows::Forms::Button^ zmianaAdresubutton;
 
 	private:
 		/// <summary>
@@ -72,12 +89,19 @@ namespace SklepUrzadzeniaMobilne {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->zmianaHaslabutton = (gcnew System::Windows::Forms::Button());
 			this->noweHaslotextBox = (gcnew System::Windows::Forms::TextBox());
 			this->stareHaslotextBox = (gcnew System::Windows::Forms::TextBox());
 			this->wylogujbutton = (gcnew System::Windows::Forms::Button());
 			this->usunbutton = (gcnew System::Windows::Forms::Button());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->noweMiastotextBox = (gcnew System::Windows::Forms::TextBox());
+			this->nowyKodtextBox = (gcnew System::Windows::Forms::TextBox());
+			this->nowaUlicatextBox = (gcnew System::Windows::Forms::TextBox());
+			this->nowyNumertextBox = (gcnew System::Windows::Forms::TextBox());
+			this->zmianaAdresubutton = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
+			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -98,8 +122,8 @@ namespace SklepUrzadzeniaMobilne {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::SystemColors::Control;
-			this->label2->Location = System::Drawing::Point(270, 16);
+			this->label2->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->label2->Location = System::Drawing::Point(12, 8);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(117, 18);
@@ -109,7 +133,7 @@ namespace SklepUrzadzeniaMobilne {
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::Color::SeaShell;
-			this->panel1->Controls->Add(this->button1);
+			this->panel1->Controls->Add(this->zmianaHaslabutton);
 			this->panel1->Controls->Add(this->noweHaslotextBox);
 			this->panel1->Controls->Add(this->stareHaslotextBox);
 			this->panel1->Controls->Add(this->label1);
@@ -119,19 +143,19 @@ namespace SklepUrzadzeniaMobilne {
 			this->panel1->Size = System::Drawing::Size(220, 133);
 			this->panel1->TabIndex = 1;
 			// 
-			// button1
+			// zmianaHaslabutton
 			// 
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->zmianaHaslabutton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->zmianaHaslabutton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::Color::SaddleBrown;
-			this->button1->Location = System::Drawing::Point(142, 91);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(61, 28);
-			this->button1->TabIndex = 2;
-			this->button1->Text = L"Zapisz";
-			this->button1->UseVisualStyleBackColor = true;
+			this->zmianaHaslabutton->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->zmianaHaslabutton->Location = System::Drawing::Point(142, 91);
+			this->zmianaHaslabutton->Margin = System::Windows::Forms::Padding(2);
+			this->zmianaHaslabutton->Name = L"zmianaHaslabutton";
+			this->zmianaHaslabutton->Size = System::Drawing::Size(61, 28);
+			this->zmianaHaslabutton->TabIndex = 2;
+			this->zmianaHaslabutton->Text = L"Zapisz";
+			this->zmianaHaslabutton->UseVisualStyleBackColor = true;
 			// 
 			// noweHaslotextBox
 			// 
@@ -191,24 +215,105 @@ namespace SklepUrzadzeniaMobilne {
 			this->usunbutton->UseVisualStyleBackColor = true;
 			this->usunbutton->Click += gcnew System::EventHandler(this, &ustawienia::usunbutton_Click);
 			// 
+			// panel2
+			// 
+			this->panel2->BackColor = System::Drawing::Color::SeaShell;
+			this->panel2->Controls->Add(this->zmianaAdresubutton);
+			this->panel2->Controls->Add(this->nowyNumertextBox);
+			this->panel2->Controls->Add(this->nowaUlicatextBox);
+			this->panel2->Controls->Add(this->nowyKodtextBox);
+			this->panel2->Controls->Add(this->noweMiastotextBox);
+			this->panel2->Controls->Add(this->label2);
+			this->panel2->Location = System::Drawing::Point(262, 8);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(284, 291);
+			this->panel2->TabIndex = 3;
+			// 
+			// noweMiastotextBox
+			// 
+			this->noweMiastotextBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->noweMiastotextBox->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->noweMiastotextBox->Location = System::Drawing::Point(15, 36);
+			this->noweMiastotextBox->Name = L"noweMiastotextBox";
+			this->noweMiastotextBox->Size = System::Drawing::Size(193, 21);
+			this->noweMiastotextBox->TabIndex = 1;
+			this->noweMiastotextBox->Text = L"Wpisz tutaj nowe miasto";
+			this->noweMiastotextBox->Enter += gcnew System::EventHandler(this, &ustawienia::noweMiastotextBox_Enter);
+			this->noweMiastotextBox->Leave += gcnew System::EventHandler(this, &ustawienia::noweMiastotextBox_Leave);
+			// 
+			// nowyKodtextBox
+			// 
+			this->nowyKodtextBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->nowyKodtextBox->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->nowyKodtextBox->Location = System::Drawing::Point(15, 63);
+			this->nowyKodtextBox->Name = L"nowyKodtextBox";
+			this->nowyKodtextBox->Size = System::Drawing::Size(193, 21);
+			this->nowyKodtextBox->TabIndex = 2;
+			this->nowyKodtextBox->Text = L"Wpisz tutaj nowy kod pocztowy";
+			this->nowyKodtextBox->Enter += gcnew System::EventHandler(this, &ustawienia::nowyKodtextBox_Enter);
+			this->nowyKodtextBox->Leave += gcnew System::EventHandler(this, &ustawienia::nowyKodtextBox_Leave);
+			// 
+			// nowaUlicatextBox
+			// 
+			this->nowaUlicatextBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->nowaUlicatextBox->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->nowaUlicatextBox->Location = System::Drawing::Point(15, 90);
+			this->nowaUlicatextBox->Name = L"nowaUlicatextBox";
+			this->nowaUlicatextBox->Size = System::Drawing::Size(193, 21);
+			this->nowaUlicatextBox->TabIndex = 3;
+			this->nowaUlicatextBox->Text = L"Wpisz tutaj nową ulicę";
+			this->nowaUlicatextBox->Enter += gcnew System::EventHandler(this, &ustawienia::nowaUlicatextBox_Enter);
+			this->nowaUlicatextBox->Leave += gcnew System::EventHandler(this, &ustawienia::nowaUlicatextBox_Leave);
+			// 
+			// nowyNumertextBox
+			// 
+			this->nowyNumertextBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->nowyNumertextBox->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->nowyNumertextBox->Location = System::Drawing::Point(15, 117);
+			this->nowyNumertextBox->Name = L"nowyNumertextBox";
+			this->nowyNumertextBox->Size = System::Drawing::Size(193, 21);
+			this->nowyNumertextBox->TabIndex = 4;
+			this->nowyNumertextBox->Text = L"Wpisz tutaj nowy numer domu";
+			this->nowyNumertextBox->Enter += gcnew System::EventHandler(this, &ustawienia::nowyNumertextBox_Enter);
+			this->nowyNumertextBox->Leave += gcnew System::EventHandler(this, &ustawienia::nowyNumertextBox_Leave);
+			// 
+			// zmianaAdresubutton
+			// 
+			this->zmianaAdresubutton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->zmianaAdresubutton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->zmianaAdresubutton->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->zmianaAdresubutton->Location = System::Drawing::Point(208, 245);
+			this->zmianaAdresubutton->Margin = System::Windows::Forms::Padding(2);
+			this->zmianaAdresubutton->Name = L"zmianaAdresubutton";
+			this->zmianaAdresubutton->Size = System::Drawing::Size(61, 28);
+			this->zmianaAdresubutton->TabIndex = 2;
+			this->zmianaAdresubutton->Text = L"Zapisz";
+			this->zmianaAdresubutton->UseVisualStyleBackColor = true;
+			// 
 			// ustawienia
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SaddleBrown;
 			this->ClientSize = System::Drawing::Size(558, 310);
+			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->usunbutton);
 			this->Controls->Add(this->wylogujbutton);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->label2);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"ustawienia";
 			this->Text = L"ustawienia";
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -256,5 +361,73 @@ private: System::Void usunbutton_Click(System::Object^ sender, System::EventArgs
 	this->wyzszy->Hide();
 	this->powrotny->Show();
 }
+
+private: System::Void noweMiastotextBox_Enter(System::Object^ sender, System::EventArgs^ e) {
+
+	if (!nowemiastoklikniete)
+	{
+		this->noweMiastotextBox->Text = "";
+		nowemiastoklikniete = true;
+	}
+}
+private: System::Void noweMiastotextBox_Leave(System::Object^ sender, System::EventArgs^ e) {
+
+	if (nowemiastoklikniete && this->noweMiastotextBox->TextLength == 0)
+	{
+		this->noweMiastotextBox->Text = "Wpisz tutaj nowe miasto";
+		nowemiastoklikniete = false;
+	}
+}
+private: System::Void nowyKodtextBox_Enter(System::Object^ sender, System::EventArgs^ e) {
+
+	if (!nowykodklikniete)
+	{
+		this->nowyKodtextBox->Text = "";
+		nowykodklikniete = true;
+	}
+}
+private: System::Void nowyKodtextBox_Leave(System::Object^ sender, System::EventArgs^ e) {
+
+	if (nowykodklikniete && this->nowyKodtextBox->TextLength == 0)
+	{
+		this->nowyKodtextBox->Text = "Wpisz tutaj nowy kod pocztowy";
+		nowykodklikniete = false;
+	}
+}
+private: System::Void nowaUlicatextBox_Enter(System::Object^ sender, System::EventArgs^ e) {
+
+	if (!nowaulicakliniete)
+	{
+		this->nowaUlicatextBox->Text = "";
+		nowaulicakliniete = true;
+	}
+}
+private: System::Void nowaUlicatextBox_Leave(System::Object^ sender, System::EventArgs^ e) {
+
+	if (nowaulicakliniete && this->nowaUlicatextBox->TextLength == 0)
+	{
+		this->nowaUlicatextBox->Text = "Wpisz tutaj nową ulicę";
+		nowaulicakliniete = false;
+	}
+}
+private: System::Void nowyNumertextBox_Enter(System::Object^ sender, System::EventArgs^ e) {
+
+	if (!nowynumerklikniete)
+	{
+		this->nowyNumertextBox->Text = "";
+		nowynumerklikniete = true;
+	}
+}
+private: System::Void nowyNumertextBox_Leave(System::Object^ sender, System::EventArgs^ e) {
+
+	if (nowynumerklikniete && this->nowyNumertextBox->TextLength == 0)
+	{
+		this->nowyNumertextBox->Text = "wpisz tutaj nowy numer domu";
+		nowynumerklikniete = false;
+	}
+}
+
+
+
 };
 }

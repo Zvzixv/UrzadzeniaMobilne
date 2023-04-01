@@ -26,11 +26,29 @@ namespace SklepUrzadzeniaMobilne {
 			//
 			//TODO: Add the constructor code here
 			//
+
+			this->panelNawigacyjny->Controls->Clear();
+			dashboardUzytkownika^ du = gcnew dashboardUzytkownika();
+			du->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			du->TopLevel = false;
+
+			this->panelNawigacyjny->Controls->Add(du);
+			du->Show();
+			this->label1->Text = "Panel użytkownika";
 		}
 		panelUzytkownika(Form^ f)
 		{
 			InitializeComponent();
 			powrotny = f;
+
+			this->panelNawigacyjny->Controls->Clear();
+			dashboardUzytkownika^ du = gcnew dashboardUzytkownika();
+			du->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			du->TopLevel = false;
+
+			this->panelNawigacyjny->Controls->Add(du);
+			du->Show();
+			this->label1->Text = "Panel użytkownika";
 		}
 
 	protected:

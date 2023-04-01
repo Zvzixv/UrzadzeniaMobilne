@@ -37,9 +37,10 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Windows::Forms::Label^ label1;
 	protected:
 	private: System::Windows::Forms::Label^ nazwaUzytkownikalabel;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::Label^ statusZamowienialabel;
+
+
 	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 	private:
 		/// <summary>
@@ -54,11 +55,12 @@ namespace SklepUrzadzeniaMobilne {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(dashboardUzytkownika::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->nazwaUzytkownikalabel = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->statusZamowienialabel = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -67,9 +69,10 @@ namespace SklepUrzadzeniaMobilne {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::Control;
-			this->label1->Location = System::Drawing::Point(46, 54);
+			this->label1->Location = System::Drawing::Point(31, 35);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(65, 26);
+			this->label1->Size = System::Drawing::Size(44, 18);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Witaj";
 			// 
@@ -79,35 +82,12 @@ namespace SklepUrzadzeniaMobilne {
 			this->nazwaUzytkownikalabel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->nazwaUzytkownikalabel->ForeColor = System::Drawing::SystemColors::Control;
-			this->nazwaUzytkownikalabel->Location = System::Drawing::Point(117, 54);
+			this->nazwaUzytkownikalabel->Location = System::Drawing::Point(78, 35);
+			this->nazwaUzytkownikalabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->nazwaUzytkownikalabel->Name = L"nazwaUzytkownikalabel";
-			this->nazwaUzytkownikalabel->Size = System::Drawing::Size(223, 26);
+			this->nazwaUzytkownikalabel->Size = System::Drawing::Size(152, 18);
 			this->nazwaUzytkownikalabel->TabIndex = 1;
 			this->nazwaUzytkownikalabel->Text = L"nazwa uzytkownika";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::SystemColors::Control;
-			this->label2->Location = System::Drawing::Point(46, 159);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(433, 26);
-			this->label2->TabIndex = 0;
-			this->label2->Text = L"Status Twojego ostatniego zamówienia:";
-			// 
-			// statusZamowienialabel
-			// 
-			this->statusZamowienialabel->AutoSize = true;
-			this->statusZamowienialabel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->statusZamowienialabel->ForeColor = System::Drawing::SystemColors::Control;
-			this->statusZamowienialabel->Location = System::Drawing::Point(486, 159);
-			this->statusZamowienialabel->Name = L"statusZamowienialabel";
-			this->statusZamowienialabel->Size = System::Drawing::Size(242, 26);
-			this->statusZamowienialabel->TabIndex = 2;
-			this->statusZamowienialabel->Text = L"Oczekuje na wysyłkę";
 			// 
 			// label3
 			// 
@@ -115,26 +95,38 @@ namespace SklepUrzadzeniaMobilne {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::SystemColors::Control;
-			this->label3->Location = System::Drawing::Point(666, 54);
+			this->label3->Location = System::Drawing::Point(444, 35);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(151, 26);
+			this->label3->Size = System::Drawing::Size(103, 18);
 			this->label3->TabIndex = 0;
 			this->label3->Text = L"Data czy cos";
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(81, 108);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(393, 226);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 2;
+			this->pictureBox1->TabStop = false;
+			// 
 			// dashboardUzytkownika
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SaddleBrown;
-			this->ClientSize = System::Drawing::Size(859, 533);
-			this->Controls->Add(this->statusZamowienialabel);
+			this->ClientSize = System::Drawing::Size(573, 346);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->nazwaUzytkownikalabel);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"dashboardUzytkownika";
 			this->Text = L"dashboardUzytkownika";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

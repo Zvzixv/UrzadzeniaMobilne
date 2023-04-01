@@ -1,5 +1,6 @@
 #pragma once
-
+#include "produktOkienko.h"
+#include "potwierdzenieZamowienia.h"
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -21,6 +22,17 @@ namespace SklepUrzadzeniaMobilne {
 			//
 			//TODO: Add the constructor code here
 			//
+			produktOkienko^ p1 = gcnew produktOkienko();
+			produktOkienko^ p2 = gcnew produktOkienko();
+
+			p1->TopLevel = false;
+			this->flowLayoutPanel->Controls->Add(p1);
+			p1->Show();
+
+			p2->TopLevel = false;
+			this->flowLayoutPanel->Controls->Add(p2);
+			p2->Show();
+
 		}
 
 	protected:
@@ -34,10 +46,8 @@ namespace SklepUrzadzeniaMobilne {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel1;
-	protected:
-
-	protected:
+	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel;
+	private: System::Windows::Forms::Button^ finalizacjabutton;
 
 	private:
 		/// <summary>
@@ -52,15 +62,30 @@ namespace SklepUrzadzeniaMobilne {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->flowLayoutPanel1 = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->flowLayoutPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->finalizacjabutton = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
-			// flowLayoutPanel1
+			// flowLayoutPanel
 			// 
-			this->flowLayoutPanel1->Location = System::Drawing::Point(12, 12);
-			this->flowLayoutPanel1->Name = L"flowLayoutPanel1";
-			this->flowLayoutPanel1->Size = System::Drawing::Size(534, 286);
-			this->flowLayoutPanel1->TabIndex = 0;
+			this->flowLayoutPanel->Location = System::Drawing::Point(12, 42);
+			this->flowLayoutPanel->Name = L"flowLayoutPanel";
+			this->flowLayoutPanel->Size = System::Drawing::Size(534, 256);
+			this->flowLayoutPanel->TabIndex = 0;
+			// 
+			// finalizacjabutton
+			// 
+			this->finalizacjabutton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->finalizacjabutton->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->finalizacjabutton->ForeColor = System::Drawing::Color::SeaShell;
+			this->finalizacjabutton->Location = System::Drawing::Point(446, 4);
+			this->finalizacjabutton->Name = L"finalizacjabutton";
+			this->finalizacjabutton->Size = System::Drawing::Size(100, 32);
+			this->finalizacjabutton->TabIndex = 1;
+			this->finalizacjabutton->Text = L"Finalizacja";
+			this->finalizacjabutton->UseVisualStyleBackColor = true;
+			this->finalizacjabutton->Click += gcnew System::EventHandler(this, &ProduktyPanel::finalizacjabutton_Click);
 			// 
 			// ProduktyPanel
 			// 
@@ -68,14 +93,24 @@ namespace SklepUrzadzeniaMobilne {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SaddleBrown;
 			this->ClientSize = System::Drawing::Size(558, 310);
-			this->Controls->Add(this->flowLayoutPanel1);
+			this->Controls->Add(this->finalizacjabutton);
+			this->Controls->Add(this->flowLayoutPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"ProduktyPanel";
 			this->Text = L"ProduktyPanel";
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void finalizacjabutton_Click(System::Object^ sender, System::EventArgs^ e) {
+		//tutaj cos w stylu ze dla wszystkich paneli sprawdzane sa czy beda kupowane i przesyla sie je dalej simply, moze zadziala
+
+		//foreach okienka sprawdz czy okienko->kupowanyGetData - ejst true to dodaj do listy.
+
+		potwierdzenieZamowienia^ pz = gcnew potwierdzenieZamowienia();
+
+		pz->ShowDialog();
+	}
 	};
 }
