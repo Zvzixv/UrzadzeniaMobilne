@@ -145,6 +145,7 @@
     <ClInclude Include="form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="json.hpp" />
     <ClInclude Include="Kategoria.h" />
     <ClInclude Include="KategoriaLaptop.h" />
     <ClInclude Include="KategoriaTablet.h" />

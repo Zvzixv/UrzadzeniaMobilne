@@ -18,5 +18,6 @@ public:
 	Zamowienie GetZamowienie(int id);
 	void SetZamowienie(int id, Uzytkownik uz, vector<Produkt> produkty, string data);
 	bool ZwrotZamowienia(int id);
+	bool ZapiszZamowienie();
 };
 
