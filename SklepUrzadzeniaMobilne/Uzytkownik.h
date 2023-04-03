@@ -19,7 +19,7 @@ private:
 public:
     Uzytkownik();
     Uzytkownik(int id, string imie, string nazwisko, string haslo, string rola, Adres adres);
-    bool Uzytkownik::zapiszUzytkownika();
+    bool Uzytkownik::zapiszUzytkownika(std::vector<json>* array);
     int Get_id_uzytkownika();
     string GetImie();
     string GetNazwisko();

@@ -69,7 +69,7 @@ void Uzytkownik::SetRola(string rola) {
 void Uzytkownik::SetAdres(Adres adres) {
     _adres = adres;
 }
-bool Uzytkownik::zapiszUzytkownika() {
+bool Uzytkownik::zapiszUzytkownika(std::vector<json>* array) {
     json data;
     data["id"] = this->Get_id_uzytkownika();
     data["imie"] = this->GetImie();
@@ -81,9 +81,11 @@ bool Uzytkownik::zapiszUzytkownika() {
     data["adres"]["kod_pocztowy"] = this->GetAdres().GetKodPocztowy();
     data["adres"]["ulica"] = this->GetAdres().GetUlica();
     data["adres"]["nr_domu"] = this->GetAdres().GetNumerDomu();
-    std::ofstream file("Uzytkownicy.json", std::ios::app);
+    array->push_back(data);
+    std::ofstream file("Uzytkownicy.json");
+    std::string jsonStr = json(*array).dump();
     if (file.is_open()) {
-        file << data;
+        file << jsonStr;
         file.close();
         return true;
     }

@@ -1,0 +1,30 @@
+[
+  {
+    "adres": {
+      "id_adresu": 0,
+      "kod_pocztowy": "123",
+      "miasto": "123",
+      "nr_domu": 123,
+      "ulica": "123"
+    },
+    "haslo": "123",
+    "id": 0,
+    "imie": "123",
+    "nazwisko": "123",
+    "rola": "Uzytkownik"
+  },
+  {
+    "adres": {
+      "id_adresu": 0,
+      "kod_pocztowy": "42-600",
+      "miasto": "chujowe",
+      "nr_domu": 1,
+      "ulica": "hujsarska"
+    },
+    "haslo": "123",
+    "id": 0,
+    "imie": "123",
+    "nazwisko": "123",
+    "rola": "Uzytkownik"
+  }
+]
