@@ -1,4 +1,6 @@
 ﻿#pragma once
+#include "Uzytkownik.h"
+#include "Adres.h"
 
 
 namespace SklepUrzadzeniaMobilne {
@@ -10,6 +12,7 @@ namespace SklepUrzadzeniaMobilne {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+	int id = 0;
 	/// <summary>
 	/// Summary for rejestracja
 	/// </summary>
@@ -415,8 +418,8 @@ namespace SklepUrzadzeniaMobilne {
 			MessageBox::Show("Miasto jest puste");
 			return;
 		}
-
-
+		Adres* adr = new Adres(idAdr++, miastotextBox->Text, kodtextBox->Text, ulicatextBox->Text, numertextBox->Text);
+		Uzytkownik* uz = new Uzytkownik(id++, imietextBox->Text->ToString(), nazwiskotextBox->Text->ToString(), haslo1textBox->Text->ToString(), "Uzytkownik", *adr);
 		//obsługa zapisania konta do bazy 
 
 

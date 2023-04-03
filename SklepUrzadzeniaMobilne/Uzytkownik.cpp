@@ -1,5 +1,6 @@
 #include "Uzytkownik.h"
 
+
 // Konstruktory
 Uzytkownik::Uzytkownik() {
     _id_uzytkownika = 0;
@@ -67,4 +68,26 @@ void Uzytkownik::SetRola(string rola) {
 
 void Uzytkownik::SetAdres(Adres adres) {
     _adres = adres;
+}
+bool Uzytkownik::zapiszUzytkownika() {
+    json data;
+    data["id"] = this->Get_id_uzytkownika();
+    data["imie"] = this->GetImie();
+    data["nazwisko"] = this->GetNazwisko();
+    data["haslo"] = this->GetHaslo();
+    data["rola"] = this->GetRola();
+    data["adres"]["id_adresu"] = this->GetAdres().GetIdAdresu();
+    data["adres"]["miasto"] = this->GetAdres().GetMiasto();
+    data["adres"]["kod_pocztowy"] = this->GetAdres().GetKodPocztowy();
+    data["adres"]["ulica"] = this->GetAdres().GetUlica();
+    data["adres"]["nr_domu"] = this->GetAdres().GetNumerDomu();
+    std::ofstream file("Uzytkownicy.json", std::ios::app);
+    if (file.is_open()) {
+        file << data;
+        file.close();
+        return true;
+    }
+    else {
+        return false;
+    }
 }

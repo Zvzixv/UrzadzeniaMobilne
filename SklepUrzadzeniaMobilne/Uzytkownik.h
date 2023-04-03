@@ -1,7 +1,11 @@
 #pragma once
 #include <string>
+#include <fstream>
+#include "json.hpp"
 #include "Adres.h"
+
 using namespace std;
+using namespace nlohmann;
 
 class Uzytkownik {
 private:
@@ -15,7 +19,7 @@ private:
 public:
     Uzytkownik();
     Uzytkownik(int id, string imie, string nazwisko, string haslo, string rola, Adres adres);
-
+    bool Uzytkownik::zapiszUzytkownika();
     int Get_id_uzytkownika();
     string GetImie();
     string GetNazwisko();

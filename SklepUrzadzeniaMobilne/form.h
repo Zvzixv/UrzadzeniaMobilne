@@ -2,6 +2,7 @@
 #include "panelUzytkownika.h"
 #include "PanelAdministratora.h"
 #include "rejestracja.h"
+#include "Uzytkownik.h"
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -47,7 +48,7 @@ namespace SklepUrzadzeniaMobilne {
 		/// <summary>
 		/// Wymagana zmienna projektanta.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -196,15 +197,19 @@ namespace SklepUrzadzeniaMobilne {
 		//Controls->Clear();
 		//Controls->Add(pu);
 		//pu->Show();
-		
+
 	}
-private: System::Void stworzKontobutton_Click(System::Object^ sender, System::EventArgs^ e) {
-	rejestracja^ r = gcnew rejestracja(this);
+	private: System::Void stworzKontobutton_Click(System::Object^ sender, System::EventArgs^ e) {
+		rejestracja^ r = gcnew rejestracja(this);
 
-	//ten sposób umożliwia powrót
-	this->Hide();
-	r->Show();
+		//ten sposób umożliwia powrót
+		this->Hide();
+		r->Show();
 
-}
-};
+	}
+	private: System::Void wczytajUzytkownikow() {
+		vector<Uzytkownik> listaUzytkownikow;
+
+	}
+	};
 }
