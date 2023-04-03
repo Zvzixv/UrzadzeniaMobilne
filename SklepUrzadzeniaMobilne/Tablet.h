@@ -5,4 +5,6 @@
 using namespace std;
 
 class Tablet : Produkt {
+	Tablet() : Produkt() {};
+	bool zapiszProdukt();
 };

@@ -12,7 +12,7 @@ private:
     int _id_kategorii;
 
 public:
-
+    virtual bool zapiszProdukt() = 0;
     //trzeba sie zastanowic co tu ma byc virtual
     Produkt();
     Produkt(int id_produktu, string nazwa, string marka, float cena, int id_kategorii);

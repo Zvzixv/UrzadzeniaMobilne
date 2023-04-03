@@ -132,6 +132,7 @@
     <ClCompile Include="produktyPanel.cpp" />
     <ClCompile Include="ProduktZamowienie.cpp" />
     <ClCompile Include="rejestracja.cpp" />
+    <ClCompile Include="Tablet.cpp" />
     <ClCompile Include="ustawienia.cpp" />
     <ClCompile Include="uzytkownicyPanel.cpp" />
     <ClCompile Include="Uzytkownik.cpp" />
