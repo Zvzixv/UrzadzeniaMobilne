@@ -81,6 +81,18 @@
     <ClCompile Include="uzytkownikOkienko.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="Tablet.cpp">
+      <Filter>Pliki źródłowe\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Laptop.cpp">
+      <Filter>Pliki źródłowe\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Telefon.cpp">
+      <Filter>Pliki źródłowe\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Akcesorie.cpp">
+      <Filter>Pliki źródłowe\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="form.h">
