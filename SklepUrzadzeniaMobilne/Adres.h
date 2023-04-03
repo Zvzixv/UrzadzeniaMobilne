@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-static int idAdr = 0;
+
 class Adres
 {
 	private:

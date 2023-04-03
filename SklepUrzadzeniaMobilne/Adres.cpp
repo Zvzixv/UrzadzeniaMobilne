@@ -1,5 +1,5 @@
 #include "Adres.h"
-
+__declspec(selectany) int idAdr = 0;
 // Konstruktor domyœlny
 Adres::Adres() : _id_adresu(0), _miasto(""), _kod_pocztowy(""), _ulica(""), _numer_domu(0) {}
 
