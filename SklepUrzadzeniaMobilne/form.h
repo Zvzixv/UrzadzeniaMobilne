@@ -176,12 +176,10 @@ namespace SklepUrzadzeniaMobilne {
 #pragma endregion
 	private: System::Void zalogujbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		//tutaj wybór czy jest to admin czy user zwykly, narazie domyslnie sam user
+		//tutaj wybór czy jest to admin czy user zwykly
 		if (uzytkowniktextBox->Text == "u")
 		{
 			panelUzytkownika^ pu = gcnew panelUzytkownika(this, 'u');
-			//pu->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			//pu->TopLevel = false;
 			this->Hide();
 			pu->Show();
 		}
@@ -194,15 +192,12 @@ namespace SklepUrzadzeniaMobilne {
 
 		uzytkowniktextBox->Text = "";
 		haslotextBox->Text = "";
-		//Controls->Clear();
-		//Controls->Add(pu);
-		//pu->Show();
+
 
 	}
 	private: System::Void stworzKontobutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		rejestracja^ r = gcnew rejestracja(this);
 
-		//ten sposób umożliwia powrót
 		this->Hide();
 		r->Show();
 

@@ -19,7 +19,7 @@ namespace SklepUrzadzeniaMobilne {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace std;
-	int id = 0;
+	//int id = 0; <--- wysryw na sto fajerek
 	/// <summary>
 	/// Summary for rejestracja
 	/// </summary>
@@ -427,10 +427,10 @@ namespace SklepUrzadzeniaMobilne {
 		}
 
 		//zmieniuc string na int z tych textboxow bo nic nie dziala 
-		//int numerDomuInt = stoi(msclr::interop::marshal_as<std::string>(numertextBox->Text));
+		int numerDomuInt = stoi(msclr::interop::marshal_as<std::string>(numertextBox->Text));
 
-		//std::string unmanaged = msclr::interop::marshal_as<std::string>(miastotextBox->Text);
-		//Adres* adr = new Adres(idAdr++, msclr::interop::marshal_as<std::string>(miastotextBox->Text), msclr::interop::marshal_as<std::string>(kodtextBox->Text), msclr::interop::marshal_as<std::string>(ulicatextBox->Text), numerDomuInt);
+		std::string unmanaged = msclr::interop::marshal_as<std::string>(miastotextBox->Text);
+		//Adres* adr = new Adres(Adres::idAdr++, msclr::interop::marshal_as<std::string>(miastotextBox->Text), msclr::interop::marshal_as<std::string>(kodtextBox->Text), msclr::interop::marshal_as<std::string>(ulicatextBox->Text), numerDomuInt);
 		//Uzytkownik* uz = new Uzytkownik(id++, msclr::interop::marshal_as<std::string>(imietextBox->Text), msclr::interop::marshal_as<std::string>(nazwiskotextBox->Text), msclr::interop::marshal_as<std::string>(haslo1textBox->Text), "Uzytkownik", *adr);
 		//obsługa zapisania konta do bazy 
 
