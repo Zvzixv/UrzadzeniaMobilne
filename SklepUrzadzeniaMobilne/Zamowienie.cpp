@@ -46,13 +46,13 @@ bool Zamowienie::ZapiszZamowienie() {
     data["user"]["id"] = this->_uzytkownik.Get_id_uzytkownika();
     data["user"]["imie"] = this->_uzytkownik.GetImie();
     data["user"]["nazwisko"] = this->_uzytkownik.GetNazwisko();
-    for (auto i : this->_produkty) {
-        data["produkty"]["id"] = i.Get_id_produktu();
-        data["produkty"]["nazwa"] = i.Get_nazwa();
-        data["produkty"]["marka"] = i.Get_marka();
-        data["produkty"]["cena"] = i.Get_cena();
-        data["produkty"]["id_kategorii"] = i.Get_id_kategorii();
-    }
+//    for (auto i : this->_produkty) {
+//        data["produkty"]["id"] = i.Get_id_produktu();
+ //       data["produkty"]["nazwa"] = i.Get_nazwa();
+ //       data["produkty"]["marka"] = i.Get_marka();
+ //       data["produkty"]["cena"] = i.Get_cena();
+ //       data["produkty"]["id_kategorii"] = i.Get_id_kategorii();
+  //  }
     std::ofstream file("data.json");
     file << data;
     file.close();

@@ -2,7 +2,7 @@
 #include "json.hpp"
 #include <fstream>
 using namespace nlohmann;
-Tablet::Tablet() : Produkt() {}
+//Tablet::Tablet(int id_produktu, string nazwa, string marka, float cena, int id_kategorii) : Produkt(id_produktu, nazwa, marka, cena, id_kategorii) {};
 bool Tablet::zapiszProdukt() {
 	json data;
 	data["id"] = this->Get_id_produktu();
