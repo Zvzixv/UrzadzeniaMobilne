@@ -9,7 +9,7 @@ Zamowienie::Zamowienie() {
     _data_zlozenia = "";
 }
 
-Zamowienie::Zamowienie(int id, Uzytkownik uz, vector<Produkt> produkty, string data) {
+Zamowienie::Zamowienie(int id, Uzytkownik uz, vector<Produkt*> produkty, string data) {
     _id_zamowienia = id;
     _uzytkownik = uz;
     _produkty = produkty;
@@ -25,7 +25,7 @@ Zamowienie Zamowienie::GetZamowienie(int id) {
     return Zamowienie();
 }
 
-void Zamowienie::SetZamowienie(int id, Uzytkownik uz, vector<Produkt> produkty, string data) {
+void Zamowienie::SetZamowienie(int id, Uzytkownik uz, vector<Produkt*> produkty, string data) {
     _id_zamowienia = id;
     _uzytkownik = uz;
     _produkty = produkty;
