@@ -1,4 +1,7 @@
 ﻿#pragma once
+#include <iostream>
+#include <string>
+#include <sstream>
 #include "Uzytkownik.h"
 #include "Adres.h"
 
@@ -11,7 +14,7 @@ namespace SklepUrzadzeniaMobilne {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace std;
 	int id = 0;
 	/// <summary>
 	/// Summary for rejestracja
@@ -418,8 +421,10 @@ namespace SklepUrzadzeniaMobilne {
 			MessageBox::Show("Miasto jest puste");
 			return;
 		}
-		Adres* adr = new Adres(idAdr++, miastotextBox->Text, kodtextBox->Text, ulicatextBox->Text, numertextBox->Text);
-		Uzytkownik* uz = new Uzytkownik(id++, imietextBox->Text->ToString(), nazwiskotextBox->Text->ToString(), haslo1textBox->Text->ToString(), "Uzytkownik", *adr);
+
+		//zmieniuc string na int z tych textboxow bo nic nie dziala 
+		Adres* adr = new Adres(idAdr++, miastotextBox->Text, kodtextBox->Text, ulicatextBox->Text, stoi(numertextBox->Text->ToString()));
+		Uzytkownik* uz = new Uzytkownik(id++, imietextBox->Text, nazwiskotextBox->Text, haslo1textBox->Text, "Uzytkownik", *adr);
 		//obsługa zapisania konta do bazy 
 
 
