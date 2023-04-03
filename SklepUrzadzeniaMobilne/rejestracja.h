@@ -4,6 +4,10 @@
 #include <sstream>
 #include "Uzytkownik.h"
 #include "Adres.h"
+#include <msclr\marshal_cppstd.h>
+#include <stdlib.h>
+
+using namespace System::Runtime::InteropServices;
 
 
 namespace SklepUrzadzeniaMobilne {
@@ -423,8 +427,11 @@ namespace SklepUrzadzeniaMobilne {
 		}
 
 		//zmieniuc string na int z tych textboxow bo nic nie dziala 
-		Adres* adr = new Adres(idAdr++, miastotextBox->Text, kodtextBox->Text, ulicatextBox->Text, stoi(numertextBox->Text->ToString()));
-		Uzytkownik* uz = new Uzytkownik(id++, imietextBox->Text, nazwiskotextBox->Text, haslo1textBox->Text, "Uzytkownik", *adr);
+		//int numerDomuInt = stoi(msclr::interop::marshal_as<std::string>(numertextBox->Text));
+
+		//std::string unmanaged = msclr::interop::marshal_as<std::string>(miastotextBox->Text);
+		//Adres* adr = new Adres(idAdr++, msclr::interop::marshal_as<std::string>(miastotextBox->Text), msclr::interop::marshal_as<std::string>(kodtextBox->Text), msclr::interop::marshal_as<std::string>(ulicatextBox->Text), numerDomuInt);
+		//Uzytkownik* uz = new Uzytkownik(id++, msclr::interop::marshal_as<std::string>(imietextBox->Text), msclr::interop::marshal_as<std::string>(nazwiskotextBox->Text), msclr::interop::marshal_as<std::string>(haslo1textBox->Text), "Uzytkownik", *adr);
 		//obsługa zapisania konta do bazy 
 
 
@@ -437,5 +444,7 @@ private: System::Void powrotbutton_Click(System::Object^ sender, System::EventAr
 	this->Hide();
 	this->formpowrotny->Show();
 }
+
+
 };
 }
