@@ -10,6 +10,7 @@ using namespace nlohmann;
 class Uzytkownik {
 private:
     int _id_uzytkownika;
+    string _login;
     string _imie;
     string _nazwisko;
     string _haslo;
@@ -18,9 +19,10 @@ private:
 
 public:
     Uzytkownik();
-    Uzytkownik(int id, string imie, string nazwisko, string haslo, string rola, Adres adres);
+    Uzytkownik(int id, string login, string imie, string nazwisko, string haslo, string rola, Adres adres);
     bool Uzytkownik::zapiszUzytkownika(std::vector<json>* array);
     int Get_id_uzytkownika();
+    string GetLogin();
     string GetImie();
     string GetNazwisko();
     string GetHaslo();
@@ -28,6 +30,7 @@ public:
     Adres GetAdres();
 
     void SetIdUzytkownika(int id);
+    void SetLogin(string login);
     void SetImie(string imie);
     void SetNazwisko(string nazwisko);
     void SetHaslo(string haslo);

@@ -25,6 +25,7 @@
 			  for (auto& element : data) {
 				  Uzytkownik uzytkownik; 
 				  uzytkownik.SetIdUzytkownika(element["id"]);
+				  uzytkownik.SetLogin(element["login"]);
 				  uzytkownik.SetImie(element["imie"]);
 				  uzytkownik.SetNazwisko(element["nazwisko"]);
 				  uzytkownik.SetHaslo(element["haslo"]);

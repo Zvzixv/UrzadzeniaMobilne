@@ -380,9 +380,9 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Void stworzKontobutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::vector<json> array;
 		bool result = Utils::wczytajBaze(&array);
-		if (result == false) {
-			return;
-		}
+		//if (result == false) {
+		//	return;
+		//}
 		//zabezpieczenia
 
 		if (logintextBox->Text == "") //&& jest juz w bazie
@@ -436,7 +436,7 @@ namespace SklepUrzadzeniaMobilne {
 
 		std::string unmanaged = msclr::interop::marshal_as<std::string>(miastotextBox->Text);
 		Adres* adr = new Adres(0, msclr::interop::marshal_as<std::string>(miastotextBox->Text), msclr::interop::marshal_as<std::string>(kodtextBox->Text), msclr::interop::marshal_as<std::string>(ulicatextBox->Text), numerDomuInt);
-		Uzytkownik* uz = new Uzytkownik(0, msclr::interop::marshal_as<std::string>(imietextBox->Text), msclr::interop::marshal_as<std::string>(nazwiskotextBox->Text), msclr::interop::marshal_as<std::string>(haslo1textBox->Text), "Uzytkownik", *adr);
+		Uzytkownik* uz = new Uzytkownik(0, msclr::interop::marshal_as<std::string>(logintextBox->Text), msclr::interop::marshal_as<std::string>(imietextBox->Text), msclr::interop::marshal_as<std::string>(nazwiskotextBox->Text), msclr::interop::marshal_as<std::string>(haslo1textBox->Text), "Uzytkownik", *adr);
 
 		uz->zapiszUzytkownika(&array);
 		//obsługa zapisania konta do bazy 

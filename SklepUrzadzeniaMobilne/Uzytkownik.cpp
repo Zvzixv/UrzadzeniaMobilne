@@ -4,6 +4,7 @@
 // Konstruktory
 Uzytkownik::Uzytkownik() {
     _id_uzytkownika = 0;
+    _login = "";
     _imie = "";
     _nazwisko = "";
     _haslo = "";
@@ -11,8 +12,9 @@ Uzytkownik::Uzytkownik() {
     _adres = Adres();
 }
 
-Uzytkownik::Uzytkownik(int id, string imie, string nazwisko, string haslo, string rola, Adres adres) {
+Uzytkownik::Uzytkownik(int id, string login, string imie, string nazwisko, string haslo, string rola, Adres adres) {
     _id_uzytkownika = id;
+    _login = login;
     _imie = imie;
     _nazwisko = nazwisko;
     _haslo = haslo;
@@ -23,6 +25,10 @@ Uzytkownik::Uzytkownik(int id, string imie, string nazwisko, string haslo, strin
 // Metody Get
 int Uzytkownik::Get_id_uzytkownika() {
     return _id_uzytkownika;
+}
+
+string Uzytkownik::GetLogin() {
+    return _login;
 }
 
 string Uzytkownik::GetImie() {
@@ -50,6 +56,10 @@ void Uzytkownik::SetIdUzytkownika(int id) {
     _id_uzytkownika = id;
 }
 
+void Uzytkownik::SetLogin(string login) {
+    _login = login;
+}
+
 void Uzytkownik::SetImie(string imie) {
     _imie = imie;
 }
@@ -72,6 +82,7 @@ void Uzytkownik::SetAdres(Adres adres) {
 bool Uzytkownik::zapiszUzytkownika(std::vector<json>* array) {
     json data;
     data["id"] = this->Get_id_uzytkownika();
+    data["login"] = this->GetLogin();
     data["imie"] = this->GetImie();
     data["nazwisko"] = this->GetNazwisko();
     data["haslo"] = this->GetHaslo();

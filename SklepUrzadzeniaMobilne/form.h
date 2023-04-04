@@ -13,6 +13,7 @@ namespace SklepUrzadzeniaMobilne {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+
 	/// <summary>
 	/// Podsumowanie informacji o form
 	/// </summary>
@@ -179,18 +180,32 @@ namespace SklepUrzadzeniaMobilne {
 
 		std::vector<Uzytkownik> baza ;
 		Utils::wczytajUzytkownikow(&baza);
+		Uzytkownik zalogowany;
 		//tutaj wybór czy jest to admin czy user zwykly
-		if (uzytkowniktextBox->Text == "u")
+		try {
+			zalogowany = login(baza, msclr::interop::marshal_as<std::string>(uzytkowniktextBox->Text), msclr::interop::marshal_as<std::string>(haslotextBox->Text));
+		}
+		catch (Exception^ ex)
+		{
+			MessageBox::Show("Błąd. Sprawdź poprawność wpisanych pól.");
+		}
+
+
+		if (zalogowany.GetRola() == "Uzytkownik")
 		{
 			panelUzytkownika^ pu = gcnew panelUzytkownika(this, 'u');
 			this->Hide();
 			pu->Show();
 		}
-		else if (uzytkowniktextBox->Text == "a")
+		else if (zalogowany.GetRola() == "Administrator")
 		{
 			PanelAdministratora^ pa = gcnew PanelAdministratora(this, 'a');
 			this->Hide();
 			pa->Show();
+		}
+		else
+		{
+			MessageBox::Show("Problemy Najmana.");
 		}
 
 		uzytkowniktextBox->Text = "";
@@ -208,6 +223,18 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Void wczytajUzytkownikow() {
 		vector<Uzytkownik> listaUzytkownikow;
 
+	}
+
+
+	private: Uzytkownik login(std::vector<Uzytkownik> baza, string login, string haslo)
+	{
+		for (auto& u : baza)
+		{
+			if (u.GetLogin() == login && u.GetHaslo() == haslo)
+				return u;
+		}
+
+		throw gcnew Exception("Nie ma takiego użytkownika");
 	}
 	};
 }

@@ -2,43 +2,16 @@
   {
     "adres": {
       "id_adresu": 0,
-      "kod_pocztowy": "123",
-      "miasto": "123",
-      "nr_domu": 123,
-      "ulica": "123"
+      "kod_pocztowy": "42-510",
+      "miasto": "zuzia",
+      "nr_domu": 3,
+      "ulica": "zuzia"
     },
-    "haslo": "123",
+    "haslo": "zuzia",
     "id": 0,
-    "imie": "123",
-    "nazwisko": "123",
-    "rola": "Uzytkownik"
-  },
-  {
-    "adres": {
-      "id_adresu": 0,
-      "kod_pocztowy": "42-600",
-      "miasto": "chujowe",
-      "nr_domu": 1,
-      "ulica": "hujsarska"
-    },
-    "haslo": "123",
-    "id": 0,
-    "imie": "123",
-    "nazwisko": "123",
-    "rola": "Uzytkownik"
-  },
-  {
-    "adres": {
-      "id_adresu": 0,
-      "kod_pocztowy": "42-600",
-      "miasto": "gowniaki",
-      "nr_domu": 11,
-      "ulica": "12"
-    },
-    "haslo": "test",
-    "id": 0,
-    "imie": "12345",
-    "nazwisko": "test",
+    "imie": "zuzia",
+    "login": "zuzia",
+    "nazwisko": "zuzia",
     "rola": "Uzytkownik"
   }
-] 
+]
