@@ -47,23 +47,25 @@ void Utils::zmienUprawnienia(string login) {
 	if (baza.size() == 0) {
 		return;
 	}
-	for (auto element : baza) {
+	for (auto& element : baza) {
 		if (element.GetLogin() == login) { // zak³adamy, ¿e chcemy zmieniæ obiekt o id równym 1
 			if (element.GetRola() == "Administrator") {
 				element.SetRola("Uzytkownik");
+			
 			}
 			else {
 				element.SetRola("Administrator");
 			}
+			Utils::zapiszBazeUzytkownikow(&baza);
 		}
 	}
-	Utils::zapiszBazeUzytkownikow(baza);
+	
 
 }
 
-void Utils::zapiszBazeUzytkownikow(std::vector<Uzytkownik> bazaUzytkownikow) {
+void Utils::zapiszBazeUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow) {
 	json j;
-	for (auto& uzytkownik : bazaUzytkownikow) {
+	for (auto& uzytkownik : *bazaUzytkownikow) {
 		json u = {
   {"id_uzytkownika", uzytkownik.Get_id_uzytkownika()},
   {"login", uzytkownik.GetLogin()},

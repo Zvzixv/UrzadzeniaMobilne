@@ -12,5 +12,5 @@ public:
 	static bool wczytajBaze(std::vector<json>* baza);
 	static bool wczytajUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow);
 	static void zmienUprawnienia(string login);
-	static void zapiszBazeUzytkownikow(std::vector<Uzytkownik> bazaUzytkownikow);
+	static void zapiszBazeUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow);
 };
