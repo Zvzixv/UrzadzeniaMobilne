@@ -193,13 +193,13 @@ namespace SklepUrzadzeniaMobilne {
 
 		if (zalogowany.GetRola() == "Uzytkownik")
 		{
-			panelUzytkownika^ pu = gcnew panelUzytkownika(this, 'u');
+			panelUzytkownika^ pu = gcnew panelUzytkownika(this, 'u', &zalogowany);
 			this->Hide();
 			pu->Show();
 		}
 		else if (zalogowany.GetRola() == "Administrator")
 		{
-			PanelAdministratora^ pa = gcnew PanelAdministratora(this, 'a');
+			PanelAdministratora^ pa = gcnew PanelAdministratora(this, 'a', &zalogowany);
 			this->Hide();
 			pa->Show();
 		}

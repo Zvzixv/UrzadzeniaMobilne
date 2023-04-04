@@ -1,5 +1,6 @@
 ﻿#pragma once
-
+#include "Uzytkownik.h"
+#include <msclr\marshal_cppstd.h>
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -22,6 +23,16 @@ namespace SklepUrzadzeniaMobilne {
 			//TODO: Add the constructor code here
 			//
 		}
+		dashboardUzytkownika(Uzytkownik* zalogowany)
+		{
+			InitializeComponent();
+			uz_zal = zalogowany;
+
+			//System::String^ label = msclr::interop::marshal_as<System::String^>(uz_zal->GetImie());
+			//String^ str = gcnew String(uz_zal->GetImie().c_str());
+			//nazwaUzytkownikalabel->Text = str;
+
+		}
 
 	protected:
 		/// <summary>
@@ -34,6 +45,10 @@ namespace SklepUrzadzeniaMobilne {
 				delete components;
 			}
 		}
+
+
+	private: Uzytkownik* uz_zal;
+	
 	private: System::Windows::Forms::Label^ label1;
 	protected:
 	private: System::Windows::Forms::Label^ nazwaUzytkownikalabel;

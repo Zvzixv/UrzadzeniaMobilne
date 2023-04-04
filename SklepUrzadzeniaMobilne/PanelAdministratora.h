@@ -4,6 +4,7 @@
 #include "zamowieniaPanel.h"
 #include "ustawienia.h"
 #include "uzytkownicyPanel.h"
+#include "Uzytkownik.h"
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -24,12 +25,13 @@ namespace SklepUrzadzeniaMobilne {
 			InitializeComponent();
 		}
 
-		PanelAdministratora(Form^ f, char r)
+		PanelAdministratora(Form^ f, char r, Uzytkownik* zalogowany)
 		{
 			InitializeComponent();
 
 			powrotny = f;
 			rola = r;
+			uz_zalogowany = zalogowany;
 		}
 
 	protected:
@@ -46,6 +48,9 @@ namespace SklepUrzadzeniaMobilne {
 
 	private: Form^ powrotny;
 	private: char rola;
+	private: Uzytkownik* uz_zalogowany;
+
+
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Button^ ustawieniabutton;
 	protected:

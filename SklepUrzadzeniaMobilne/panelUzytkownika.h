@@ -4,6 +4,7 @@
 #include "zamowieniaPanel.h"
 #include "kontakt.h"
 #include "ustawienia.h"
+#include "Uzytkownik.h"
 
 namespace SklepUrzadzeniaMobilne {
 
@@ -36,11 +37,12 @@ namespace SklepUrzadzeniaMobilne {
 			du->Show();
 			this->label1->Text = "Panel użytkownika";
 		}
-		panelUzytkownika(Form^ f, char r)
+		panelUzytkownika(Form^ f, char r, Uzytkownik* zalogowany)
 		{
 			InitializeComponent();
 			powrotny = f;
 			rola = r;
+			uz_zalogowany = zalogowany;
 
 			this->panelNawigacyjny->Controls->Clear();
 			dashboardUzytkownika^ du = gcnew dashboardUzytkownika();
@@ -66,6 +68,8 @@ namespace SklepUrzadzeniaMobilne {
 
 	private: Form^ powrotny;
 	private: char rola;
+	private: Uzytkownik* uz_zalogowany;
+
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Button^ ustawieniabutton;
 	protected:
@@ -258,7 +262,7 @@ namespace SklepUrzadzeniaMobilne {
 #pragma endregion
 	private: System::Void dashboardUzytkownikabutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->panelNawigacyjny->Controls->Clear();
-		dashboardUzytkownika^ du = gcnew dashboardUzytkownika();
+		dashboardUzytkownika^ du = gcnew dashboardUzytkownika(uz_zalogowany);
 		du->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 		du->TopLevel = false;
 
