@@ -6,6 +6,7 @@
 #include "Adres.h"
 #include <msclr\marshal_cppstd.h>
 #include <stdlib.h>
+#include "Utils.h"
 
 using namespace System::Runtime::InteropServices;
 
@@ -378,7 +379,7 @@ namespace SklepUrzadzeniaMobilne {
 #pragma endregion
 	private: System::Void stworzKontobutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::vector<json> array;
-		bool result = wczytajBaze(&array);
+		bool result = Utils::wczytajBaze(&array);
 		if (result == false) {
 			return;
 		}
@@ -450,19 +451,5 @@ private: System::Void powrotbutton_Click(System::Object^ sender, System::EventAr
 	this->Hide();
 	this->formpowrotny->Show();
 }
-
-	   private: System::Boolean wczytajBaze(std::vector<json>* baza) {
-		   std::ifstream file("Uzytkownicy.json");
-		   if (!file.is_open()) {
-			   std::cerr << "Nie można otworzyć pliku." << std::endl;
-			   return false;
-		   }
-		   std::string jsonStr((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
-		   if (jsonStr.length() == 0)
-			   return true;
-		   // Konwertowanie stringa JSON na wektor obiektów JSON
-		   *baza = json::parse(jsonStr);
-		   return true;
-	   }
 };
 }

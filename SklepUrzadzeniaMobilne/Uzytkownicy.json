@@ -26,5 +26,19 @@
     "imie": "123",
     "nazwisko": "123",
     "rola": "Uzytkownik"
+  },
+  {
+    "adres": {
+      "id_adresu": 0,
+      "kod_pocztowy": "42-600",
+      "miasto": "gowniaki",
+      "nr_domu": 11,
+      "ulica": "12"
+    },
+    "haslo": "test",
+    "id": 0,
+    "imie": "12345",
+    "nazwisko": "test",
+    "rola": "Uzytkownik"
   }
-]
+] 

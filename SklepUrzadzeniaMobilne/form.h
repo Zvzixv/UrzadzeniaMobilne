@@ -3,6 +3,7 @@
 #include "PanelAdministratora.h"
 #include "rejestracja.h"
 #include "Uzytkownik.h"
+#include "Utils.h"
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -176,6 +177,8 @@ namespace SklepUrzadzeniaMobilne {
 #pragma endregion
 	private: System::Void zalogujbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 
+		std::vector<Uzytkownik> baza ;
+		Utils::wczytajUzytkownikow(&baza);
 		//tutaj wybór czy jest to admin czy user zwykly
 		if (uzytkowniktextBox->Text == "u")
 		{

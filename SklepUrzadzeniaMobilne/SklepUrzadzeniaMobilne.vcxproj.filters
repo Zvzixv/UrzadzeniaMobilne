@@ -93,6 +93,9 @@
     <ClCompile Include="Akcesorie.cpp">
       <Filter>Pliki źródłowe\Model</Filter>
     </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="form.h">
@@ -166,6 +169,9 @@
     </ClInclude>
     <ClInclude Include="uzytkownikOkienko.h">
       <Filter>Pliki źródłowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

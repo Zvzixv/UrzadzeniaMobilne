@@ -137,6 +137,7 @@
     <ClCompile Include="Tablet.cpp" />
     <ClCompile Include="Telefon.cpp" />
     <ClCompile Include="ustawienia.cpp" />
+    <ClCompile Include="Utils.cpp" />
     <ClCompile Include="uzytkownicyPanel.cpp" />
     <ClCompile Include="Uzytkownik.cpp" />
     <ClCompile Include="uzytkownikOkienko.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="ustawienia.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Utils.h" />
     <ClInclude Include="uzytkownicyPanel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
