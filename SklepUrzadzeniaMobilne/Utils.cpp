@@ -22,22 +22,22 @@ bool Utils::wczytajUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow) {
 	}
 	json data;
 	file >> data;
-	for (auto element : data) {
-		Uzytkownik* uzytkownik = new Uzytkownik();
-		uzytkownik->SetIdUzytkownika(element["id_uzytkownika"]);
-		uzytkownik->SetLogin(element["login"]);
-		uzytkownik->SetImie(element["imie"]);
-		uzytkownik->SetNazwisko(element["nazwisko"]);
-		uzytkownik->SetHaslo(element["haslo"]);
-		uzytkownik->SetRola(element["rola"]);
+	for (auto& element : data) {
+		Uzytkownik uzytkownik;
+		uzytkownik.SetIdUzytkownika(element["id_uzytkownika"]);
+		uzytkownik.SetLogin(element["login"]);
+		uzytkownik.SetImie(element["imie"]);
+		uzytkownik.SetNazwisko(element["nazwisko"]);
+		uzytkownik.SetHaslo(element["haslo"]);
+		uzytkownik.SetRola(element["rola"]);
 		Adres az;
 		az.SetIdAdresu(element["adres"]["id_adresu"]);
 		az.SetKodPocztowy(element["adres"]["kod_pocztowy"]);
 		az.SetUlica(element["adres"]["ulica"]);
 		az.SetMiasto(element["adres"]["miasto"]);
-		az.SetNumerDomu(element["adres"]["nr_domu"]);
-		uzytkownik->SetAdres(az);
-		bazaUzytkownikow->push_back(*uzytkownik);
+		az.SetNumerDomu(element["adres"]["numer_domu"]);
+		uzytkownik.SetAdres(az);
+		bazaUzytkownikow->push_back(uzytkownik);
 	}
 	return true;
 }

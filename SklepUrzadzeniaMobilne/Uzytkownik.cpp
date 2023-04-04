@@ -81,7 +81,7 @@ void Uzytkownik::SetAdres(Adres adres) {
 }
 bool Uzytkownik::zapiszUzytkownika(std::vector<json>* array) {
     json data;
-    data["id"] = this->Get_id_uzytkownika();
+    data["id_uzytkownika"] = this->Get_id_uzytkownika();
     data["login"] = this->GetLogin();
     data["imie"] = this->GetImie();
     data["nazwisko"] = this->GetNazwisko();
