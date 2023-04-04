@@ -4,14 +4,44 @@
       "id_adresu": 0,
       "kod_pocztowy": "42-510",
       "miasto": "zuzia",
-      "nr_domu": 3,
+      "numer_domu": 3,
       "ulica": "zuzia"
     },
     "haslo": "zuzia",
-    "id": 0,
+    "id_uzytkownika": 0,
     "imie": "zuzia",
     "login": "zuzia",
     "nazwisko": "zuzia",
     "rola": "Administrator"
+  },
+  {
+    "adres": {
+      "id_adresu": 0,
+      "kod_pocztowy": "42-500",
+      "miasto": "tg",
+      "numer_domu": 123,
+      "ulica": "husarska"
+    },
+    "haslo": "123",
+    "id_uzytkownika": 1,
+    "imie": "mat",
+    "login": "mart0sz",
+    "nazwisko": "par",
+    "rola": "Uzytkownik"
+  },
+  {
+    "adres": {
+      "id_adresu": 0,
+      "kod_pocztowy": "42-100",
+      "miasto": "dupa",
+      "nr_domu": 1,
+      "ulica": "dupa"
+    },
+    "haslo": "dupa",
+    "id": 0,
+    "imie": "dupa",
+    "login": "dupa",
+    "nazwisko": "dupa",
+    "rola": "Uzytkownik"
   }
 ]
