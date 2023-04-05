@@ -63,6 +63,22 @@ void Utils::zmienUprawnienia(string login) {
 
 }
 
+void Utils::zmienHaslo(string login, string haslo) {
+	std::vector<Uzytkownik> baza;
+	Utils::wczytajUzytkownikow(&baza);
+	if (baza.size() == 0) {
+		return;
+	}
+	for (auto& element : baza) {
+		if (element.GetLogin() == login) { // zak³adamy, ¿e chcemy zmieniæ obiekt o id równym 1
+			element.SetHaslo(haslo);
+			Utils::zapiszBazeUzytkownikow(&baza);
+		}
+	}
+
+
+}
+
 void Utils::zapiszBazeUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow) {
 	json j;
 	for (auto& uzytkownik : *bazaUzytkownikow) {

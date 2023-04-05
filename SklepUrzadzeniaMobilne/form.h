@@ -179,6 +179,7 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Void zalogujbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::vector<Uzytkownik> baza ;
 		Utils::wczytajUzytkownikow(&baza);
+
 		Uzytkownik* zalogowany;
 		//tutaj wybór czy jest to admin czy user zwykly
 		try {
@@ -187,6 +188,7 @@ namespace SklepUrzadzeniaMobilne {
 		catch (Exception^ ex)
 		{
 			MessageBox::Show("Błąd. Sprawdź poprawność wpisanych pól.");
+			return;
 		}
 
 
