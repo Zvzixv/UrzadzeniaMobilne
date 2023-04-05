@@ -179,7 +179,7 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Void zalogujbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::vector<Uzytkownik> baza ;
 		Utils::wczytajUzytkownikow(&baza);
-		Uzytkownik zalogowany;
+		Uzytkownik* zalogowany;
 		//tutaj wybór czy jest to admin czy user zwykly
 		try {
 			zalogowany = login(baza, msclr::interop::marshal_as<std::string>(uzytkowniktextBox->Text), msclr::interop::marshal_as<std::string>(haslotextBox->Text));
@@ -190,15 +190,15 @@ namespace SklepUrzadzeniaMobilne {
 		}
 
 
-		if (zalogowany.GetRola() == "Uzytkownik")
+		if (zalogowany->GetRola() == "Uzytkownik")
 		{
-			panelUzytkownika^ pu = gcnew panelUzytkownika(this, 'u', &zalogowany);
+			panelUzytkownika^ pu = gcnew panelUzytkownika(this, 'u', zalogowany);
 			this->Hide();
 			pu->Show();
 		}
-		else if (zalogowany.GetRola() == "Administrator")
+		else if (zalogowany->GetRola() == "Administrator")
 		{
-			PanelAdministratora^ pa = gcnew PanelAdministratora(this, 'a', &zalogowany);
+			PanelAdministratora^ pa = gcnew PanelAdministratora(this, 'a', zalogowany);
 			this->Hide();
 			pa->Show();
 		}
@@ -225,12 +225,15 @@ namespace SklepUrzadzeniaMobilne {
 	}
 
 
-	private: Uzytkownik login(std::vector<Uzytkownik> baza, string login, string haslo)
+	private: Uzytkownik* login(std::vector<Uzytkownik> baza, string login, string haslo)
 	{
 		for (auto& u : baza)
 		{
 			if (u.GetLogin() == login && u.GetHaslo() == haslo)
-				return u;
+			{
+				Uzytkownik* zalogowany = new Uzytkownik(u);
+				return zalogowany;
+			}
 		}
 
 		throw gcnew Exception("Nie ma takiego użytkownika");

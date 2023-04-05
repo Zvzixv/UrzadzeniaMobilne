@@ -45,7 +45,7 @@ namespace SklepUrzadzeniaMobilne {
 			uz_zalogowany = zalogowany;
 
 			this->panelNawigacyjny->Controls->Clear();
-			dashboardUzytkownika^ du = gcnew dashboardUzytkownika();
+			dashboardUzytkownika^ du = gcnew dashboardUzytkownika(uz_zalogowany);
 			du->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			du->TopLevel = false;
 

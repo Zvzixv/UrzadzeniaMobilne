@@ -91,7 +91,7 @@ bool Uzytkownik::zapiszUzytkownika(std::vector<json>* array) {
     data["adres"]["miasto"] = this->GetAdres().GetMiasto();
     data["adres"]["kod_pocztowy"] = this->GetAdres().GetKodPocztowy();
     data["adres"]["ulica"] = this->GetAdres().GetUlica();
-    data["adres"]["nr_domu"] = this->GetAdres().GetNumerDomu();
+    data["adres"]["numer_domu"] = this->GetAdres().GetNumerDomu();
     array->push_back(data);
     std::ofstream file("Uzytkownicy.json");
     std::string jsonStr = json(*array).dump();

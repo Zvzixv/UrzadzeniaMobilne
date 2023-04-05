@@ -1,6 +1,7 @@
 #pragma once
 #include "uzytkownikOkienko.h"
 #include "Utils.h"
+using namespace System::Collections::Generic;
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -19,38 +20,25 @@ namespace SklepUrzadzeniaMobilne {
 		uzytkownicyPanel(void)
 		{
 			InitializeComponent();
-			
+
 			std::vector<Uzytkownik> bazaUzytkownikow;
 			Utils::wczytajUzytkownikow(&bazaUzytkownikow);
-			//std::vector<uzytkownikOkienko^> paneleUzytkownikow;
+			List<uzytkownikOkienko^>^ paneleUzytkownikow = gcnew List<uzytkownikOkienko^>();
 
 			for (auto u : bazaUzytkownikow)
 			{
-				uzytkownikOkienko^ upanel = gcnew uzytkownikOkienko(&u);
-				//paneleUzytkownikow.push_back(upanel);
-				upanel->TopLevel = false;
-				this->flowLayoutPanel->Controls->Add(upanel);
-				upanel->Show();
+				Uzytkownik* uwskaznik = new Uzytkownik(u);
+				uzytkownikOkienko^ upanel = gcnew uzytkownikOkienko(uwskaznik);
+				paneleUzytkownikow->Add(upanel);
+
 			}
 
-			//for (auto p : paneleUzytkownikow)
-			//{
-			//	p->TopLevel = false;
-			//	this->flowLayoutPanel->Controls->Add(p);
-			//	p->Show();
-			//}
+			for each (uzytkownikOkienko ^ panel in paneleUzytkownikow) {
+				panel->TopLevel = false;
+				this->flowLayoutPanel->Controls->Add(panel);
+				panel->Show();
+			}
 
-			//uzytkownikOkienko^ u1 = gcnew uzytkownikOkienko();
-			//uzytkownikOkienko^ u2 = gcnew uzytkownikOkienko();
-
-			//u1->TopLevel = false;
-			//this->flowLayoutPanel->Controls->Add(u1);
-			//u1->Show();
-
-
-			//u2->TopLevel = false;
-			//this->flowLayoutPanel->Controls->Add(u2);
-			//u2->Show();
 		}
 
 	protected:
@@ -73,7 +61,7 @@ namespace SklepUrzadzeniaMobilne {
 		/// <summary>
 		/// Wymagana zmienna projektanta.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>

@@ -28,12 +28,17 @@ namespace SklepUrzadzeniaMobilne {
 			InitializeComponent();
 			uz_zal = zalogowany;
 
-			//System::String^ label = msclr::interop::marshal_as<System::String^>(uz_zal->GetImie());
-			//String^ str = gcnew String(uz_zal->GetImie().c_str());
-			//nazwaUzytkownikalabel->Text = str;
-			//std::string myString = uz_zal->GetImie();
-			//System::String^ myConvertedString = msclr::interop::marshal_as<System::String^>(myString);
-			//nazwaUzytkownikalabel->Text = myConvertedString;
+
+			try {
+				std::string myString = uz_zal->GetImie();
+				System::String^ myConvertedString = msclr::interop::marshal_as<System::String^>(myString);
+				nazwaUzytkownikalabel->Text = myConvertedString;
+			}
+
+			catch (System::Exception^ ex)
+			{
+				Console::WriteLine(ex->ToString());
+			}
 
 		}
 

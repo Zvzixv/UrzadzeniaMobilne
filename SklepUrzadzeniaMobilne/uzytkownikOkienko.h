@@ -1,5 +1,7 @@
 #pragma once
 #include "Uzytkownik.h"
+#include <msclr/marshal_cppstd.h>
+#include "Utils.h"
 
 namespace SklepUrzadzeniaMobilne {
 
@@ -30,6 +32,19 @@ namespace SklepUrzadzeniaMobilne {
 			//TODO: W tym miejscu dodaj kod konstruktora
 			//
 			uzytkownik = uz;
+
+			std::string login = uz->GetLogin();
+			System::String^ loginSkonwertowany = msclr::interop::marshal_as<System::String^>(login);
+
+			std::string imienazwisko = uz->GetImie() + " " + uz->GetNazwisko();
+			System::String^ imienazwiskoSkonwertowany = msclr::interop::marshal_as<System::String^>(imienazwisko);
+
+			std::string rola = uz->GetRola();
+			System::String^ rolaSkonwertowany = msclr::interop::marshal_as<System::String^>(rola);
+			
+			loginlabel->Text = loginSkonwertowany;
+			imieNazwiskolabel->Text = imienazwiskoSkonwertowany;
+			rolalabel->Text = rolaSkonwertowany;
 		}
 
 	protected:
@@ -52,6 +67,9 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Button^ zmienRolebutton;
+	private: System::Windows::Forms::Label^ loginlabel;
+	private: System::Windows::Forms::Label^ imieNazwiskolabel;
+	private: System::Windows::Forms::Label^ rolalabel;
 
 	private:
 		/// <summary>
@@ -72,6 +90,9 @@ namespace SklepUrzadzeniaMobilne {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->zmienRolebutton = (gcnew System::Windows::Forms::Button());
+			this->loginlabel = (gcnew System::Windows::Forms::Label());
+			this->imieNazwiskolabel = (gcnew System::Windows::Forms::Label());
+			this->rolalabel = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -134,6 +155,43 @@ namespace SklepUrzadzeniaMobilne {
 			this->zmienRolebutton->TabIndex = 2;
 			this->zmienRolebutton->Text = L"Zmieñ rolê";
 			this->zmienRolebutton->UseVisualStyleBackColor = false;
+			this->zmienRolebutton->Click += gcnew System::EventHandler(this, &uzytkownikOkienko::zmienRolebutton_Click);
+			// 
+			// loginlabel
+			// 
+			this->loginlabel->AutoSize = true;
+			this->loginlabel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->loginlabel->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->loginlabel->Location = System::Drawing::Point(268, 13);
+			this->loginlabel->Name = L"loginlabel";
+			this->loginlabel->Size = System::Drawing::Size(153, 16);
+			this->loginlabel->TabIndex = 1;
+			this->loginlabel->Text = L"<nazwa_uzytkownika>";
+			// 
+			// imieNazwiskolabel
+			// 
+			this->imieNazwiskolabel->AutoSize = true;
+			this->imieNazwiskolabel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->imieNazwiskolabel->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->imieNazwiskolabel->Location = System::Drawing::Point(238, 29);
+			this->imieNazwiskolabel->Name = L"imieNazwiskolabel";
+			this->imieNazwiskolabel->Size = System::Drawing::Size(122, 16);
+			this->imieNazwiskolabel->TabIndex = 1;
+			this->imieNazwiskolabel->Text = L"<imie i nazwisko>";
+			// 
+			// rolalabel
+			// 
+			this->rolalabel->AutoSize = true;
+			this->rolalabel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->rolalabel->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->rolalabel->Location = System::Drawing::Point(168, 45);
+			this->rolalabel->Name = L"rolalabel";
+			this->rolalabel->Size = System::Drawing::Size(49, 16);
+			this->rolalabel->TabIndex = 1;
+			this->rolalabel->Text = L"<rola>";
 			// 
 			// uzytkownikOkienko
 			// 
@@ -144,6 +202,9 @@ namespace SklepUrzadzeniaMobilne {
 			this->Controls->Add(this->zmienRolebutton);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
+			this->Controls->Add(this->rolalabel);
+			this->Controls->Add(this->imieNazwiskolabel);
+			this->Controls->Add(this->loginlabel);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -154,6 +215,28 @@ namespace SklepUrzadzeniaMobilne {
 			this->PerformLayout();
 
 		}
+
+		private: System::Void zmienRolebutton_Click(System::Object^ sender, System::EventArgs^ e) {
+			Utils::zmienUprawnienia(this->uzytkownik->GetLogin());
+
+
+			if (this->uzytkownik->GetRola() == "Uzytkownik")
+			{
+				System::String^ rolaSkonwertowany = msclr::interop::marshal_as<System::String^>("Administrator");
+				this->rolalabel->Text = rolaSkonwertowany;
+				uzytkownik->SetRola("Administrator");
+				//this->Invalidate();
+			}
+			else if (this->uzytkownik->GetRola() == "Administrator")
+			{
+				System::String^ rolaSkonwertowany = msclr::interop::marshal_as<System::String^>("Uzytkownik");
+				this->rolalabel->Text = rolaSkonwertowany;
+				uzytkownik->SetRola("Uzytkownik");
+				//this->Invalidate();
+				
+			}
+
+		}
 #pragma endregion
-	};
+};
 }
