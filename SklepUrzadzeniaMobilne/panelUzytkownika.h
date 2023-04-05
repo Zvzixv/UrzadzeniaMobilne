@@ -306,7 +306,7 @@ private: System::Void kontaktbutton_Click(System::Object^ sender, System::EventA
 private: System::Void ustawieniabutton_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	this->panelNawigacyjny->Controls->Clear();
-	ustawienia^ u = gcnew ustawienia(powrotny, this);
+	ustawienia^ u = gcnew ustawienia(powrotny, this, uz_zalogowany);
 	u->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 	u->TopLevel = false;
 

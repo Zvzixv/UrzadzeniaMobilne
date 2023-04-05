@@ -9,6 +9,7 @@ namespace SklepUrzadzeniaMobilne {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+#include <ctime>
 
 	/// <summary>
 	/// Summary for dashboardUzytkownika
@@ -40,6 +41,11 @@ namespace SklepUrzadzeniaMobilne {
 				Console::WriteLine(ex->ToString());
 			}
 
+			SYSTEMTIME systemtime;
+			GetLocalTime(&systemtime);
+			String^ data = systemtime.wDay + "." + systemtime.wMonth + "." + systemtime.wYear;
+			this->datalabel->Text = data;
+
 		}
 
 	protected:
@@ -60,9 +66,10 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Windows::Forms::Label^ label1;
 	protected:
 	private: System::Windows::Forms::Label^ nazwaUzytkownikalabel;
+	private: System::Windows::Forms::Label^ datalabel;
 
 
-	private: System::Windows::Forms::Label^ label3;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 	private:
@@ -81,7 +88,7 @@ namespace SklepUrzadzeniaMobilne {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(dashboardUzytkownika::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->nazwaUzytkownikalabel = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->datalabel = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
@@ -112,18 +119,18 @@ namespace SklepUrzadzeniaMobilne {
 			this->nazwaUzytkownikalabel->TabIndex = 1;
 			this->nazwaUzytkownikalabel->Text = L"nazwa uzytkownika";
 			// 
-			// label3
+			// datalabel
 			// 
-			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->datalabel->AutoSize = true;
+			this->datalabel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->ForeColor = System::Drawing::SystemColors::Control;
-			this->label3->Location = System::Drawing::Point(444, 35);
-			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(103, 18);
-			this->label3->TabIndex = 0;
-			this->label3->Text = L"Data czy cos";
+			this->datalabel->ForeColor = System::Drawing::SystemColors::Control;
+			this->datalabel->Location = System::Drawing::Point(444, 35);
+			this->datalabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->datalabel->Name = L"datalabel";
+			this->datalabel->Size = System::Drawing::Size(103, 18);
+			this->datalabel->TabIndex = 0;
+			this->datalabel->Text = L"Data czy cos";
 			// 
 			// pictureBox1
 			// 
@@ -143,10 +150,10 @@ namespace SklepUrzadzeniaMobilne {
 			this->ClientSize = System::Drawing::Size(573, 346);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->nazwaUzytkownikalabel);
-			this->Controls->Add(this->label3);
+			this->Controls->Add(this->datalabel);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"dashboardUzytkownika";
 			this->Text = L"dashboardUzytkownika";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();

@@ -32,6 +32,16 @@ namespace SklepUrzadzeniaMobilne {
 			powrotny = f;
 			rola = r;
 			uz_zalogowany = zalogowany;
+
+
+			this->panelNawigacyjny->Controls->Clear();
+			dashboardUzytkownika^ du = gcnew dashboardUzytkownika(uz_zalogowany);
+			du->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			du->TopLevel = false;
+
+			this->panelNawigacyjny->Controls->Add(du);
+			du->Show();
+			this->label1->Text = "Panel administratora";
 		}
 
 	protected:
@@ -254,7 +264,7 @@ namespace SklepUrzadzeniaMobilne {
 #pragma endregion
 	private: System::Void panelAdministratorabutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->panelNawigacyjny->Controls->Clear();
-		dashboardUzytkownika^ du = gcnew dashboardUzytkownika();
+		dashboardUzytkownika^ du = gcnew dashboardUzytkownika(uz_zalogowany);
 		du->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 		du->TopLevel = false;
 
@@ -296,7 +306,7 @@ private: System::Void zamowieniabutton_Click(System::Object^ sender, System::Eve
 private: System::Void ustawieniabutton_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	this->panelNawigacyjny->Controls->Clear();
-	ustawienia^ u = gcnew ustawienia(powrotny, this);
+	ustawienia^ u = gcnew ustawienia(powrotny, this, uz_zalogowany);
 	u->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 	u->TopLevel = false;
 

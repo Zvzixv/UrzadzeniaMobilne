@@ -181,7 +181,7 @@ namespace SklepUrzadzeniaMobilne {
 		Utils::wczytajUzytkownikow(&baza);
 
 		Uzytkownik* zalogowany;
-		//tutaj wybór czy jest to admin czy user zwykly
+
 		try {
 			zalogowany = login(baza, msclr::interop::marshal_as<std::string>(uzytkowniktextBox->Text), msclr::interop::marshal_as<std::string>(haslotextBox->Text));
 		}
