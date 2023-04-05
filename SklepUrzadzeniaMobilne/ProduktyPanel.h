@@ -25,7 +25,7 @@ namespace SklepUrzadzeniaMobilne {
 
 			std::vector<Produkt*>bazaProduktow;
 			Utils::wczytajProdukty(&bazaProduktow);
-			List<produktOkienko^>^ paneleProduktow = gcnew List <produktOkienko^>();
+			paneleProduktow = gcnew List <produktOkienko^>();
 
 			for (auto u : bazaProduktow)
 			{
@@ -54,6 +54,9 @@ namespace SklepUrzadzeniaMobilne {
 				delete components;
 			}
 		}
+
+	private: List<produktOkienko^>^ paneleProduktow;
+	private: std::vector<Produkt*>* koszyk = new std::vector<Produkt*>();
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel;
 	private: System::Windows::Forms::Button^ finalizacjabutton;
 
@@ -114,10 +117,16 @@ namespace SklepUrzadzeniaMobilne {
 #pragma endregion
 	private: System::Void finalizacjabutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		//tutaj cos w stylu ze dla wszystkich paneli sprawdzane sa czy beda kupowane i przesyla sie je dalej simply, moze zadziala
+		for each (produktOkienko ^ panel in paneleProduktow)
+		{
+			if (panel->czyKupowany == true)
+			{
+				koszyk->push_back(panel->produkt);
+			}
+		}
 
-		//foreach okienka sprawdz czy okienko->kupowanyGetData - ejst true to dodaj do listy.
 
-		potwierdzenieZamowienia^ pz = gcnew potwierdzenieZamowienia();
+		potwierdzenieZamowienia^ pz = gcnew potwierdzenieZamowienia(koszyk);
 
 		pz->ShowDialog();
 	}

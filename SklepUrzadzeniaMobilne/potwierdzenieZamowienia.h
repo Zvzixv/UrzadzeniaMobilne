@@ -1,5 +1,8 @@
 #pragma once
-
+#include <vector>
+#include "Produkt.h"
+#include <msclr/marshal_cppstd.h>
+#include "produktOkienko.h"
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -8,6 +11,8 @@ namespace SklepUrzadzeniaMobilne {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+
+
 
 	/// <summary>
 	/// Podsumowanie informacji o potwierdzenieZamowienia
@@ -23,6 +28,16 @@ namespace SklepUrzadzeniaMobilne {
 			//
 		}
 
+		
+		potwierdzenieZamowienia(vector<Produkt*>* k)
+		{
+			InitializeComponent();
+			koszyk = k;
+
+			wyswietlInformacje();
+
+		}
+
 	protected:
 		/// <summary>
 		/// Wyczyœæ wszystkie u¿ywane zasoby.
@@ -34,6 +49,8 @@ namespace SklepUrzadzeniaMobilne {
 				delete components;
 			}
 		}
+
+	private: std::vector<Produkt*>* koszyk;
 	private: System::Windows::Forms::Label^ label1;
 	protected:
 	private: System::Windows::Forms::Label^ produktylabel;
@@ -137,5 +154,18 @@ private: System::Void anulujbutton_Click(System::Object^ sender, System::EventAr
 	//nic
 	this->Close();
 }
+
+	   private: System::Void wyswietlInformacje()
+	   {
+		   string informacje;
+
+		   for (auto prod : *koszyk)
+		   {
+			   informacje += prod->Get_typ_produktu() + " " + prod->Get_marka() + " " + prod->Get_nazwa() + " - " + tostr(prod->Get_cena())+ " PLN\n";
+		   }
+
+		   produktylabel->Text = msclr::interop::marshal_as<System::String^>(informacje);
+		   informacje = "";
+	   }
 };
 }

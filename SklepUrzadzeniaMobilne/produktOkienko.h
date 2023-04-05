@@ -38,7 +38,7 @@ namespace SklepUrzadzeniaMobilne {
 			InitializeComponent();
 			produkt = p;
 
-			string result = tostr(produkt->Get_cena());
+			string result = tostr(produkt->Get_cena())+" PLN";
 
 			kategorialabel->Text = msclr::interop::marshal_as<System::String^>(produkt->Get_typ_produktu());
 			label->Text = msclr::interop::marshal_as<System::String^>(produkt->Get_marka() + " " + produkt->Get_nazwa());
@@ -77,8 +77,8 @@ namespace SklepUrzadzeniaMobilne {
 			}
 		}
 
-	private: bool czyKupowany = false;
-	private: Produkt* produkt;
+	public: bool czyKupowany = false;
+	public: Produkt* produkt;
 
 	private: System::Windows::Forms::PictureBox^ pictureBox;
 	protected:
