@@ -1,5 +1,6 @@
 #pragma once
 #include "uzytkownikOkienko.h"
+#include "Utils.h"
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -19,17 +20,37 @@ namespace SklepUrzadzeniaMobilne {
 		{
 			InitializeComponent();
 			
-			uzytkownikOkienko^ u1 = gcnew uzytkownikOkienko();
-			uzytkownikOkienko^ u2 = gcnew uzytkownikOkienko();
+			std::vector<Uzytkownik> bazaUzytkownikow;
+			Utils::wczytajUzytkownikow(&bazaUzytkownikow);
+			//std::vector<uzytkownikOkienko^> paneleUzytkownikow;
 
-			u1->TopLevel = false;
-			this->flowLayoutPanel->Controls->Add(u1);
-			u1->Show();
+			for (auto u : bazaUzytkownikow)
+			{
+				uzytkownikOkienko^ upanel = gcnew uzytkownikOkienko(&u);
+				//paneleUzytkownikow.push_back(upanel);
+				upanel->TopLevel = false;
+				this->flowLayoutPanel->Controls->Add(upanel);
+				upanel->Show();
+			}
+
+			//for (auto p : paneleUzytkownikow)
+			//{
+			//	p->TopLevel = false;
+			//	this->flowLayoutPanel->Controls->Add(p);
+			//	p->Show();
+			//}
+
+			//uzytkownikOkienko^ u1 = gcnew uzytkownikOkienko();
+			//uzytkownikOkienko^ u2 = gcnew uzytkownikOkienko();
+
+			//u1->TopLevel = false;
+			//this->flowLayoutPanel->Controls->Add(u1);
+			//u1->Show();
 
 
-			u2->TopLevel = false;
-			this->flowLayoutPanel->Controls->Add(u2);
-			u2->Show();
+			//u2->TopLevel = false;
+			//this->flowLayoutPanel->Controls->Add(u2);
+			//u2->Show();
 		}
 
 	protected:

@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "Uzytkownik.h"
-#include <msclr\marshal_cppstd.h>
+#include <msclr/marshal_cppstd.h>
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -31,6 +31,9 @@ namespace SklepUrzadzeniaMobilne {
 			//System::String^ label = msclr::interop::marshal_as<System::String^>(uz_zal->GetImie());
 			//String^ str = gcnew String(uz_zal->GetImie().c_str());
 			//nazwaUzytkownikalabel->Text = str;
+			//std::string myString = uz_zal->GetImie();
+			//System::String^ myConvertedString = msclr::interop::marshal_as<System::String^>(myString);
+			//nazwaUzytkownikalabel->Text = myConvertedString;
 
 		}
 

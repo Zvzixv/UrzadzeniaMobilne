@@ -1,4 +1,5 @@
 #pragma once
+#include "Uzytkownik.h"
 
 namespace SklepUrzadzeniaMobilne {
 
@@ -22,6 +23,14 @@ namespace SklepUrzadzeniaMobilne {
 			//TODO: W tym miejscu dodaj kod konstruktora
 			//
 		}
+		uzytkownikOkienko(Uzytkownik* uz)
+		{
+			InitializeComponent();
+			//
+			//TODO: W tym miejscu dodaj kod konstruktora
+			//
+			uzytkownik = uz;
+		}
 
 	protected:
 		/// <summary>
@@ -34,6 +43,9 @@ namespace SklepUrzadzeniaMobilne {
 				delete components;
 			}
 		}
+
+	private: Uzytkownik* uzytkownik;
+
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	protected:
 	private: System::Windows::Forms::Label^ label1;

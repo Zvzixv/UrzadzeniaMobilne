@@ -177,7 +177,6 @@ namespace SklepUrzadzeniaMobilne {
 		}
 #pragma endregion
 	private: System::Void zalogujbutton_Click(System::Object^ sender, System::EventArgs^ e) {
-		Utils::zmienUprawnienia("123");
 		std::vector<Uzytkownik> baza ;
 		Utils::wczytajUzytkownikow(&baza);
 		Uzytkownik zalogowany;
