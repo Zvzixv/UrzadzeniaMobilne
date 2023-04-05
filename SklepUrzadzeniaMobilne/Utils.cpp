@@ -51,7 +51,7 @@ void Utils::zmienUprawnienia(string login) {
 		if (element.GetLogin() == login) { // zak³adamy, ¿e chcemy zmieniæ obiekt o id równym 1
 			if (element.GetRola() == "Administrator") {
 				element.SetRola("Uzytkownik");
-			
+
 			}
 			else {
 				element.SetRola("Administrator");
@@ -59,7 +59,7 @@ void Utils::zmienUprawnienia(string login) {
 			Utils::zapiszBazeUzytkownikow(&baza);
 		}
 	}
-	
+
 
 }
 
@@ -67,22 +67,21 @@ void Utils::zapiszBazeUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow) {
 	json j;
 	for (auto& uzytkownik : *bazaUzytkownikow) {
 		json u = {
-  {"id_uzytkownika", uzytkownik.Get_id_uzytkownika()},
-  {"login", uzytkownik.GetLogin()},
-  {"imie", uzytkownik.GetImie()},
-  {"nazwisko", uzytkownik.GetNazwisko()},
-  {"haslo", uzytkownik.GetHaslo()},
-  {"rola", uzytkownik.GetRola()},
-  {"adres", {
-  {"miasto", uzytkownik.GetAdres().GetMiasto()},
-  {"ulica", uzytkownik.GetAdres().GetUlica()},
-  {"numer_domu", uzytkownik.GetAdres().GetNumerDomu()},
-  {"kod_pocztowy", uzytkownik.GetAdres().GetKodPocztowy()},
-  {"id_adresu", uzytkownik.GetAdres().GetIdAdresu()}
-
-
-
-}} };
+			  {"id_uzytkownika", uzytkownik.Get_id_uzytkownika()},
+			  {"login", uzytkownik.GetLogin()},
+			  {"imie", uzytkownik.GetImie()},
+			  {"nazwisko", uzytkownik.GetNazwisko()},
+			  {"haslo", uzytkownik.GetHaslo()},
+			  {"rola", uzytkownik.GetRola()},
+			  {"adres", {
+							{"miasto", uzytkownik.GetAdres().GetMiasto()},
+							{"ulica", uzytkownik.GetAdres().GetUlica()},
+							{"numer_domu", uzytkownik.GetAdres().GetNumerDomu()},
+							{"kod_pocztowy", uzytkownik.GetAdres().GetKodPocztowy()},
+							{"id_adresu", uzytkownik.GetAdres().GetIdAdresu()}
+						}
+			}
+		};
 		j.push_back(u);
 		std::ofstream output("Uzytkownicy.json");
 		if (!output.is_open()) {
@@ -91,4 +90,4 @@ void Utils::zapiszBazeUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow) {
 		}
 		output << j;
 	}
-}
+}//
