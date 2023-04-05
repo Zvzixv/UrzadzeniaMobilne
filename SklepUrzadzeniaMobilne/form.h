@@ -177,13 +177,15 @@ namespace SklepUrzadzeniaMobilne {
 		}
 #pragma endregion
 	private: System::Void zalogujbutton_Click(System::Object^ sender, System::EventArgs^ e) {
-		std::vector<Uzytkownik> baza ;
-		Utils::wczytajUzytkownikow(&baza);
+		std::vector<Uzytkownik> bazaUzytkownikow ;
+
+		Utils::wczytajUzytkownikow(&bazaUzytkownikow);
+
 
 		Uzytkownik* zalogowany;
 
 		try {
-			zalogowany = login(baza, msclr::interop::marshal_as<std::string>(uzytkowniktextBox->Text), msclr::interop::marshal_as<std::string>(haslotextBox->Text));
+			zalogowany = login(bazaUzytkownikow, msclr::interop::marshal_as<std::string>(uzytkowniktextBox->Text), msclr::interop::marshal_as<std::string>(haslotextBox->Text));
 		}
 		catch (Exception^ ex)
 		{

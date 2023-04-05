@@ -4,6 +4,11 @@
 #include <vector>
 #include "Uzytkownik.h"
 #include "json.hpp"
+#include "Produkt.h"
+#include "Tablet.h"
+#include "Telefon.h"
+#include "Akcesorie.h"
+#include "Laptop.h"
 using namespace std;
 using namespace nlohmann;
 
@@ -15,4 +20,12 @@ public:
 	static void zapiszBazeUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow);
 	static void zmienHaslo(string login, string haslo);
 	static void zmienAdres(string login, string miasto, string kodPocztowy, string ulica, int numerDomu);
+
+
+	static bool wczytajBazeProduktow(std::vector<json>* baza);
+	static bool wczytajProdukty(std::vector<Produkt*>* bazaProduktow);
+	static void zapiszBazeProduktow(std::vector<Produkt*>* bazaProduktow);
+
+
+
 };

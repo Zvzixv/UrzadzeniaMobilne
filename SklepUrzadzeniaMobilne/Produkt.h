@@ -9,15 +9,15 @@ private:
     string _nazwa;
     string _marka;
     float _cena;
-    int _id_kategorii;
+    string _typ_produktu;
 
 public:
     virtual bool zapiszProdukt() = 0;
-    //trzeba sie zastanowic co tu ma byc virtual
+
     Produkt();
-    Produkt(int id_produktu, string nazwa, string marka, float cena, int id_kategorii);
+    Produkt(int id_produktu, string nazwa, string marka, float cena, string typ_produktu);
     Produkt GetProdukt();
-    void SetProdukt(int id_produktu, string nazwa, string marka, float cena, int id_kategorii);
+    void SetProdukt(int id_produktu, string nazwa, string marka, float cena);
     bool EditProdukt(Produkt produkt);
     bool DeleteProdukt(int id);
 
@@ -25,13 +25,15 @@ public:
     string Get_nazwa();
     string Get_marka();
     float Get_cena();
-    int Get_id_kategorii();
+    string Get_typ_produktu();
 
     void Set_id_produktu(int id_produktu);
     void Set_nazwa(string nazwa);
     void Set_marka(string marka);
     void Set_cena(float cena);
-    void Set_id_kategorii(int id_kategorii);
+    void Set_typ_produktu(string typ);
+
+    //virtual ~Produkt();
 
     //virtual void DodajDoKoszyka();
 };

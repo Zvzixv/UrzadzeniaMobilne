@@ -6,7 +6,8 @@
 #include <fstream>
 using namespace std;
 
-class Laptop : Produkt {
-	Laptop(int id_produktu, string nazwa, string marka, float cena, int id_kategorii) : Produkt(id_produktu, nazwa, marka, cena, id_kategorii) {};
+class Laptop : public Produkt {
+public:
+	Laptop(int id_produktu, string nazwa, string marka, float cena) : Produkt(id_produktu, nazwa, marka, cena, "Laptop") {};
 	bool zapiszProdukt();
 };

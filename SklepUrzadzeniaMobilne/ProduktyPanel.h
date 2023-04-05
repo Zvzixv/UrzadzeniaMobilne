@@ -1,6 +1,8 @@
 #pragma once
 #include "produktOkienko.h"
 #include "potwierdzenieZamowienia.h"
+#include "Utils.h"
+using namespace System::Collections::Generic;
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -19,19 +21,25 @@ namespace SklepUrzadzeniaMobilne {
 		ProduktyPanel(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
-			produktOkienko^ p1 = gcnew produktOkienko();
-			produktOkienko^ p2 = gcnew produktOkienko();
+			
 
-			p1->TopLevel = false;
-			this->flowLayoutPanel->Controls->Add(p1);
-			p1->Show();
+			std::vector<Produkt*>bazaProduktow;
+			Utils::wczytajProdukty(&bazaProduktow);
+			List<produktOkienko^>^ paneleProduktow = gcnew List <produktOkienko^>();
 
-			p2->TopLevel = false;
-			this->flowLayoutPanel->Controls->Add(p2);
-			p2->Show();
+			for (auto u : bazaProduktow)
+			{
+				produktOkienko^ upanel = gcnew produktOkienko(u);
+				paneleProduktow->Add(upanel);
+
+			}
+
+			for each (produktOkienko ^ panel in paneleProduktow) {
+				panel->TopLevel = false;
+				this->flowLayoutPanel->Controls->Add(panel);
+				panel->Show();
+			}
+
 
 		}
 
@@ -68,6 +76,7 @@ namespace SklepUrzadzeniaMobilne {
 			// 
 			// flowLayoutPanel
 			// 
+			this->flowLayoutPanel->AutoScroll = true;
 			this->flowLayoutPanel->Location = System::Drawing::Point(12, 42);
 			this->flowLayoutPanel->Name = L"flowLayoutPanel";
 			this->flowLayoutPanel->Size = System::Drawing::Size(534, 256);

@@ -173,5 +173,30 @@
     <ClInclude Include="Utils.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SklepUrzadzeniaMobilne.rc">
+      <Filter>Pliki zasobów</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\Downloads\akcesoria.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Downloads\telefon1.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Downloads\telefon2.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Downloads\tablet.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="..\..\..\..\..\Downloads\laptop.png">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -7,7 +7,8 @@
 using namespace std;
 using namespace nlohmann;
 
-class Akcesorie : Produkt {
-	Akcesorie(int id_produktu, string nazwa, string marka, float cena, int id_kategorii) : Produkt(id_produktu, nazwa, marka, cena, id_kategorii) {};
+class Akcesoria : public Produkt {
+public:
+	Akcesoria(int id_produktu, string nazwa, string marka, float cena) : Produkt(id_produktu, nazwa, marka, cena, "Akcesoria") {};
 	bool zapiszProdukt();
 };

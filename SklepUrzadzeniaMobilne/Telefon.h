@@ -6,8 +6,9 @@
 #include "json.hpp"
 using namespace std;
 
-class Telefon : Produkt
+class Telefon : public Produkt
 {
-	Telefon(int id_produktu, string nazwa, string marka, float cena, int id_kategorii) : Produkt(id_produktu, nazwa, marka, cena, id_kategorii) {};
+public:
+	Telefon(int id_produktu, string nazwa, string marka, float cena) : Produkt(id_produktu, nazwa, marka, cena, "Telefon") {};
 	bool zapiszProdukt();
 };
