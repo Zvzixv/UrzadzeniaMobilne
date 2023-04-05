@@ -14,5 +14,5 @@ public:
 	static void zmienUprawnienia(string login);
 	static void zapiszBazeUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow);
 	static void zmienHaslo(string login, string haslo);
-	static void zmienAdres(string login, string miasto, string kodPocztowy, string ulica, string numerDomu);
+	static void zmienAdres(string login, string miasto, string kodPocztowy, string ulica, int numerDomu);
 };

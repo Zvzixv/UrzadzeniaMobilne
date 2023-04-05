@@ -70,13 +70,37 @@ void Utils::zmienHaslo(string login, string haslo) {
 		return;
 	}
 	for (auto& element : baza) {
-		if (element.GetLogin() == login) { // zak³adamy, ¿e chcemy zmieniæ obiekt o id równym 1
+		if (element.GetLogin() == login) { 
 			element.SetHaslo(haslo);
 			Utils::zapiszBazeUzytkownikow(&baza);
 		}
 	}
+}
 
+void Utils::zmienAdres(string login, string miasto, string kodPocztowy, string ulica, int numerDomu) {
+	std::vector<Uzytkownik> baza;
+	Utils::wczytajUzytkownikow(&baza);
+	if (baza.size() == 0) {
+		return;
+	}
+	for (auto& element : baza) {
+		if (element.GetLogin() == login) {
+			
+			Adres nowyAdres = element.GetAdres();
+			if (!miasto.empty())
+				nowyAdres.SetMiasto(miasto);
+			if (!kodPocztowy.empty())
+				nowyAdres.SetKodPocztowy(kodPocztowy);
+			if (!ulica.empty())
+				nowyAdres.SetUlica(ulica);
+			if (numerDomu!=0)
+				nowyAdres.SetNumerDomu(numerDomu);
 
+			element.SetAdres(nowyAdres);
+
+			Utils::zapiszBazeUzytkownikow(&baza);
+		}
+	}
 }
 
 void Utils::zapiszBazeUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow) {
