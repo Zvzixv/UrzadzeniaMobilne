@@ -1,1 +1,17 @@
-[{"adres":{"id_adresu":0,"kod_pocztowy":"123","miasto":"123","numer_domu":123,"ulica":"123"},"haslo":"123","id_uzytkownika":0,"imie":"123","login":"123","nazwisko":"123","rola":"Uzytkownik"}]
+[
+  {
+    "adres": {
+      "id_adresu": 0,
+      "kod_pocztowy": "123",
+      "miasto": "123",
+      "numer_domu": 123,
+      "ulica": "123"
+    },
+    "haslo": "123",
+    "id_uzytkownika": 0,
+    "imie": "123",
+    "login": "123",
+    "nazwisko": "123",
+    "rola": "Uzytkownik"
+  }
+]
