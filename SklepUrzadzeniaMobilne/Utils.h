@@ -9,6 +9,7 @@
 #include "Telefon.h"
 #include "Akcesorie.h"
 #include "Laptop.h"
+#include "Zamowienie.h"
 using namespace std;
 using namespace nlohmann;
 
@@ -25,7 +26,7 @@ public:
 	static bool wczytajBazeProduktow(std::vector<json>* baza);
 	static bool wczytajProdukty(std::vector<Produkt*>* bazaProduktow);
 	static void zapiszBazeProduktow(std::vector<Produkt*>* bazaProduktow);
-
+	static bool zapiszZamowienie(std::vector<Zamowienie>* bazaZamowien);
 
 
 };

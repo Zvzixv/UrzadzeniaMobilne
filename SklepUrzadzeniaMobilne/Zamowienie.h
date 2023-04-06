@@ -19,5 +19,13 @@ public:
 	void SetZamowienie(int id, Uzytkownik uz, vector<Produkt*> produkty, string data);
 	bool ZwrotZamowienia(int id);
 	bool ZapiszZamowienie();
+	int getIdZamowienia();
+	Uzytkownik getUzytkownik();
+	vector<Produkt*> getProdukty();
+	string getDataZlozenia();
+	void setIdZamowienia(int id);
+	void setUzytkownik(Uzytkownik uz);
+	void setProdukty(vector<Produkt*> produkty);
+	void setDataZlozenia(string data);
 };
 
