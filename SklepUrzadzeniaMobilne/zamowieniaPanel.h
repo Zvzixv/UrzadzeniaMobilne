@@ -38,7 +38,7 @@ namespace SklepUrzadzeniaMobilne {
 				for (auto u : *zamowienia)
 				{
 					Zamowienie* uwskaznik = new Zamowienie(u);
-					zamowienieOkienko^ upanel = gcnew zamowienieOkienko(uwskaznik);
+					zamowienieOkienko^ upanel = gcnew zamowienieOkienko(uwskaznik, uz_zalogowany);
 					paneleZamowien->Add(upanel);
 
 				}
@@ -51,7 +51,7 @@ namespace SklepUrzadzeniaMobilne {
 						if (uz_zalogowany->GetLogin() == u.getUzytkownik().GetLogin())
 						{
 							Zamowienie* uwskaznik = new Zamowienie(u);
-							zamowienieOkienko^ upanel = gcnew zamowienieOkienko(uwskaznik);
+							zamowienieOkienko^ upanel = gcnew zamowienieOkienko(uwskaznik, uz_zalogowany);
 							paneleZamowien->Add(upanel);
 						}
 

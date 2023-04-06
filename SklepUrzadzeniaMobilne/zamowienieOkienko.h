@@ -1,5 +1,8 @@
 #pragma once
 #include "Zamowienie.h"
+#include <msclr/marshal_cppstd.h>
+#include "produktOkienko.h"
+#include "Uzytkownik.h"
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -23,10 +26,36 @@ namespace SklepUrzadzeniaMobilne {
 			//
 		}
 
-		zamowienieOkienko(Zamowienie * z)
+		zamowienieOkienko(Zamowienie * z, Uzytkownik* zalogowany)
 		{
 			InitializeComponent();
 			zamowienie = z;
+
+			String^ dataSkonwertowana = msclr::interop::marshal_as<System::String^>(zamowienie->getDataZlozenia());
+			datalabel->Text = dataSkonwertowana;
+
+			string informacje;
+
+			for (auto prod : zamowienie->getProdukty())
+			{
+				informacje += prod->Get_typ_produktu() + " " + prod->Get_marka() + " " + prod->Get_nazwa() + " - " + tostr(prod->Get_cena()) + " PLN\n";
+			}
+
+			produktylabel->Text = msclr::interop::marshal_as<System::String^>(informacje);
+			
+			Uzytkownik wlasciciel = zamowienie->getUzytkownik();
+
+			if (zalogowany->GetRola() == "Uzytkownik")
+			{
+				wlasciciellabel->Visible = false;
+				wlascicieldanelabel->Visible = false;
+			}
+			else
+			{
+				wlasciciellabel->Visible = true;
+				wlascicieldanelabel->Visible = true;
+				wlascicieldanelabel->Text = msclr::interop::marshal_as<System::String^>(wlasciciel.GetLogin());
+			}
 		}
 
 
@@ -49,6 +78,9 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Windows::Forms::Button^ zwrotbutton;
 	private: System::Windows::Forms::Label^ datalabel;
 	private: System::Windows::Forms::Label^ produktylabel;
+	private: System::Windows::Forms::Label^ wlasciciellabel;
+
+	private: System::Windows::Forms::Label^ wlascicieldanelabel;
 
 	private:
 		/// <summary>
@@ -68,6 +100,8 @@ namespace SklepUrzadzeniaMobilne {
 			this->zwrotbutton = (gcnew System::Windows::Forms::Button());
 			this->datalabel = (gcnew System::Windows::Forms::Label());
 			this->produktylabel = (gcnew System::Windows::Forms::Label());
+			this->wlasciciellabel = (gcnew System::Windows::Forms::Label());
+			this->wlascicieldanelabel = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -76,7 +110,7 @@ namespace SklepUrzadzeniaMobilne {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->label1->ForeColor = System::Drawing::Color::SaddleBrown;
-			this->label1->Location = System::Drawing::Point(13, 39);
+			this->label1->Location = System::Drawing::Point(12, 51);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(148, 16);
 			this->label1->TabIndex = 0;
@@ -126,19 +160,45 @@ namespace SklepUrzadzeniaMobilne {
 			this->produktylabel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->produktylabel->ForeColor = System::Drawing::Color::SaddleBrown;
-			this->produktylabel->Location = System::Drawing::Point(12, 61);
+			this->produktylabel->Location = System::Drawing::Point(11, 73);
 			this->produktylabel->Name = L"produktylabel";
 			this->produktylabel->Size = System::Drawing::Size(82, 16);
 			this->produktylabel->TabIndex = 0;
 			this->produktylabel->Text = L"<produkty>";
+			// 
+			// wlasciciellabel
+			// 
+			this->wlasciciellabel->AutoSize = true;
+			this->wlasciciellabel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->wlasciciellabel->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->wlasciciellabel->Location = System::Drawing::Point(11, 25);
+			this->wlasciciellabel->Name = L"wlasciciellabel";
+			this->wlasciciellabel->Size = System::Drawing::Size(164, 16);
+			this->wlasciciellabel->TabIndex = 0;
+			this->wlasciciellabel->Text = L"W³aœciciel zamówienia: ";
+			// 
+			// wlascicieldanelabel
+			// 
+			this->wlascicieldanelabel->AutoSize = true;
+			this->wlascicieldanelabel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->wlascicieldanelabel->ForeColor = System::Drawing::Color::SaddleBrown;
+			this->wlascicieldanelabel->Location = System::Drawing::Point(181, 25);
+			this->wlascicieldanelabel->Name = L"wlascicieldanelabel";
+			this->wlascicieldanelabel->Size = System::Drawing::Size(82, 16);
+			this->wlascicieldanelabel->TabIndex = 0;
+			this->wlascicieldanelabel->Text = L"<produkty>";
 			// 
 			// zamowienieOkienko
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SeaShell;
-			this->ClientSize = System::Drawing::Size(466, 153);
+			this->ClientSize = System::Drawing::Size(466, 201);
 			this->Controls->Add(this->zwrotbutton);
+			this->Controls->Add(this->wlascicieldanelabel);
+			this->Controls->Add(this->wlasciciellabel);
 			this->Controls->Add(this->produktylabel);
 			this->Controls->Add(this->datalabel);
 			this->Controls->Add(this->label2);
