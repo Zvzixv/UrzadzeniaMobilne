@@ -141,30 +141,28 @@ void Utils::zapiszBazeUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow) {
 }
 bool Utils::zapiszZamowienie(std::vector<Zamowienie>* bazaZamowien) {
 	json j;
-	for (auto& zamowienie : *bazaZamowien)
+	for (auto& zamowienie : *bazaZamowien) {
 		json z = {
-			{"id", zamowienie.getIdZamowienia()},
-			{"data_zlozenia", zamowienie.getDataZlozenia()},
-			{"uzytkownik", {
-				{"id", zamowienie.getUzytkownik().Get_id_uzytkownika()},
-				{"imie", zamowienie.getUzytkownik().GetImie()},
-				{"nazwisko", zamowienie.getUzytkownik().GetNazwisko()},
-				{"adres", {
-						{"miasto", zamowienie.getUzytkownik().GetAdres().GetMiasto()},
-						{"ulica", zamowienie.getUzytkownik().GetAdres().GetUlica()},
-						{"numer_domu", zamowienie.getUzytkownik().GetAdres().GetNumerDomu()},
-						{"kod_pocztowy", zamowienie.getUzytkownik().GetAdres().GetKodPocztowy()},
-						{"id_adresu", zamowienie.getUzytkownik().GetAdres().GetIdAdresu()}
-				}},
-			},
-			{"produkty", {
-				{"id produktu", zamowienie.getProdukty()}
+		{"id", zamowienie.getIdZamowienia()},
+		{"data_zlozenia", zamowienie.getDataZlozenia()},
+		{"uzytkownik", {
+			{"id", zamowienie.getUzytkownik().Get_id_uzytkownika()},
+			{"imie", zamowienie.getUzytkownik().GetImie()},
+			{"nazwisko", zamowienie.getUzytkownik().GetNazwisko()},
+			{"adres", {
+				{"miasto", zamowienie.getUzytkownik().GetAdres().GetMiasto()},
+				{"ulica", zamowienie.getUzytkownik().GetAdres().GetUlica()},
+				{"numer_domu", zamowienie.getUzytkownik().GetAdres().GetNumerDomu()},
+				{"kod_pocztowy", zamowienie.getUzytkownik().GetAdres().GetKodPocztowy()},
+				{"id_adresu", zamowienie.getUzytkownik().GetAdres().GetIdAdresu()}
+			}},
+		}},
+		{"produkty", {
+			{"id produktu", 123} // example value, replace with actual data
+		}}
+		};
+	
 
-
-
-			}}
-		}
-	};
 
 		//data["uzytkownik"]["imie"] = this->_uzytkownik.GetImie();
 		//data["uzytkownik"]["nazwisko"] = this->_uzytkownik.GetNazwisko();
@@ -172,11 +170,11 @@ bool Utils::zapiszZamowienie(std::vector<Zamowienie>* bazaZamowien) {
 		//data["uzytkownik"]["adres"] = this->_uzytkownik.GetNazwisko();
 
 		std::ofstream file("Zamowienia.json");
-		file << data;
+		file << z;
 		file.close();
 		return true;
+}
 
-	
 }
 
 //produkty
