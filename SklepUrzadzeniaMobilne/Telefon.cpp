@@ -1,6 +1,5 @@
 #include "Telefon.h"
 
-using namespace nlohmann;
 bool Telefon::zapiszProdukt() {
 	json data;
 	data["id"] = this->Get_id_produktu();

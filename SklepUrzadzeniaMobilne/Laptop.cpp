@@ -1,6 +1,5 @@
 #include "Laptop.h"
 
-using namespace nlohmann;
 bool Laptop::zapiszProdukt() {
 	json data;
 	data["id"] = this->Get_id_produktu();

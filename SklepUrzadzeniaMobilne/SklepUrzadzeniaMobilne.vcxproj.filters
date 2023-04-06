@@ -33,9 +33,6 @@
     <ClCompile Include="Produkt.cpp">
       <Filter>Pliki źródłowe\Model</Filter>
     </ClCompile>
-    <ClCompile Include="ProduktZamowienie.cpp">
-      <Filter>Pliki źródłowe\Model</Filter>
-    </ClCompile>
     <ClCompile Include="Zamowienie.cpp">
       <Filter>Pliki źródłowe\Model</Filter>
     </ClCompile>
@@ -131,9 +128,6 @@
     <ClInclude Include="Produkt.h">
       <Filter>Pliki nagłówkowe\Model</Filter>
     </ClInclude>
-    <ClInclude Include="ProduktZamowienie.h">
-      <Filter>Pliki nagłówkowe\Model</Filter>
-    </ClInclude>
     <ClInclude Include="Uzytkownik.h">
       <Filter>Pliki nagłówkowe\Model</Filter>
     </ClInclude>
@@ -173,30 +167,5 @@
     <ClInclude Include="Utils.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="SklepUrzadzeniaMobilne.rc">
-      <Filter>Pliki zasobów</Filter>
-    </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\..\..\Downloads\akcesoria.png">
-      <Filter>Pliki zasobów</Filter>
-    </Image>
-    <Image Include="..\..\..\..\..\Downloads\telefon1.png">
-      <Filter>Pliki zasobów</Filter>
-    </Image>
-    <Image Include="..\..\..\..\..\Downloads\telefon2.png">
-      <Filter>Pliki zasobów</Filter>
-    </Image>
-    <Image Include="..\..\..\..\..\Downloads\tablet.png">
-      <Filter>Pliki zasobów</Filter>
-    </Image>
-    <Image Include="..\..\..\..\..\Downloads\laptop.png">
-      <Filter>Pliki zasobów</Filter>
-    </Image>
   </ItemGroup>
 </Project>

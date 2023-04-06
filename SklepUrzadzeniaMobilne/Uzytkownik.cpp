@@ -1,6 +1,5 @@
 #include "Uzytkownik.h"
 
-
 // Konstruktory
 Uzytkownik::Uzytkownik() {
     _id_uzytkownika = 0;

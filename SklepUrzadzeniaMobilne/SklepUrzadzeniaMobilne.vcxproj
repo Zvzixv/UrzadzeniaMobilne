@@ -132,7 +132,6 @@
     <ClCompile Include="Produkt.cpp" />
     <ClCompile Include="produktOkienko.cpp" />
     <ClCompile Include="produktyPanel.cpp" />
-    <ClCompile Include="ProduktZamowienie.cpp" />
     <ClCompile Include="rejestracja.cpp" />
     <ClCompile Include="Tablet.cpp" />
     <ClCompile Include="Telefon.cpp" />
@@ -175,11 +174,9 @@
     <ClInclude Include="produktyPanel.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="ProduktZamowienie.h" />
     <ClInclude Include="rejestracja.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="resource.h" />
     <ClInclude Include="Tablet.h" />
     <ClInclude Include="Telefon.h" />
     <ClInclude Include="ustawienia.h">
@@ -244,16 +241,6 @@
     <EmbeddedResource Include="zamowienieOkienko.resx">
       <DependentUpon>zamowienieOkienko.h</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="SklepUrzadzeniaMobilne.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\..\..\Downloads\akcesoria.png" />
-    <Image Include="..\..\..\..\..\Downloads\laptop.png" />
-    <Image Include="..\..\..\..\..\Downloads\tablet.png" />
-    <Image Include="..\..\..\..\..\Downloads\telefon1.png" />
-    <Image Include="..\..\..\..\..\Downloads\telefon2.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,5 @@
 #include "Akcesorie.h"
+
 bool Akcesoria::zapiszProdukt() {
 	json data;
 	data["id"] = this->Get_id_produktu();
