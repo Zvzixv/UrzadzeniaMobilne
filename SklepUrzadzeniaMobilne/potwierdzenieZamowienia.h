@@ -158,7 +158,11 @@ namespace SklepUrzadzeniaMobilne {
 		String^ data = systemtime.wDay + "." + systemtime.wMonth + "." + systemtime.wYear;
 		string dataFormat = msclr::interop::marshal_as<std::string>(data);
 
-		int noweId = zamowienia.size();
+		int ostatniElement = zamowienia.size()-1;
+		Zamowienie ostatnieZamowienie = zamowienia[ostatniElement];
+		int ostatnieId = ostatnieZamowienie.getIdZamowienia();
+		int noweId = ostatnieId + 1;
+
 		Zamowienie noweZamowienie;
 		noweZamowienie.setIdZamowienia(noweId);
 		noweZamowienie.setUzytkownik(*uz_zalogowany);

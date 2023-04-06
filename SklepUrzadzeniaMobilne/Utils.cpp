@@ -139,6 +139,38 @@ void Utils::zapiszBazeUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow) {
 		output << j;
 	}
 }
+
+bool Utils::usunUzytkownika(vector<Uzytkownik>* bazaUzytkownikow, string login) {
+	json data;
+	std::ifstream file("Uzytkownicy.json");
+	if (!file.is_open()) {
+		std::cerr << "Nie udalo sie otworzyc pliku!" << std::endl;
+		return false;
+	}
+	file >> data;
+	file.close();
+	for (auto it = data.begin(); it != data.end(); ++it) {
+		if ((*it)["login"] == login) {
+			data.erase(it);
+			std::ofstream fileOut("Uzytkownicy.json");
+			fileOut << data.dump(4);
+			fileOut.close();
+			// usuwanie u¿ytkownika z bazy
+			for (auto it = bazaUzytkownikow->begin(); it != bazaUzytkownikow->end(); ++it) {
+				if (it->GetLogin() == login) {
+					bazaUzytkownikow->erase(it);
+					break;
+				}
+			}
+			return true;
+		}
+	}
+	return false;
+}
+
+
+//zamowienia
+
 bool Utils::zapiszZamowienie(std::vector<Zamowienie>* bazaZamowien) {
 	json j;
 	for (auto& zamowienie : *bazaZamowien) {
@@ -225,6 +257,7 @@ bool Utils::odczytajZamowienia(std::vector<Zamowienie>* bazaZamowien) {
 	file.close();
 	return true;
 }
+
 
 //produkty
 

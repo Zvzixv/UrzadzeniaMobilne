@@ -3,6 +3,7 @@
 #include <msclr/marshal_cppstd.h>
 #include "produktOkienko.h"
 #include "Uzytkownik.h"
+#include "Utils.h"
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -213,6 +214,18 @@ namespace SklepUrzadzeniaMobilne {
 #pragma endregion
 	private: System::Void zwrotbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		//usuniecie z bazy dodac ofc
+		std::vector<Zamowienie> bazaZamowien;
+		Utils::odczytajZamowienia(&bazaZamowien);
+
+
+		for (auto it = bazaZamowien.begin(); it != bazaZamowien.end(); ++it) {
+			if (it->getIdZamowienia() == this->zamowienie->getIdZamowienia()) {
+				bazaZamowien.erase(it);
+				break; // opcjonalnie: usun¹æ tylko pierwsze wyst¹pienie elementu o danym id
+			}
+		}
+
+		Utils::zapiszZamowienie(&bazaZamowien);
 
 		this->Hide();
 	}

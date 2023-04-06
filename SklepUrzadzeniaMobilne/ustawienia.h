@@ -361,7 +361,12 @@ private: System::Void wylogujbutton_Click(System::Object^ sender, System::EventA
 	this->powrotny->Show();
 }
 private: System::Void usunbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 	//usuwanie z bazy
+	std::vector<Uzytkownik> bazaUzytkownikow;
+	Utils::wczytajUzytkownikow(&bazaUzytkownikow);
+
+	Utils::usunUzytkownika(&bazaUzytkownikow, uzalogowany->GetLogin());
 
 	this->wyzszy->Hide();
 	this->powrotny->Show();

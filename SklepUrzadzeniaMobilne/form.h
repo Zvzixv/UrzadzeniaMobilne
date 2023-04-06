@@ -182,6 +182,11 @@ namespace SklepUrzadzeniaMobilne {
 		Utils::wczytajUzytkownikow(&bazaUzytkownikow);
 
 
+		//std::vector<Zamowienie> bazaZamowien;
+		//Utils::odczytajZamowienia(&bazaZamowien);
+		//Utils::usunZamowienie(&bazaZamowien, 3);
+		//Utils::zapiszZamowienie(&bazaZamowien);
+
 		Uzytkownik* zalogowany;
 
 		try {

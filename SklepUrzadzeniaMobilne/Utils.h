@@ -21,7 +21,7 @@ public:
 	static void zapiszBazeUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow);
 	static void zmienHaslo(string login, string haslo);
 	static void zmienAdres(string login, string miasto, string kodPocztowy, string ulica, int numerDomu);
-
+	static bool usunUzytkownika(std::vector<Uzytkownik>* bazaUzytkownikow, string login);
 
 	static bool wczytajBazeProduktow(std::vector<json>* baza);
 	static bool wczytajProdukty(std::vector<Produkt*>* bazaProduktow);
