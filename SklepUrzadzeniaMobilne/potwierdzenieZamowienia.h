@@ -3,6 +3,7 @@
 #include "Produkt.h"
 #include <msclr/marshal_cppstd.h>
 #include "produktOkienko.h"
+#include "Utils.h"
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -29,11 +30,11 @@ namespace SklepUrzadzeniaMobilne {
 		}
 
 		
-		potwierdzenieZamowienia(vector<Produkt*>* k)
+		potwierdzenieZamowienia(vector<Produkt*>* k, Uzytkownik* uz_zal)
 		{
 			InitializeComponent();
 			koszyk = k;
-
+			uz_zalogowany = uz_zal;
 			wyswietlInformacje();
 
 		}
@@ -51,6 +52,7 @@ namespace SklepUrzadzeniaMobilne {
 		}
 
 	private: std::vector<Produkt*>* koszyk;
+	private: Uzytkownik* uz_zalogowany;
 	private: System::Windows::Forms::Label^ label1;
 	protected:
 	private: System::Windows::Forms::Label^ produktylabel;
@@ -148,15 +150,34 @@ namespace SklepUrzadzeniaMobilne {
 #pragma endregion
 	private: System::Void zapiszZamowieniebutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		//nic
+		vector<Zamowienie> zamowienia;
+		Utils::odczytajZamowienia(&zamowienia);
+
+		SYSTEMTIME systemtime;
+		GetLocalTime(&systemtime);
+		String^ data = systemtime.wDay + "." + systemtime.wMonth + "." + systemtime.wYear;
+		string dataFormat = msclr::interop::marshal_as<std::string>(data);
+
+		int noweId = zamowienia.size();
+		Zamowienie noweZamowienie;
+		noweZamowienie.setIdZamowienia(noweId);
+		noweZamowienie.setUzytkownik(*uz_zalogowany);
+		noweZamowienie.setProdukty(*koszyk);
+		noweZamowienie.setDataZlozenia(dataFormat);
+
+		zamowienia.push_back(noweZamowienie);
+
+		Utils::zapiszZamowienie(&zamowienia);
+
 		this->Close();
 	}
-private: System::Void anulujbutton_Click(System::Object^ sender, System::EventArgs^ e) {
-	//nic
-	this->Close();
-}
+	private: System::Void anulujbutton_Click(System::Object^ sender, System::EventArgs^ e) {
+		//nic
+		this->Close();
+	}
 
-	   private: System::Void wyswietlInformacje()
-	   {
+	private: System::Void wyswietlInformacje()
+	{
 		   string informacje;
 
 		   for (auto prod : *koszyk)
@@ -166,6 +187,6 @@ private: System::Void anulujbutton_Click(System::Object^ sender, System::EventAr
 
 		   produktylabel->Text = msclr::interop::marshal_as<System::String^>(informacje);
 		   informacje = "";
-	   }
+	}
 };
 }

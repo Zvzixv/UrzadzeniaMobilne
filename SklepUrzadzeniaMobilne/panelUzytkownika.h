@@ -274,7 +274,7 @@ namespace SklepUrzadzeniaMobilne {
 private: System::Void produktybutton_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	this->panelNawigacyjny->Controls->Clear();
-	ProduktyPanel^ pp = gcnew ProduktyPanel();
+	ProduktyPanel^ pp = gcnew ProduktyPanel(uz_zalogowany);
 	pp->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 	pp->TopLevel = false;
 

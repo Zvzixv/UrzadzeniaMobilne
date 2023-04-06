@@ -43,6 +43,32 @@ namespace SklepUrzadzeniaMobilne {
 
 		}
 
+		ProduktyPanel(Uzytkownik* uz)
+		{
+			InitializeComponent();
+
+			uz_zalogowany = uz;
+
+			std::vector<Produkt*>bazaProduktow;
+			Utils::wczytajProdukty(&bazaProduktow);
+			paneleProduktow = gcnew List <produktOkienko^>();
+
+			for (auto u : bazaProduktow)
+			{
+				produktOkienko^ upanel = gcnew produktOkienko(u);
+				paneleProduktow->Add(upanel);
+
+			}
+
+			for each (produktOkienko ^ panel in paneleProduktow) {
+				panel->TopLevel = false;
+				this->flowLayoutPanel->Controls->Add(panel);
+				panel->Show();
+			}
+
+
+		}
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -57,6 +83,7 @@ namespace SklepUrzadzeniaMobilne {
 
 	private: List<produktOkienko^>^ paneleProduktow;
 	private: std::vector<Produkt*>* koszyk = new std::vector<Produkt*>();
+	private: Uzytkownik* uz_zalogowany;
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel;
 	private: System::Windows::Forms::Button^ finalizacjabutton;
 
@@ -126,7 +153,7 @@ namespace SklepUrzadzeniaMobilne {
 		}
 
 
-		potwierdzenieZamowienia^ pz = gcnew potwierdzenieZamowienia(koszyk);
+		potwierdzenieZamowienia^ pz = gcnew potwierdzenieZamowienia(koszyk, uz_zalogowany);
 
 		pz->ShowDialog();
 	}
