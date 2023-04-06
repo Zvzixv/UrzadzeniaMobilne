@@ -50,15 +50,6 @@ END
 // PNG
 //
 
-IDB_PNG1                PNG                     "C:\\Users\\zuzia\\Downloads\\akcesoria.png"
-
-IDB_PNG2                PNG                     "C:\\Users\\zuzia\\Downloads\\telefon1.png"
-
-IDB_PNG3                PNG                     "C:\\Users\\zuzia\\Downloads\\telefon2.png"
-
-IDB_PNG4                PNG                     "C:\\Users\\zuzia\\Downloads\\tablet.png"
-
-IDB_PNG5                PNG                     "C:\\Users\\zuzia\\Downloads\\laptop.png"
 
 #endif    // Polski (Polska) resources
 /////////////////////////////////////////////////////////////////////////////

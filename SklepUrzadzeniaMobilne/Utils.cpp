@@ -142,6 +142,18 @@ void Utils::zapiszBazeUzytkownikow(std::vector<Uzytkownik>* bazaUzytkownikow) {
 bool Utils::zapiszZamowienie(std::vector<Zamowienie>* bazaZamowien) {
 	json j;
 	for (auto& zamowienie : *bazaZamowien) {
+		json produkty_json = json::array(); // tablica obiektów JSON
+		for (const auto& produkt : zamowienie.getProdukty()) {
+			json produkt_json = {
+				{"id_produktu", produkt->Get_id_produktu()},
+				{"nazwa_produktu", produkt->Get_nazwa()},
+				{"marka", produkt->Get_marka()},
+				{"cena", produkt->Get_cena()},
+				{"typ",produkt->Get_typ_produktu()}
+				
+			};
+			produkty_json.push_back(produkt_json); 
+		}
 		json z = {
 		{"id", zamowienie.getIdZamowienia()},
 		{"data_zlozenia", zamowienie.getDataZlozenia()},
@@ -157,24 +169,15 @@ bool Utils::zapiszZamowienie(std::vector<Zamowienie>* bazaZamowien) {
 				{"id_adresu", zamowienie.getUzytkownik().GetAdres().GetIdAdresu()}
 			}},
 		}},
-		{"produkty", {
-			{"id produktu", 123} // example value, replace with actual data
-		}}
+		{"produkty", produkty_json}
 		};
-	
-
-
-		//data["uzytkownik"]["imie"] = this->_uzytkownik.GetImie();
-		//data["uzytkownik"]["nazwisko"] = this->_uzytkownik.GetNazwisko();
-		//data["uzytkownik"]["adres"] = this->_uzytkownik.GetNazwisko();
-		//data["uzytkownik"]["adres"] = this->_uzytkownik.GetNazwisko();
-
+		j.push_back(z);
 		std::ofstream file("Zamowienia.json");
-		file << z;
+		file << j;
 		file.close();
-		return true;
+		
 }
-
+	return true;
 }
 
 //produkty
