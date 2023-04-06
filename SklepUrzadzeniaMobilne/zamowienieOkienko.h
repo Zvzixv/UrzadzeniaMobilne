@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Zamowienie.h"
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -23,6 +23,12 @@ namespace SklepUrzadzeniaMobilne {
 			//
 		}
 
+		zamowienieOkienko(Zamowienie * z)
+		{
+			InitializeComponent();
+			zamowienie = z;
+		}
+
 
 	protected:
 		/// <summary>
@@ -35,6 +41,8 @@ namespace SklepUrzadzeniaMobilne {
 				delete components;
 			}
 		}
+
+	private: Zamowienie* zamowienie;
 	private: System::Windows::Forms::Label^ label1;
 	protected:
 	private: System::Windows::Forms::Label^ label2;

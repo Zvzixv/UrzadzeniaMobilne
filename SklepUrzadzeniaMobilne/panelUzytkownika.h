@@ -284,7 +284,7 @@ private: System::Void produktybutton_Click(System::Object^ sender, System::Event
 }
 private: System::Void zamowieniabutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->panelNawigacyjny->Controls->Clear();
-	zamowieniaPanel^ zp = gcnew zamowieniaPanel();
+	zamowieniaPanel^ zp = gcnew zamowieniaPanel(uz_zalogowany);
 	zp->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 	zp->TopLevel = false;
 

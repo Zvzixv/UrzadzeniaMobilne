@@ -26,7 +26,9 @@ public:
 	static bool wczytajBazeProduktow(std::vector<json>* baza);
 	static bool wczytajProdukty(std::vector<Produkt*>* bazaProduktow);
 	static void zapiszBazeProduktow(std::vector<Produkt*>* bazaProduktow);
-	static bool zapiszZamowienie(std::vector<Zamowienie>* bazaZamowien);
 
+
+	static bool zapiszZamowienie(std::vector<Zamowienie>* bazaZamowien);
+	static bool odczytajZamowienia(std::vector<Zamowienie>* bazaZamowien);
 
 };

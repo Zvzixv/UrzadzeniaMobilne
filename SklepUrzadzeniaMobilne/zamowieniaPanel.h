@@ -1,5 +1,8 @@
 #pragma once
 #include "zamowienieOkienko.h"
+#include "Zamowienie.h"
+#include"Utils.h"
+using namespace System::Collections::Generic;
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -18,27 +21,51 @@ namespace SklepUrzadzeniaMobilne {
 		zamowieniaPanel(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
 
-			zamowienieOkienko^ zam1 = gcnew zamowienieOkienko();
-			zamowienieOkienko^ zam2 = gcnew zamowienieOkienko();
-			zamowienieOkienko^ zam3 = gcnew zamowienieOkienko();
+		}
+
+		zamowieniaPanel(Uzytkownik* zal)
+		{
+			InitializeComponent();
+
+			uz_zalogowany = zal;
+			vector<Zamowienie>* zamowienia = new vector<Zamowienie>;
+			Utils::odczytajZamowienia(zamowienia);
+			List<zamowienieOkienko^>^ paneleZamowien = gcnew List<zamowienieOkienko^>();
+
+			if (uz_zalogowany->GetRola() == "Administrator")
+			{
+				for (auto u : *zamowienia)
+				{
+					Zamowienie* uwskaznik = new Zamowienie(u);
+					zamowienieOkienko^ upanel = gcnew zamowienieOkienko(uwskaznik);
+					paneleZamowien->Add(upanel);
+
+				}
+
+			}
+			else if (uz_zalogowany->GetRola() == "Uzytkownik")
+			{
+					for (auto u : *zamowienia)
+					{
+						if (uz_zalogowany->GetLogin() == u.getUzytkownik().GetLogin())
+						{
+							Zamowienie* uwskaznik = new Zamowienie(u);
+							zamowienieOkienko^ upanel = gcnew zamowienieOkienko(uwskaznik);
+							paneleZamowien->Add(upanel);
+						}
+
+					}
+			}
 
 
-			zam1->TopLevel = false;
-			this->flowLayoutPanel->Controls->Add(zam1);
-			zam1->Show();
 
+			for each (zamowienieOkienko ^ panel in paneleZamowien) {
+				panel->TopLevel = false;
+				this->flowLayoutPanel->Controls->Add(panel);
+				panel->Show();
+			}
 
-			zam2->TopLevel = false;
-			this->flowLayoutPanel->Controls->Add(zam2);
-			zam2->Show();
-
-			zam3->TopLevel = false;
-			this->flowLayoutPanel->Controls->Add(zam3);
-			zam3->Show();
 		}
 
 	protected:
@@ -52,6 +79,8 @@ namespace SklepUrzadzeniaMobilne {
 				delete components;
 			}
 		}
+
+	private: Uzytkownik* uz_zalogowany;
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel;
 
 

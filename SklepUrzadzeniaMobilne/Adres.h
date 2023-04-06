@@ -15,6 +15,7 @@ class Adres
 	public:
 		Adres();
 		Adres(int id_adresu, string miasto, string kod_pocztowy, string ulica, int numer_domu);
+		Adres(string miasto, string kod_pocztowy, string ulica, int numer_domu);
 		Adres GetAdres();
 		void SetAdres(int id_adresu, string miasto, string kod_pocztowy, string ulica, int numer_domu);
 		bool EditAdres(Adres adres);

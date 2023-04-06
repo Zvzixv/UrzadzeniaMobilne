@@ -53,6 +53,7 @@ namespace SklepUrzadzeniaMobilne {
 			}
 		}
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel;
+	private: System::Windows::Forms::Label^ label1;
 	protected:
 
 	protected:
@@ -71,6 +72,7 @@ namespace SklepUrzadzeniaMobilne {
 		void InitializeComponent(void)
 		{
 			this->flowLayoutPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// flowLayoutPanel
@@ -78,8 +80,20 @@ namespace SklepUrzadzeniaMobilne {
 			this->flowLayoutPanel->AutoScroll = true;
 			this->flowLayoutPanel->Location = System::Drawing::Point(12, 12);
 			this->flowLayoutPanel->Name = L"flowLayoutPanel";
-			this->flowLayoutPanel->Size = System::Drawing::Size(518, 247);
+			this->flowLayoutPanel->Size = System::Drawing::Size(518, 229);
 			this->flowLayoutPanel->TabIndex = 0;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label1->ForeColor = System::Drawing::Color::SeaShell;
+			this->label1->Location = System::Drawing::Point(9, 245);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(492, 17);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"Jeœli zmieniamy rolê samemu sobie to zmiany zostan¹ widoczne po przelogowaniu.";
 			// 
 			// uzytkownicyPanel
 			// 
@@ -87,11 +101,13 @@ namespace SklepUrzadzeniaMobilne {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SaddleBrown;
 			this->ClientSize = System::Drawing::Size(542, 271);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->flowLayoutPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"uzytkownicyPanel";
 			this->Text = L"uzytkownicyPanel";
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
