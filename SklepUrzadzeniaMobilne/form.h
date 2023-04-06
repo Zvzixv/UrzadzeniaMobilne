@@ -74,7 +74,7 @@ namespace SklepUrzadzeniaMobilne {
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(289, 57);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(147, 77);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
@@ -111,7 +111,7 @@ namespace SklepUrzadzeniaMobilne {
 			// 
 			this->uzytkowniktextBox->ForeColor = System::Drawing::SystemColors::WindowText;
 			this->uzytkowniktextBox->Location = System::Drawing::Point(307, 162);
-			this->uzytkowniktextBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->uzytkowniktextBox->Margin = System::Windows::Forms::Padding(2);
 			this->uzytkowniktextBox->Name = L"uzytkowniktextBox";
 			this->uzytkowniktextBox->Size = System::Drawing::Size(105, 20);
 			this->uzytkowniktextBox->TabIndex = 2;
@@ -119,7 +119,7 @@ namespace SklepUrzadzeniaMobilne {
 			// haslotextBox
 			// 
 			this->haslotextBox->Location = System::Drawing::Point(307, 202);
-			this->haslotextBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->haslotextBox->Margin = System::Windows::Forms::Padding(2);
 			this->haslotextBox->Name = L"haslotextBox";
 			this->haslotextBox->Size = System::Drawing::Size(105, 20);
 			this->haslotextBox->TabIndex = 2;
@@ -131,7 +131,7 @@ namespace SklepUrzadzeniaMobilne {
 				static_cast<System::Byte>(0)));
 			this->zalogujbutton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->zalogujbutton->Location = System::Drawing::Point(325, 233);
-			this->zalogujbutton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->zalogujbutton->Margin = System::Windows::Forms::Padding(2);
 			this->zalogujbutton->Name = L"zalogujbutton";
 			this->zalogujbutton->Size = System::Drawing::Size(76, 27);
 			this->zalogujbutton->TabIndex = 3;
@@ -146,7 +146,7 @@ namespace SklepUrzadzeniaMobilne {
 				static_cast<System::Byte>(0)));
 			this->stworzKontobutton->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->stworzKontobutton->Location = System::Drawing::Point(325, 273);
-			this->stworzKontobutton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->stworzKontobutton->Margin = System::Windows::Forms::Padding(2);
 			this->stworzKontobutton->Name = L"stworzKontobutton";
 			this->stworzKontobutton->Size = System::Drawing::Size(76, 47);
 			this->stworzKontobutton->TabIndex = 3;
@@ -168,6 +168,7 @@ namespace SklepUrzadzeniaMobilne {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->pictureBox1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::SizableToolWindow;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"form";
 			this->Text = L"Sklep z urządzeniami mobilnymi";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();

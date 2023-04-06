@@ -82,7 +82,7 @@ namespace SklepUrzadzeniaMobilne {
 
 	private: Uzytkownik* uz_zalogowany;
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel;
-	private: System::Windows::Forms::Label^ label1;
+
 
 
 	private:
@@ -99,7 +99,6 @@ namespace SklepUrzadzeniaMobilne {
 		void InitializeComponent(void)
 		{
 			this->flowLayoutPanel = (gcnew System::Windows::Forms::FlowLayoutPanel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// flowLayoutPanel
@@ -107,20 +106,8 @@ namespace SklepUrzadzeniaMobilne {
 			this->flowLayoutPanel->AutoScroll = true;
 			this->flowLayoutPanel->Location = System::Drawing::Point(12, 12);
 			this->flowLayoutPanel->Name = L"flowLayoutPanel";
-			this->flowLayoutPanel->Size = System::Drawing::Size(534, 264);
+			this->flowLayoutPanel->Size = System::Drawing::Size(534, 286);
 			this->flowLayoutPanel->TabIndex = 0;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(238)));
-			this->label1->ForeColor = System::Drawing::Color::SeaShell;
-			this->label1->Location = System::Drawing::Point(12, 283);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(440, 16);
-			this->label1->TabIndex = 1;
-			this->label1->Text = L"Zwrócone zamówienia mog¹ zostaæ zaktualizowane po ponowym zalogowaniu";
 			// 
 			// zamowieniaPanel
 			// 
@@ -128,14 +115,12 @@ namespace SklepUrzadzeniaMobilne {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SaddleBrown;
 			this->ClientSize = System::Drawing::Size(558, 310);
-			this->Controls->Add(this->label1);
 			this->Controls->Add(this->flowLayoutPanel);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"zamowieniaPanel";
 			this->Text = L"zamowieniaPanel";
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
