@@ -1,4 +1,6 @@
-
+#define _CRTDBG_MAP_ALLOC
+#include <cstdlib>
+#include <crtdbg.h>
 #include "form.h"
 using namespace System;
 
