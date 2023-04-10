@@ -204,12 +204,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form.resx">
       <DependentUpon>form.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="kontakt.resx">
       <DependentUpon>kontakt.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="panelAdministratora.resx">
       <DependentUpon>panelAdministratora.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="panelUzytkownika.resx">
       <DependentUpon>panelUzytkownika.h</DependentUpon>

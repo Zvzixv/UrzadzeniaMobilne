@@ -83,7 +83,7 @@ namespace SklepUrzadzeniaMobilne {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -272,47 +272,47 @@ namespace SklepUrzadzeniaMobilne {
 		du->Show();
 		this->label1->Text = "Panel administratora";
 	}
-private: System::Void produktybutton_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->panelNawigacyjny->Controls->Clear();
-	ProduktyPanel^ pp = gcnew ProduktyPanel(uz_zalogowany);
-	pp->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-	pp->TopLevel = false;
+	private: System::Void produktybutton_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->panelNawigacyjny->Controls->Clear();
+		ProduktyPanel^ pp = gcnew ProduktyPanel(uz_zalogowany);
+		pp->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+		pp->TopLevel = false;
 
-	this->panelNawigacyjny->Controls->Add(pp);
-	pp->Show();
-	this->label1->Text = "Produkty";
-}
-private: System::Void uzytkownicybutton_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->panelNawigacyjny->Controls->Add(pp);
+		pp->Show();
+		this->label1->Text = "Produkty";
+	}
+	private: System::Void uzytkownicybutton_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	this->panelNawigacyjny->Controls->Clear();
-	uzytkownicyPanel^ u = gcnew uzytkownicyPanel();
-	u->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-	u->TopLevel = false;
+		this->panelNawigacyjny->Controls->Clear();
+		uzytkownicyPanel^ u = gcnew uzytkownicyPanel();
+		u->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+		u->TopLevel = false;
 
-	this->panelNawigacyjny->Controls->Add(u);
-	u->Show();
-	this->label1->Text = "Użytkownicy";
-}
-private: System::Void zamowieniabutton_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->panelNawigacyjny->Controls->Clear();
-	zamowieniaPanel^ zp = gcnew zamowieniaPanel(uz_zalogowany);
-	zp->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-	zp->TopLevel = false;
+		this->panelNawigacyjny->Controls->Add(u);
+		u->Show();
+		this->label1->Text = "Użytkownicy";
+	}
+	private: System::Void zamowieniabutton_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->panelNawigacyjny->Controls->Clear();
+		zamowieniaPanel^ zp = gcnew zamowieniaPanel(uz_zalogowany);
+		zp->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+		zp->TopLevel = false;
 
-	this->panelNawigacyjny->Controls->Add(zp);
-	zp->Show();
-	this->label1->Text = "Zamówienia";
-}
-private: System::Void ustawieniabutton_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->panelNawigacyjny->Controls->Add(zp);
+		zp->Show();
+		this->label1->Text = "Zamówienia";
+	}
+	private: System::Void ustawieniabutton_Click(System::Object^ sender, System::EventArgs^ e) {
 
-	this->panelNawigacyjny->Controls->Clear();
-	ustawienia^ u = gcnew ustawienia(powrotny, this, uz_zalogowany);
-	u->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-	u->TopLevel = false;
+		this->panelNawigacyjny->Controls->Clear();
+		ustawienia^ u = gcnew ustawienia(powrotny, this, uz_zalogowany);
+		u->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+		u->TopLevel = false;
 
-	this->panelNawigacyjny->Controls->Add(u);
-	u->Show();
-	this->label1->Text = "Ustawienia";
-}
-};
+		this->panelNawigacyjny->Controls->Add(u);
+		u->Show();
+		this->label1->Text = "Ustawienia";
+	}
+	};
 }
