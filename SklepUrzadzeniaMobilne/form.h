@@ -23,7 +23,6 @@ namespace SklepUrzadzeniaMobilne {
 		form(void)
 		{
 			InitializeComponent();
-
 		}
 
 	protected:
@@ -179,15 +178,7 @@ namespace SklepUrzadzeniaMobilne {
 #pragma endregion
 	private: System::Void zalogujbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::vector<Uzytkownik> bazaUzytkownikow ;
-
 		Utils::wczytajUzytkownikow(&bazaUzytkownikow);
-
-
-		//std::vector<Zamowienie> bazaZamowien;
-		//Utils::odczytajZamowienia(&bazaZamowien);
-		//Utils::usunZamowienie(&bazaZamowien, 3);
-		//Utils::zapiszZamowienie(&bazaZamowien);
-
 		Uzytkownik* zalogowany;
 
 		try {
@@ -198,7 +189,6 @@ namespace SklepUrzadzeniaMobilne {
 			MessageBox::Show("Błąd. Sprawdź poprawność wpisanych pól.");
 			return;
 		}
-
 
 		if (zalogowany->GetRola() == "Uzytkownik")
 		{
@@ -212,16 +202,11 @@ namespace SklepUrzadzeniaMobilne {
 			this->Hide();
 			pa->Show();
 		}
-		else
-		{
-			MessageBox::Show("Problemy Najmana.");
-		}
 
 		uzytkowniktextBox->Text = "";
 		haslotextBox->Text = "";
-
-
 	}
+
 	private: System::Void stworzKontobutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		rejestracja^ r = gcnew rejestracja(this);
 
@@ -229,11 +214,10 @@ namespace SklepUrzadzeniaMobilne {
 		r->Show();
 
 	}
+
 	private: System::Void wczytajUzytkownikow() {
 		vector<Uzytkownik> listaUzytkownikow;
-
 	}
-
 
 	private: Uzytkownik* login(std::vector<Uzytkownik> baza, string login, string haslo)
 	{

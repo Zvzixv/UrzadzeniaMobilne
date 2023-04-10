@@ -272,6 +272,7 @@ bool Utils::wczytajBazeProduktow(std::vector<json>* baza) {
 		return true;
 	// Konwertowanie stringa JSON na wektor obiektów JSON
 	*baza = json::parse(jsonStr);
+
 	return true;
 }
 
@@ -282,6 +283,7 @@ bool Utils::wczytajProdukty(std::vector<Produkt*>* bazaProduktow) {
 	std::ifstream plik("Produkty.json");
 	if (!plik) {
 		std::cerr << "Nie mo¿na otworzyæ pliku Produkty.json" << std::endl;
+
 		return false;
 	}
 
@@ -351,53 +353,3 @@ void Utils::zapiszBazeProduktow(std::vector<Produkt*>* bazaProduktow) {
 		output << j;
 	}
 }
-
-
-
-
-//z vectora do json
-/*
-void zapiszProdukty(const std::vector<Produkt*>& produkty, const std::string& nazwaPliku) {
-	// Utwórz pusty obiekt JSON
-	json dane;
-
-	// Iteruj przez ka¿dy produkt w wektorze i dodaj jego dane do obiektu JSON
-	for (const auto& produkt : produkty) {
-		json daneProduktu;
-		daneProduktu["typ"] = produkt->typ();
-		daneProduktu["nazwa"] = produkt->nazwa();
-		daneProduktu["cena"] = produkt->cena();
-
-		if (produkt->typ() == "Tablet") {
-			Tablet* tablet = dynamic_cast<Tablet*>(produkt);
-			daneProduktu["rozmiarEkranu"] = tablet->rozmiarEkranu();
-			daneProduktu["producent"] = tablet->producent();
-		}
-		else if (produkt->typ() == "Telefon") {
-			Telefon* telefon = dynamic_cast<Telefon*>(produkt);
-			daneProduktu["model"] = telefon->model();
-			daneProduktu["producent"] = telefon->producent();
-		}
-		else if (produkt->typ() == "Laptop") {
-			Laptop* laptop = dynamic_cast<Laptop*>(produkt);
-			daneProduktu["procesor"] = laptop->procesor();
-			daneProduktu["producent"] = laptop->producent();
-		}
-		else if (produkt->typ() == "Akcesoria") {
-			Akcesoria* akcesoria = dynamic_cast<Akcesoria*>(produkt);
-			daneProduktu["rodzaj"] = akcesoria->rodzaj();
-		}
-
-		dane.push_back(daneProduktu);
-	}
-
-	// Zapisz obiekt JSON do pliku
-	std::ofstream plik(nazwaPliku);
-	if (!plik) {
-		std::cerr << "Nie mo¿na otworzyæ pliku " << nazwaPliku << " do zapisu" << std::endl;
-		return;
-	}
-
-	plik << std::setw(4) << dane << std::endl;
-}
-*/

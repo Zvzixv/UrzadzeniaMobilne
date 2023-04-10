@@ -1,6 +1,5 @@
 #include "Zamowienie.h"
 
-
 Zamowienie::Zamowienie() {
     _id_zamowienia = 0;
     _data_zlozenia = "";

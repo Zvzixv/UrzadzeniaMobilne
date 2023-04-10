@@ -29,7 +29,6 @@ namespace SklepUrzadzeniaMobilne {
 			//
 		}
 
-		
 		potwierdzenieZamowienia(vector<Produkt*>* k, Uzytkownik* uz_zal)
 		{
 			InitializeComponent();
@@ -176,14 +175,12 @@ namespace SklepUrzadzeniaMobilne {
 		this->Close();
 	}
 	private: System::Void anulujbutton_Click(System::Object^ sender, System::EventArgs^ e) {
-		//nic
 		this->Close();
 	}
 
 	private: System::Void wyswietlInformacje()
 	{
 		   string informacje;
-
 		   for (auto prod : *koszyk)
 		   {
 			   informacje += prod->Get_typ_produktu() + " " + prod->Get_marka() + " " + prod->Get_nazwa() + " - " + tostr(prod->Get_cena())+ " PLN\n";

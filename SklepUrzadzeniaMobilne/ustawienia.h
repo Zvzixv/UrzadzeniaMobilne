@@ -16,12 +16,15 @@ namespace SklepUrzadzeniaMobilne {
 	public ref class ustawienia : public System::Windows::Forms::Form
 	{
 	public:
+		bool starehasloklikniete = false;
+		bool nowehasloklikniete = false;
+		bool nowemiastoklikniete = false;
+		bool nowykodklikniete = false;
+		bool nowaulicakliniete = false;
+		bool nowynumerklikniete = false;
 		ustawienia(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
 		}
 		ustawienia(Form^ f, Form^ w, Uzytkownik* zalogowany)
 		{
@@ -51,30 +54,15 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Button^ zmianaHaslabutton;
-
 	private: System::Windows::Forms::TextBox^ noweHaslotextBox;
-
 	private: System::Windows::Forms::TextBox^ stareHaslotextBox;
-
-		   bool starehasloklikniete = false;
-		   bool nowehasloklikniete = false;
-
-		   bool nowemiastoklikniete = false;
-		   bool nowykodklikniete = false;
-		   bool nowaulicakliniete = false;
-		   bool nowynumerklikniete = false;
-
 	private: System::Windows::Forms::Button^ wylogujbutton;
 	private: System::Windows::Forms::Button^ usunbutton;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::TextBox^ noweMiastotextBox;
 	private: System::Windows::Forms::TextBox^ nowyNumertextBox;
-
-
 	private: System::Windows::Forms::TextBox^ nowaUlicatextBox;
-
 	private: System::Windows::Forms::TextBox^ nowyKodtextBox;
-
 	private: System::Windows::Forms::Button^ zmianaAdresubutton;
 
 	private:
@@ -329,7 +317,6 @@ private: System::Void stareHaslotextBox_Validated(System::Object^ sender, System
 		this->stareHaslotextBox->Text = "";
 		starehasloklikniete = true;
 		this->stareHaslotextBox->PasswordChar = '*';
-		//this->stareHaslotextBox->UseSystemPasswordChar = true; to z jakiegos powodu wyrzuca wyjątek idk
 	}
 }
 private: System::Void stareHaslotextBox_Leave(System::Object^ sender, System::EventArgs^ e) {
@@ -362,7 +349,6 @@ private: System::Void wylogujbutton_Click(System::Object^ sender, System::EventA
 }
 private: System::Void usunbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	
-	//usuwanie z bazy
 	std::vector<Uzytkownik> bazaUzytkownikow;
 	Utils::wczytajUzytkownikow(&bazaUzytkownikow);
 
@@ -437,8 +423,6 @@ private: System::Void nowyNumertextBox_Leave(System::Object^ sender, System::Eve
 	}
 }
 
-
-
 private: System::Void zmianaAdresubutton_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	string noweMiasto; string nowyKod; string nowaUlica; string nowyNumerDomu;
@@ -447,7 +431,6 @@ private: System::Void zmianaAdresubutton_Click(System::Object^ sender, System::E
 	this->nowyKodtextBox->Text == "Wpisz tutaj nowy kod pocztowy" ? nowyKod = "" : nowyKod = msclr::interop::marshal_as<std::string>(this->nowyKodtextBox->Text);
 	this->nowaUlicatextBox->Text == "Wpisz tutaj nową ulicę" ? nowaUlica = "" : nowaUlica = msclr::interop::marshal_as<std::string>(this->nowaUlicatextBox->Text);
 	this->nowyNumertextBox->Text == "Wpisz tutaj nowy numer domu" ? nowyNumerDomu = "" : nowyNumerDomu = msclr::interop::marshal_as<std::string>(this->nowyNumertextBox->Text);
-
 	int nowyNumerDomuInt;
 
 	if (nowyNumerDomu == "") nowyNumerDomuInt = 0;

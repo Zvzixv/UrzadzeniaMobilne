@@ -28,9 +28,6 @@ namespace SklepUrzadzeniaMobilne {
 		produktOkienko(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: W tym miejscu dodaj kod konstruktora
-			//
 		}
 
 		produktOkienko(Produkt* p)
@@ -63,7 +60,6 @@ namespace SklepUrzadzeniaMobilne {
 			}
 
 		}
-
 
 	protected:
 		/// <summary>
@@ -192,7 +188,6 @@ namespace SklepUrzadzeniaMobilne {
 #pragma endregion
 	private: System::Void dodajButton_Click(System::Object^ sender, System::EventArgs^ e) {
 		czyKupowany = true;
-		
 	}
 
 	public: System::Boolean kupowanyGetData()

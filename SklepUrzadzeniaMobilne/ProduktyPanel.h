@@ -22,7 +22,6 @@ namespace SklepUrzadzeniaMobilne {
 		{
 			InitializeComponent();
 			
-
 			std::vector<Produkt*>bazaProduktow;
 			Utils::wczytajProdukty(&bazaProduktow);
 			paneleProduktow = gcnew List <produktOkienko^>();
@@ -39,7 +38,6 @@ namespace SklepUrzadzeniaMobilne {
 				this->flowLayoutPanel->Controls->Add(panel);
 				panel->Show();
 			}
-
 
 		}
 
@@ -151,7 +149,6 @@ namespace SklepUrzadzeniaMobilne {
 				koszyk->push_back(panel->produkt);
 			}
 		}
-
 
 		potwierdzenieZamowienia^ pz = gcnew potwierdzenieZamowienia(koszyk, uz_zalogowany);
 

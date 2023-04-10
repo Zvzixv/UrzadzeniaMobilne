@@ -21,7 +21,6 @@ namespace SklepUrzadzeniaMobilne {
 		zamowieniaPanel(void)
 		{
 			InitializeComponent();
-
 		}
 
 		zamowieniaPanel(Uzytkownik* zal)
@@ -57,8 +56,6 @@ namespace SklepUrzadzeniaMobilne {
 
 					}
 			}
-
-
 
 			for each (zamowienieOkienko ^ panel in paneleZamowien) {
 				panel->TopLevel = false;

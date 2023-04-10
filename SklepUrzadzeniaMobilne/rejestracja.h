@@ -20,7 +20,7 @@ namespace SklepUrzadzeniaMobilne {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace std;
-	//int id = 0; <--- wysryw na sto fajerek
+
 	/// <summary>
 	/// Summary for rejestracja
 	/// </summary>
@@ -30,16 +30,12 @@ namespace SklepUrzadzeniaMobilne {
 		rejestracja(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
 		}
 
 		rejestracja(Form ^f)
 		{
 			InitializeComponent();
 			formpowrotny = f;
-
 		}
 
 	protected:
@@ -67,23 +63,13 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Windows::Forms::TextBox^ logintextBox;
 	private: System::Windows::Forms::TextBox^ imietextBox;
 	private: System::Windows::Forms::TextBox^ nazwiskotextBox;
-
-
-
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::TextBox^ haslo1textBox;
 	private: System::Windows::Forms::TextBox^ haslo2textBox;
 	private: System::Windows::Forms::TextBox^ ulicatextBox;
 	private: System::Windows::Forms::TextBox^ miastotextBox;
 	private: System::Windows::Forms::TextBox^ numertextBox;
-
-
-
-
-
 	private: System::Windows::Forms::TextBox^ kodtextBox;
-
-
 	private: System::Windows::Forms::Button^ stworzKontobutton;
 	private: System::Windows::Forms::Button^ powrotbutton;
 
@@ -380,12 +366,8 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Void stworzKontobutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::vector<json> array;
 		bool result = Utils::wczytajBaze(&array);
-		//if (result == false) {
-		//	return;
-		//}
-		//zabezpieczenia
 
-		if (logintextBox->Text == "") //&& jest juz w bazie
+		if (logintextBox->Text == "")
 		{
 			MessageBox::Show("Login jest pusty");
 			return;
@@ -431,19 +413,12 @@ namespace SklepUrzadzeniaMobilne {
 			return;
 		}
 
-		//zmieniuc string na int z tych textboxow bo nic nie dziala 
 		int numerDomuInt = stoi(msclr::interop::marshal_as<std::string>(numertextBox->Text));
-
 		std::string unmanaged = msclr::interop::marshal_as<std::string>(miastotextBox->Text);
 		Adres* adr = new Adres(0, msclr::interop::marshal_as<std::string>(miastotextBox->Text), msclr::interop::marshal_as<std::string>(kodtextBox->Text), msclr::interop::marshal_as<std::string>(ulicatextBox->Text), numerDomuInt);
 		Uzytkownik* uz = new Uzytkownik(0, msclr::interop::marshal_as<std::string>(logintextBox->Text), msclr::interop::marshal_as<std::string>(imietextBox->Text), msclr::interop::marshal_as<std::string>(nazwiskotextBox->Text), msclr::interop::marshal_as<std::string>(haslo1textBox->Text), "Uzytkownik", *adr);
 
 		uz->zapiszUzytkownika(&array);
-		//obsługa zapisania konta do bazy 
-
-
-		//powrót
-
 		this->Hide();
 		this->formpowrotny->Show();
 	}

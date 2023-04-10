@@ -22,9 +22,6 @@ namespace SklepUrzadzeniaMobilne {
 		zamowienieOkienko(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: W tym miejscu dodaj kod konstruktora
-			//
 		}
 
 		zamowienieOkienko(Zamowienie * z, Uzytkownik* zalogowany)

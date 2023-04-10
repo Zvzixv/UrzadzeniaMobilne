@@ -1,6 +1,5 @@
 #include "Tablet.h"
 
-
 bool Tablet::zapiszProdukt() {
 	json data;
 	data["id"] = this->Get_id_produktu();
