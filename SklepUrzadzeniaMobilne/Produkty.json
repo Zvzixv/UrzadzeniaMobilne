@@ -1,1 +1,30 @@
-[{"cena":500.0,"id_produktu":1,"marka":"Tablaxy","nazwa":"Samsung","typ_produktu":"Tablet"},{"cena":1000.0,"id_produktu":2,"marka":"huajej","nazwa":"400","typ_produktu":"Telefon"},{"cena":50.0,"id_produktu":3,"marka":"apel","nazwa":"ladowarka","typ_produktu":"Akcesoria"},{"cena":5000.0,"id_produktu":4,"marka":"asus","nazwa":"aspire","typ_produktu":"Laptop"}]
+[
+  {
+    "cena": 900.0,
+    "id_produktu": 1,
+    "marka": "Galaxy Tab",
+    "nazwa": "Samsung",
+    "typ_produktu": "Tablet"
+  },
+  {
+    "cena": 1000.0,
+    "id_produktu": 2,
+    "marka": "Huawei",
+    "nazwa": "P20",
+    "typ_produktu": "Telefon"
+  },
+  {
+    "cena": 50.0,
+    "id_produktu": 3,
+    "marka": "Apple",
+    "nazwa": "Kabel",
+    "typ_produktu": "Akcesoria"
+  },
+  {
+    "cena": 5000.0,
+    "id_produktu": 4,
+    "marka": "Asus",
+    "nazwa": "Aspire 5",
+    "typ_produktu": "Laptop"
+  }
+]
