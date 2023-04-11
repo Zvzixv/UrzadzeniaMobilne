@@ -1,7 +1,7 @@
 #pragma once
 #include "zamowienieOkienko.h"
 #include "Zamowienie.h"
-#include"Utils.h"
+#include"SerializatorZamowienia.h"
 using namespace System::Collections::Generic;
 namespace SklepUrzadzeniaMobilne {
 
@@ -29,7 +29,7 @@ namespace SklepUrzadzeniaMobilne {
 
 			uz_zalogowany = zal;
 			vector<Zamowienie>* zamowienia = new vector<Zamowienie>;
-			Utils::odczytajZamowienia(zamowienia);
+			SerializatorZamowienia::odczytajZamowienia(zamowienia);
 			List<zamowienieOkienko^>^ paneleZamowien = gcnew List<zamowienieOkienko^>();
 
 			if (uz_zalogowany->GetRola() == "Administrator")

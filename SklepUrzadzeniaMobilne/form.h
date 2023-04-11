@@ -3,7 +3,7 @@
 #include "PanelAdministratora.h"
 #include "rejestracja.h"
 #include "Uzytkownik.h"
-#include "Utils.h"
+#include "SerializatorUzytkownicy.h"
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -178,7 +178,7 @@ namespace SklepUrzadzeniaMobilne {
 #pragma endregion
 	private: System::Void zalogujbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::vector<Uzytkownik> bazaUzytkownikow ;
-		Utils::wczytajUzytkownikow(&bazaUzytkownikow);
+		SerializatorUzytkownicy::wczytajUzytkownikow(&bazaUzytkownikow);
 		Uzytkownik* zalogowany;
 
 		try {

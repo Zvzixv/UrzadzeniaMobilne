@@ -3,7 +3,7 @@
 #include "Produkt.h"
 #include <msclr/marshal_cppstd.h>
 #include "produktOkienko.h"
-#include "Utils.h"
+#include "SerializatorZamowienia.h"
 namespace SklepUrzadzeniaMobilne {
 
 	using namespace System;
@@ -150,7 +150,7 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Void zapiszZamowieniebutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		//nic
 		vector<Zamowienie> zamowienia;
-		Utils::odczytajZamowienia(&zamowienia);
+		SerializatorZamowienia::odczytajZamowienia(&zamowienia);
 
 		SYSTEMTIME systemtime;
 		GetLocalTime(&systemtime);
@@ -170,7 +170,7 @@ namespace SklepUrzadzeniaMobilne {
 
 		zamowienia.push_back(noweZamowienie);
 
-		Utils::zapiszZamowienie(&zamowienia);
+		SerializatorZamowienia::zapiszZamowienie(&zamowienia);
 
 		this->Close();
 	}

@@ -1,7 +1,8 @@
 #pragma once
 #include "produktOkienko.h"
 #include "potwierdzenieZamowienia.h"
-#include "Utils.h"
+#include "SerializatorZamowienia.h"
+#include "SerializatorProdukty.h"
 using namespace System::Collections::Generic;
 namespace SklepUrzadzeniaMobilne {
 
@@ -23,7 +24,7 @@ namespace SklepUrzadzeniaMobilne {
 			InitializeComponent();
 			
 			std::vector<Produkt*>bazaProduktow;
-			Utils::wczytajProdukty(&bazaProduktow);
+			SerializatorProdukty::wczytajProdukty(&bazaProduktow);
 			paneleProduktow = gcnew List <produktOkienko^>();
 
 			for (auto u : bazaProduktow)
@@ -48,7 +49,7 @@ namespace SklepUrzadzeniaMobilne {
 			uz_zalogowany = uz;
 
 			std::vector<Produkt*>bazaProduktow;
-			Utils::wczytajProdukty(&bazaProduktow);
+			SerializatorProdukty::wczytajProdukty(&bazaProduktow);
 			paneleProduktow = gcnew List <produktOkienko^>();
 
 			for (auto u : bazaProduktow)

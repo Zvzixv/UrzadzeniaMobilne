@@ -22,6 +22,12 @@
     <Filter Include="Pliki nagłówkowe\Model">
       <UniqueIdentifier>{175ee78e-adc5-41b1-8cce-3c90c430ed74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki nagłówkowe\Repozytorium">
+      <UniqueIdentifier>{de7e34fb-4106-4fea-9d31-2d646cbcc832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\Repozytorium">
+      <UniqueIdentifier>{e4bc113c-1652-43a8-b612-78eaff033f8b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Adres.cpp">
@@ -90,8 +96,14 @@
     <ClCompile Include="Akcesorie.cpp">
       <Filter>Pliki źródłowe\Model</Filter>
     </ClCompile>
-    <ClCompile Include="Utils.cpp">
-      <Filter>Pliki źródłowe</Filter>
+    <ClCompile Include="SerializatorProdukty.cpp">
+      <Filter>Pliki źródłowe\Repozytorium</Filter>
+    </ClCompile>
+    <ClCompile Include="SerializatorUzytkownicy.cpp">
+      <Filter>Pliki źródłowe\Repozytorium</Filter>
+    </ClCompile>
+    <ClCompile Include="SerializatorZamowienia.cpp">
+      <Filter>Pliki źródłowe\Repozytorium</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -164,8 +176,14 @@
     <ClInclude Include="uzytkownikOkienko.h">
       <Filter>Pliki źródłowe</Filter>
     </ClInclude>
-    <ClInclude Include="Utils.h">
-      <Filter>Pliki nagłówkowe</Filter>
+    <ClInclude Include="SerializatorZamowienia.h">
+      <Filter>Pliki nagłówkowe\Repozytorium</Filter>
+    </ClInclude>
+    <ClInclude Include="SerializatorProdukty.h">
+      <Filter>Pliki nagłówkowe\Repozytorium</Filter>
+    </ClInclude>
+    <ClInclude Include="SerializatorUzytkownicy.h">
+      <Filter>Pliki nagłówkowe\Repozytorium</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

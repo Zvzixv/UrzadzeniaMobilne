@@ -6,7 +6,7 @@
 #include "Adres.h"
 #include <msclr\marshal_cppstd.h>
 #include <stdlib.h>
-#include "Utils.h"
+#include "SerializatorUzytkownicy.h"
 
 using namespace System::Runtime::InteropServices;
 
@@ -365,7 +365,7 @@ namespace SklepUrzadzeniaMobilne {
 #pragma endregion
 	private: System::Void stworzKontobutton_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::vector<json> array;
-		bool result = Utils::wczytajBaze(&array);
+		bool result = SerializatorUzytkownicy::wczytajBaze(&array);
 
 		if (logintextBox->Text == "")
 		{

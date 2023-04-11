@@ -133,10 +133,12 @@
     <ClCompile Include="produktOkienko.cpp" />
     <ClCompile Include="produktyPanel.cpp" />
     <ClCompile Include="rejestracja.cpp" />
+    <ClCompile Include="SerializatorProdukty.cpp" />
+    <ClCompile Include="SerializatorUzytkownicy.cpp" />
+    <ClCompile Include="SerializatorZamowienia.cpp" />
     <ClCompile Include="Tablet.cpp" />
     <ClCompile Include="Telefon.cpp" />
     <ClCompile Include="ustawienia.cpp" />
-    <ClCompile Include="Utils.cpp" />
     <ClCompile Include="uzytkownicyPanel.cpp" />
     <ClCompile Include="Uzytkownik.cpp" />
     <ClCompile Include="uzytkownikOkienko.cpp" />
@@ -177,12 +179,14 @@
     <ClInclude Include="rejestracja.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="SerializatorProdukty.h" />
+    <ClInclude Include="SerializatorUzytkownicy.h" />
+    <ClInclude Include="SerializatorZamowienia.h" />
     <ClInclude Include="Tablet.h" />
     <ClInclude Include="Telefon.h" />
     <ClInclude Include="ustawienia.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Utils.h" />
     <ClInclude Include="uzytkownicyPanel.h">
       <FileType>CppForm</FileType>
     </ClInclude>

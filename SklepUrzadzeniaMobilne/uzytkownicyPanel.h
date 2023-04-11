@@ -1,6 +1,6 @@
 #pragma once
 #include "uzytkownikOkienko.h"
-#include "Utils.h"
+#include "SerializatorUzytkownicy.h"
 using namespace System::Collections::Generic;
 namespace SklepUrzadzeniaMobilne {
 
@@ -22,7 +22,7 @@ namespace SklepUrzadzeniaMobilne {
 			InitializeComponent();
 
 			std::vector<Uzytkownik> bazaUzytkownikow;
-			Utils::wczytajUzytkownikow(&bazaUzytkownikow);
+			SerializatorUzytkownicy::wczytajUzytkownikow(&bazaUzytkownikow);
 			List<uzytkownikOkienko^>^ paneleUzytkownikow = gcnew List<uzytkownikOkienko^>();
 
 			for (auto u : bazaUzytkownikow)

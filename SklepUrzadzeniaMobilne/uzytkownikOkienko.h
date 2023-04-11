@@ -1,7 +1,7 @@
 #pragma once
 #include "Uzytkownik.h"
 #include <msclr/marshal_cppstd.h>
-#include "Utils.h"
+#include "SerializatorUzytkownicy.h"
 
 namespace SklepUrzadzeniaMobilne {
 
@@ -217,7 +217,7 @@ namespace SklepUrzadzeniaMobilne {
 		}
 
 		private: System::Void zmienRolebutton_Click(System::Object^ sender, System::EventArgs^ e) {
-			Utils::zmienUprawnienia(this->uzytkownik->GetLogin());
+			SerializatorUzytkownicy::zmienUprawnienia(this->uzytkownik->GetLogin());
 
 
 			if (this->uzytkownik->GetRola() == "Uzytkownik")

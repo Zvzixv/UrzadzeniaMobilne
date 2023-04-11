@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "Utils.h"
+#include "SerializatorUzytkownicy.h"
 #include <msclr\marshal_cppstd.h>
 namespace SklepUrzadzeniaMobilne {
 
@@ -350,9 +350,9 @@ private: System::Void wylogujbutton_Click(System::Object^ sender, System::EventA
 private: System::Void usunbutton_Click(System::Object^ sender, System::EventArgs^ e) {
 	
 	std::vector<Uzytkownik> bazaUzytkownikow;
-	Utils::wczytajUzytkownikow(&bazaUzytkownikow);
+	SerializatorUzytkownicy::wczytajUzytkownikow(&bazaUzytkownikow);
 
-	Utils::usunUzytkownika(&bazaUzytkownikow, uzalogowany->GetLogin());
+	SerializatorUzytkownicy::usunUzytkownika(&bazaUzytkownikow, uzalogowany->GetLogin());
 
 	this->wyzszy->Hide();
 	this->powrotny->Show();
@@ -436,7 +436,7 @@ private: System::Void zmianaAdresubutton_Click(System::Object^ sender, System::E
 	if (nowyNumerDomu == "") nowyNumerDomuInt = 0;
 	else nowyNumerDomuInt = stoi(nowyNumerDomu); 
 
-	Utils::zmienAdres(uzalogowany->GetLogin(), noweMiasto, nowyKod, nowaUlica, nowyNumerDomuInt);
+	SerializatorUzytkownicy::zmienAdres(uzalogowany->GetLogin(), noweMiasto, nowyKod, nowaUlica, nowyNumerDomuInt);
 
 }
 };
