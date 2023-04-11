@@ -53,7 +53,6 @@ namespace SklepUrzadzeniaMobilne {
 							zamowienieOkienko^ upanel = gcnew zamowienieOkienko(uwskaznik, uz_zalogowany);
 							paneleZamowien->Add(upanel);
 						}
-
 					}
 			}
 
@@ -79,8 +78,6 @@ namespace SklepUrzadzeniaMobilne {
 
 	private: Uzytkownik* uz_zalogowany;
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel;
-
-
 
 	private:
 		/// <summary>

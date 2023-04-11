@@ -24,9 +24,6 @@ namespace SklepUrzadzeniaMobilne {
 		panelUzytkownika(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
 
 			this->panelNawigacyjny->Controls->Clear();
 			dashboardUzytkownika^ du = gcnew dashboardUzytkownika();
@@ -69,21 +66,14 @@ namespace SklepUrzadzeniaMobilne {
 	private: Form^ powrotny;
 	private: char rola;
 	private: Uzytkownik* uz_zalogowany;
-
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Button^ ustawieniabutton;
-	protected:
-
 	private: System::Windows::Forms::Button^ produktybutton;
 	private: System::Windows::Forms::Button^ dashboardUzytkownikabutton;
-
-
-
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Panel^ panelNawigacyjny;
-
 	private: System::Windows::Forms::Button^ zamowieniabutton;
 	private: System::Windows::Forms::Button^ kontaktbutton;
 
@@ -313,11 +303,6 @@ private: System::Void ustawieniabutton_Click(System::Object^ sender, System::Eve
 	this->panelNawigacyjny->Controls->Add(u);
 	u->Show();
 	this->label1->Text = "Ustawienia";
-}
-
-public: System::Void Powrot() {
-	this->Hide();
-	powrotny->Show();
 }
 };
 }

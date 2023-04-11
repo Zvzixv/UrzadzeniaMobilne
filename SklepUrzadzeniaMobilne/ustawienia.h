@@ -16,12 +16,7 @@ namespace SklepUrzadzeniaMobilne {
 	public ref class ustawienia : public System::Windows::Forms::Form
 	{
 	public:
-		bool starehasloklikniete = false;
-		bool nowehasloklikniete = false;
-		bool nowemiastoklikniete = false;
-		bool nowykodklikniete = false;
-		bool nowaulicakliniete = false;
-		bool nowynumerklikniete = false;
+		
 		ustawienia(void)
 		{
 			InitializeComponent();
@@ -49,8 +44,13 @@ namespace SklepUrzadzeniaMobilne {
 	private: Form^ powrotny;
 	private: Form^ wyzszy;
 	private: Uzytkownik* uzalogowany;
+	bool starehasloklikniete = false;
+	bool nowehasloklikniete = false;
+	bool nowemiastoklikniete = false;
+	bool nowykodklikniete = false;
+	bool nowaulicakliniete = false;
+	bool nowynumerklikniete = false;
 	private: System::Windows::Forms::Label^ label1;
-	protected:
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Button^ zmianaHaslabutton;
@@ -351,7 +351,6 @@ private: System::Void usunbutton_Click(System::Object^ sender, System::EventArgs
 	
 	std::vector<Uzytkownik> bazaUzytkownikow;
 	SerializatorUzytkownicy::wczytajUzytkownikow(&bazaUzytkownikow);
-
 	SerializatorUzytkownicy::usunUzytkownika(&bazaUzytkownikow, uzalogowany->GetLogin());
 
 	this->wyzszy->Hide();

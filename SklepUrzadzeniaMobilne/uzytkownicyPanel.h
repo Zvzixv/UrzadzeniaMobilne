@@ -30,7 +30,6 @@ namespace SklepUrzadzeniaMobilne {
 				Uzytkownik* uwskaznik = new Uzytkownik(u);
 				uzytkownikOkienko^ upanel = gcnew uzytkownikOkienko(uwskaznik);
 				paneleUzytkownikow->Add(upanel);
-
 			}
 
 			for each (uzytkownikOkienko ^ panel in paneleUzytkownikow) {
@@ -54,9 +53,6 @@ namespace SklepUrzadzeniaMobilne {
 		}
 	private: System::Windows::Forms::FlowLayoutPanel^ flowLayoutPanel;
 	private: System::Windows::Forms::Label^ label1;
-	protected:
-
-	protected:
 
 	private:
 		/// <summary>

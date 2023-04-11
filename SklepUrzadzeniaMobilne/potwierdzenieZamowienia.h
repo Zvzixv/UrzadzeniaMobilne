@@ -24,9 +24,6 @@ namespace SklepUrzadzeniaMobilne {
 		potwierdzenieZamowienia(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: W tym miejscu dodaj kod konstruktora
-			//
 		}
 
 		potwierdzenieZamowienia(vector<Produkt*>* k, Uzytkownik* uz_zal)
@@ -53,11 +50,9 @@ namespace SklepUrzadzeniaMobilne {
 	private: std::vector<Produkt*>* koszyk;
 	private: Uzytkownik* uz_zalogowany;
 	private: System::Windows::Forms::Label^ label1;
-	protected:
 	private: System::Windows::Forms::Label^ produktylabel;
 	private: System::Windows::Forms::Button^ zapiszZamowieniebutton;
 	private: System::Windows::Forms::Button^ anulujbutton;
-
 	private:
 		/// <summary>
 		/// Wymagana zmienna projektanta.
@@ -148,7 +143,6 @@ namespace SklepUrzadzeniaMobilne {
 		}
 #pragma endregion
 	private: System::Void zapiszZamowieniebutton_Click(System::Object^ sender, System::EventArgs^ e) {
-		//nic
 		vector<Zamowienie> zamowienia;
 		SerializatorZamowienia::odczytajZamowienia(&zamowienia);
 
@@ -167,11 +161,9 @@ namespace SklepUrzadzeniaMobilne {
 		noweZamowienie.setUzytkownik(*uz_zalogowany);
 		noweZamowienie.setProdukty(*koszyk);
 		noweZamowienie.setDataZlozenia(dataFormat);
-
 		zamowienia.push_back(noweZamowienie);
 
 		SerializatorZamowienia::zapiszZamowienie(&zamowienia);
-
 		this->Close();
 	}
 	private: System::Void anulujbutton_Click(System::Object^ sender, System::EventArgs^ e) {

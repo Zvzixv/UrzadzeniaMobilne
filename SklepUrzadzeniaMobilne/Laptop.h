@@ -30,5 +30,5 @@ public:
 	* Funkcja, której zadaniem jest zapisanie obiektu, który t¹ metodê wywo³a³, do pliku JSON o nazwie "Produkty.json".
 	* @return zwraca wartoœæ true, jeœli zapis przebieg³ poprawnie i false, jeœli nie uda³o siê zapisaæ obiektu.
 	*/
-	bool zapiszProdukt();
+	string Get_nazwa_pliku();
 };

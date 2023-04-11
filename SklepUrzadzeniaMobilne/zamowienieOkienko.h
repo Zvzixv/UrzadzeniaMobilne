@@ -71,13 +71,11 @@ namespace SklepUrzadzeniaMobilne {
 
 	private: Zamowienie* zamowienie;
 	private: System::Windows::Forms::Label^ label1;
-	protected:
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ zwrotbutton;
 	private: System::Windows::Forms::Label^ datalabel;
 	private: System::Windows::Forms::Label^ produktylabel;
 	private: System::Windows::Forms::Label^ wlasciciellabel;
-
 	private: System::Windows::Forms::Label^ wlascicieldanelabel;
 
 	private:
@@ -213,7 +211,6 @@ namespace SklepUrzadzeniaMobilne {
 		std::vector<Zamowienie> bazaZamowien;
 		SerializatorZamowienia::odczytajZamowienia(&bazaZamowien);
 
-
 		for (auto it = bazaZamowien.begin(); it != bazaZamowien.end(); ++it) {
 			if (it->getIdZamowienia() == this->zamowienie->getIdZamowienia()) {
 				bazaZamowien.erase(it);
@@ -222,7 +219,6 @@ namespace SklepUrzadzeniaMobilne {
 		}
 
 		SerializatorZamowienia::zapiszZamowienie(&bazaZamowien);
-
 		this->Hide();
 	}
 };

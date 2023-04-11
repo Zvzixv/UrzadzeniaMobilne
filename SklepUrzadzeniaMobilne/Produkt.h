@@ -20,11 +20,6 @@ private:
 
 public:
     /**
-	* @brief Metoda wirtualna, pozwalaj¹ca klasom pochodnym na zapis danego obiektu do pliku JSON.
-	* Metoda wirtualna, której zadaniem jest umo¿lwienie klasom pochodnym zapisania obiektu, który t¹ metodê wywo³a³, do pliku JSON o nazwie "Produkty.json".
-	*/
-    virtual bool zapiszProdukt() = 0;
-    /**
 	* @brief Konstruktor bezargumentowy.
 	* Konstruktor bezargumentowy.
 	*/
@@ -74,6 +69,12 @@ public:
 	* Funkcja ustawiaj¹ca wartoœæ numeryczn¹ bêd¹c¹ id produktu.
 	* @param id_produktu Id produktu
 	*/
+    virtual string Get_nazwa_pliku()=0;
+    /**
+    * @brief Setter pozwalaj¹cy na zapisanie id produktu.
+    * Funkcja ustawiaj¹ca wartoœæ numeryczn¹ bêd¹c¹ id produktu.
+    * @param id_produktu Id produktu
+    */
     void Set_id_produktu(int id_produktu);
     /**
     * @brief Setter pozwalaj¹cy na zapisanie nazwy, modelu produktu.

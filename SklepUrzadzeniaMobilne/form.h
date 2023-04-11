@@ -37,14 +37,12 @@ namespace SklepUrzadzeniaMobilne {
 			}
 		}
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	protected:
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::TextBox^ uzytkowniktextBox;
 	private: System::Windows::Forms::TextBox^ haslotextBox;
 	private: System::Windows::Forms::Button^ zalogujbutton;
 	private: System::Windows::Forms::Button^ stworzKontobutton;
-
 	private:
 		/// <summary>
 		/// Wymagana zmienna projektanta.

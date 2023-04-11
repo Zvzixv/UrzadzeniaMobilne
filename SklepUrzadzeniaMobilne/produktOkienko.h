@@ -41,23 +41,7 @@ namespace SklepUrzadzeniaMobilne {
 			label->Text = msclr::interop::marshal_as<System::String^>(produkt->Get_marka() + " " + produkt->Get_nazwa());
 			cenalabel->Text = msclr::interop::marshal_as<System::String^>(result);
 
-			if (produkt->Get_typ_produktu() == "Telefon")
-			{
-
-				pictureBox->Image = Image::FromFile("telefon1.png");
-			}
-			else if (produkt->Get_typ_produktu() == "Laptop")
-			{
-				pictureBox->Image = Image::FromFile("laptop.png");
-			}
-			else if (produkt->Get_typ_produktu() == "Akcesoria")
-			{
-				pictureBox->Image = Image::FromFile("akcesoria.png");
-			}
-			else if (produkt->Get_typ_produktu() == "Tablet")
-			{
-				pictureBox->Image = Image::FromFile("tablet.png");
-			}
+			pictureBox->Image = Image::FromFile(msclr::interop::marshal_as<System::String^>(produkt->Get_nazwa_pliku()));
 
 		}
 
@@ -73,11 +57,9 @@ namespace SklepUrzadzeniaMobilne {
 			}
 		}
 
-	public: bool czyKupowany = false;
-	public: Produkt* produkt;
-
+	private: bool czyKupowany = false;
+	private: Produkt* produkt;
 	private: System::Windows::Forms::PictureBox^ pictureBox;
-	protected:
 	private: System::Windows::Forms::Button^ dodajButton;
 	private: System::Windows::Forms::Label^ label;
 	private: System::Windows::Forms::Label^ kategorialabel;
@@ -193,6 +175,11 @@ namespace SklepUrzadzeniaMobilne {
 	public: System::Boolean kupowanyGetData()
 	{
 		return czyKupowany;
+	}
+
+	public: Produkt* kupowanyGetProdukt()
+	{
+		return produkt;
 	}
 	};
 }

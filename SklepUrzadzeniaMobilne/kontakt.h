@@ -18,9 +18,6 @@ namespace SklepUrzadzeniaMobilne {
 		kontakt(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
 		}
 
 	protected:
@@ -35,7 +32,6 @@ namespace SklepUrzadzeniaMobilne {
 			}
 		}
 	private: System::Windows::Forms::Label^ label1;
-	protected:
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::LinkLabel^ linkLabel1;

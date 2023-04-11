@@ -52,7 +52,6 @@ namespace SklepUrzadzeniaMobilne {
 
 	private: Form ^formpowrotny;
 	private: System::Windows::Forms::Label^ label1;
-	protected:
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
@@ -72,7 +71,6 @@ namespace SklepUrzadzeniaMobilne {
 	private: System::Windows::Forms::TextBox^ kodtextBox;
 	private: System::Windows::Forms::Button^ stworzKontobutton;
 	private: System::Windows::Forms::Button^ powrotbutton;
-
 
 	private:
 		/// <summary>

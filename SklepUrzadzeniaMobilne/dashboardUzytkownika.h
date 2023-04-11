@@ -62,14 +62,9 @@ namespace SklepUrzadzeniaMobilne {
 
 
 	private: Uzytkownik* uz_zal;
-	
 	private: System::Windows::Forms::Label^ label1;
-	protected:
 	private: System::Windows::Forms::Label^ nazwaUzytkownikalabel;
 	private: System::Windows::Forms::Label^ datalabel;
-
-
-
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 	private:

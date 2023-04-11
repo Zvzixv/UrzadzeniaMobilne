@@ -21,16 +21,10 @@ namespace SklepUrzadzeniaMobilne {
 		uzytkownikOkienko(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: W tym miejscu dodaj kod konstruktora
-			//
 		}
 		uzytkownikOkienko(Uzytkownik* uz)
 		{
 			InitializeComponent();
-			//
-			//TODO: W tym miejscu dodaj kod konstruktora
-			//
 			uzytkownik = uz;
 
 			std::string login = uz->GetLogin();
@@ -60,9 +54,7 @@ namespace SklepUrzadzeniaMobilne {
 		}
 
 	private: Uzytkownik* uzytkownik;
-
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
-	protected:
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
@@ -225,17 +217,13 @@ namespace SklepUrzadzeniaMobilne {
 				System::String^ rolaSkonwertowany = msclr::interop::marshal_as<System::String^>("Administrator");
 				this->rolalabel->Text = rolaSkonwertowany;
 				uzytkownik->SetRola("Administrator");
-				//this->Invalidate();
 			}
 			else if (this->uzytkownik->GetRola() == "Administrator")
 			{
 				System::String^ rolaSkonwertowany = msclr::interop::marshal_as<System::String^>("Uzytkownik");
 				this->rolalabel->Text = rolaSkonwertowany;
 				uzytkownik->SetRola("Uzytkownik");
-				//this->Invalidate();
-				
 			}
-
 		}
 #pragma endregion
 };

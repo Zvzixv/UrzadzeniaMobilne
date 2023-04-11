@@ -33,7 +33,6 @@ namespace SklepUrzadzeniaMobilne {
 			rola = r;
 			uz_zalogowany = zalogowany;
 
-
 			this->panelNawigacyjny->Controls->Clear();
 			dashboardUzytkownika^ du = gcnew dashboardUzytkownika(uz_zalogowany);
 			du->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
@@ -59,25 +58,16 @@ namespace SklepUrzadzeniaMobilne {
 	private: Form^ powrotny;
 	private: char rola;
 	private: Uzytkownik* uz_zalogowany;
-
-
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Button^ ustawieniabutton;
-	protected:
-
 	private: System::Windows::Forms::Button^ produktybutton;
-
 	private: System::Windows::Forms::Button^ panelAdministratorabutton;
-
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ uzytkownicybutton;
 	private: System::Windows::Forms::Panel^ panelNawigacyjny;
-
-
 	private: System::Windows::Forms::Button^ zamowieniabutton;
-
 
 	private:
 		/// <summary>

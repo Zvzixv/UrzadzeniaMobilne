@@ -31,7 +31,6 @@ namespace SklepUrzadzeniaMobilne {
 			{
 				produktOkienko^ upanel = gcnew produktOkienko(u);
 				paneleProduktow->Add(upanel);
-
 			}
 
 			for each (produktOkienko ^ panel in paneleProduktow) {
@@ -39,7 +38,6 @@ namespace SklepUrzadzeniaMobilne {
 				this->flowLayoutPanel->Controls->Add(panel);
 				panel->Show();
 			}
-
 		}
 
 		ProduktyPanel(Uzytkownik* uz)
@@ -47,7 +45,6 @@ namespace SklepUrzadzeniaMobilne {
 			InitializeComponent();
 
 			uz_zalogowany = uz;
-
 			std::vector<Produkt*>bazaProduktow;
 			SerializatorProdukty::wczytajProdukty(&bazaProduktow);
 			paneleProduktow = gcnew List <produktOkienko^>();
@@ -56,7 +53,6 @@ namespace SklepUrzadzeniaMobilne {
 			{
 				produktOkienko^ upanel = gcnew produktOkienko(u);
 				paneleProduktow->Add(upanel);
-
 			}
 
 			for each (produktOkienko ^ panel in paneleProduktow) {
@@ -64,8 +60,6 @@ namespace SklepUrzadzeniaMobilne {
 				this->flowLayoutPanel->Controls->Add(panel);
 				panel->Show();
 			}
-
-
 		}
 
 	protected:
@@ -142,12 +136,12 @@ namespace SklepUrzadzeniaMobilne {
 		}
 #pragma endregion
 	private: System::Void finalizacjabutton_Click(System::Object^ sender, System::EventArgs^ e) {
-		//tutaj cos w stylu ze dla wszystkich paneli sprawdzane sa czy beda kupowane i przesyla sie je dalej simply, moze zadziala
+		
 		for each (produktOkienko ^ panel in paneleProduktow)
 		{
-			if (panel->czyKupowany == true)
+			if (panel->kupowanyGetData() == true)
 			{
-				koszyk->push_back(panel->produkt);
+				koszyk->push_back(panel->kupowanyGetProdukt());
 			}
 		}
 
